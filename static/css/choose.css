@@ -1,0 +1,753 @@
+:root{
+    --background_color:#34495e ;
+	--button_background_color:#34495e;
+	--button_txt_color:rgb(206, 193, 193);
+}
+
+
+body {
+	margin:0;
+	padding:0;
+	background-color: var(--background_color);
+	font-family: 'Roboto Condensed', sans-serif;
+  }
+
+
+  /* სათაური თითოეულ შემთხვევაში */
+.main_header_secttion{
+	width: 1200px;
+    position: relative;
+    display: flex;
+	margin: auto;
+    padding: auto;
+    margin-top: 40px;
+	background-color: var(--background_color);
+}
+
+.main_header{
+	position: relative;
+	margin: auto;
+    padding: auto;
+	letter-spacing: 2px;
+	font-weight: bolder;
+	font-size: 30px;
+	text-shadow: 2px 2px 4px #363636;
+	font-family:Arial, Helvetica, sans-serif;
+	letter-spacing: 1.7px;
+	color: rgb(206, 193, 193);
+}
+
+
+
+.navigation{
+    width: 1200px;
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: auto;
+    margin-top: 0px;
+	
+}
+
+
+
+
+
+
+/******************************************************* ნავიგაციის კონტროლი *******************************************************/
+/******************************************************* ნავიგაციის კონტროლი *******************************************************/
+/******************************************************* ნავიგაციის კონტროლი *******************************************************/
+
+nav {
+	margin: 27px auto 0;
+
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color: var(--background_color); 
+	border-radius: 8px;
+	font-size: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 1.5px;
+	margin-left: 30px;
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+
+
+/* ნავიგაციის ღილაკის სიდიდეები */
+
+a:nth-child(1) {
+	width: 110px;
+}
+a:nth-child(2) {
+	width: 110px;
+}
+a:nth-child(3) {
+	width: 100px;
+}
+a:nth-child(4) {
+	width: 120px;
+}
+a:nth-child(5) {
+	width: 120px;
+}
+
+
+
+/*ნავიგაცისს ბარსი სიგრძის ფერების მინიჭება თითოეული ინდივიდისთვის */
+
+nav .start-home, a:nth-child(1):hover~.animation {
+	width: 110px;
+	left: 0;
+	background-color: #1abc9c;
+}
+nav .start-about, a:nth-child(2):hover~.animation {
+	width: 110px;
+	left: 110px;
+	background-color: #e74c3c;
+}
+nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 220px;
+	background-color: #3498db;
+}
+nav .start-portefolio, a:nth-child(4):hover~.animation {
+	width: 120px;
+	left: 320px;
+	background-color: #9b59b6;
+}
+nav .start-contact, a:nth-child(5):hover~.animation {
+	width: 120px;
+	left: 460px;
+	background-color: #e67e22;
+}
+
+
+span {
+    color: #2BD6B4;
+}
+
+
+
+
+
+
+
+/******************************************************* ძირითადი ნავიგაციის კონტროლი *******************************************************/
+/******************************************************* ძირითადი ნავიგაციის კონტროლი *******************************************************/
+/******************************************************* ძირითადი ნავიგაციის კონტროლი *******************************************************/
+
+
+/* პირველი ხაზი */
+.main_navigation_first_row{
+	width: 1200px;
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: auto;
+    margin-top: 40px;
+	background-color: var(--background_color);
+}
+
+
+
+/* მეორე ხაზი */
+.main_navigation_second_row{
+	width: 1200px;
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: auto;
+	margin-top: 40px;
+    
+	background-color: var(--background_color);	
+}
+
+
+
+/* მესამე ხაზი */
+.main_navigation_third_row{
+	width: 1200px;
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: auto;
+	margin-top: 40px;
+    
+	background-color: var(--background_color);	
+}
+
+
+
+
+
+
+
+
+
+/* პირველი სტრიქნოს ღილაკების მახასიათებლები */
+.button1 {
+	position: relative;
+	display: inline-block;
+	padding: 30px 61px;
+	border-radius: 4px;
+	color: var(--button_txt_color);
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	/* margin: 15px; */
+	font-family: "Roboto", sans-serif;
+	filter: hue-rotate(0deg);
+	border: 2px solid white;
+	border:none;
+	border-radius: 10px;
+	transition: all 0s linear;
+	height: auto;
+	width: 120px;
+	text-align: center;
+	background-color:var(--button_background_color);
+	
+	box-shadow: 2px 1px 46px -5px rgba(0,0,0,0.64);
+}
+
+
+
+ /* მეორე სტრიქნოს ღილაკების მახასიათებლები */
+.button2 {
+	position: relative;
+	display: inline-block;
+	padding: 30px 61px;
+	border-radius: 4px;
+	color: var(--button_txt_color);
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	/* margin: 15px; */
+	font-family: "Roboto", sans-serif;
+	filter: hue-rotate(0deg);
+	border: 2px solid white;
+	border:none;
+	border-radius: 10px;
+	transition: all 0s linear;
+	height: auto;
+	width: 160px;
+	text-align: center;
+	background-color:var(--button_background_color);
+	
+	box-shadow: 2px 1px 46px -5px rgba(0,0,0,0.64);
+}
+ 
+
+
+ /* მესამე სტრიქნოს ღილაკების მახასიათებლები */
+.button3 {
+	position: relative;
+	display: inline-block;
+	padding: 30px 61px;
+	border-radius: 4px;
+	color: var(--button_txt_color);
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	/* margin: 15px; */
+	font-family: "Roboto", sans-serif;
+	filter: hue-rotate(0deg);
+	border: 2px solid #d2bdff;
+	transition: all 0s linear;
+	height: 20px;
+	
+
+	background-color:var(--button_background_color);
+	border:none;
+	border-radius: 10px;
+	box-shadow: 2px 1px 46px -5px rgba(0,0,0,0.64);
+}
+
+
+
+
+/* პირველი 3 ღილაკის განლაგება */
+.first_1_row{
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 118.5px;
+}
+
+.first_2_row{
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 118.5px;
+}
+
+.first_3_row{
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 118.5px;
+}
+
+
+
+
+/* მეორე 3 ღილაკის განლაგება */
+.second_1_row{
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 88.5px;
+}
+
+.second_2_row{
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 88.5px;
+}
+
+.second_3_row{
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 88.5px;
+}
+
+
+
+
+/* მესამე 3 ღილაკის განლაგება */
+.third_1_row{
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 330px;
+}
+
+.third_2_row{
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 57.4px;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************** პირველი სტრიქონის ანიმაციები ***************************************************/
+/******************************************************** პირველი სტრიქონის ანიმაციები ***************************************************/
+/******************************************************** პირველი სტრიქონის ანიმაციები ***************************************************/
+
+
+
+.button1:hover {
+	border: 0px solid transparent;
+}
+.button1:hover span {
+	position: absolute;
+	display: block;
+}
+.button1:hover span:nth-child(1) {
+	filter: hue-rotate(0deg);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: linear-gradient(90deg, transparent, #3a86ff);
+	animation: animate1 1s linear infinite;
+	
+}
+@keyframes animate1 {
+	0% {
+		left: -100%;
+   }
+	50%, 100% {
+		left: 100%;
+   }
+}
+.button1:hover span:nth-child(2) {
+	filter: hue-rotate(60deg);
+	top: -100%;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #3a86ff);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+@keyframes animate2 {
+	0% {
+		top: -100%;
+   }
+	50%, 100% {
+		top: 100%;
+   }
+}
+.button1:hover span:nth-child(3) {
+	filter: hue-rotate(120deg);
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	background: linear-gradient(270deg, transparent, #3a86ff);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.5s;
+}
+@keyframes animate3 {
+	0% {
+		right: -100%;
+		height: 5px;
+   }
+	50%, 100% {
+		height: 2px;
+		right: 100%;
+   }
+}
+.button1:hover span:nth-child(4) {
+	filter: hue-rotate(300deg);
+	bottom: -100%;
+	left: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #3a86ff);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+@keyframes animate4 {
+	0% {
+		bottom: -100%;
+   }
+	50%, 100% {
+		bottom: 100%;
+   }
+}
+
+
+
+
+
+/******************************************************** მეორე სტრიქონის ანიმაციები ***************************************************/
+/******************************************************** მეორე სტრიქონის ანიმაციები ***************************************************/
+/******************************************************** მეორე სტრიქონის ანიმაციები ***************************************************/
+
+
+
+.button2:hover {
+	border: 0px solid transparent;
+}
+.button2:hover span {
+	position: absolute;
+	display: block;
+}
+.button2:hover span:nth-child(1) {
+	filter: hue-rotate(0deg);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: linear-gradient(90deg, transparent, #3a86ff);
+	animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+	0% {
+		left: -100%;
+   }
+	50%, 100% {
+		left: 100%;
+   }
+}
+.button2:hover span:nth-child(2) {
+	filter: hue-rotate(60deg);
+	top: -100%;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #3a86ff);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+@keyframes animate2 {
+	0% {
+		top: -100%;
+   }
+	50%, 100% {
+		top: 100%;
+   }
+}
+.button2:hover span:nth-child(3) {
+	filter: hue-rotate(120deg);
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	background: linear-gradient(270deg, transparent, #3a86ff);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.5s;
+}
+@keyframes animate3 {
+	0% {
+		right: -100%;
+		height: 5px;
+   }
+	50%, 100% {
+		height: 2px;
+		right: 100%;
+   }
+}
+.button2:hover span:nth-child(4) {
+	filter: hue-rotate(300deg);
+	bottom: -100%;
+	left: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #3a86ff);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+@keyframes animate4 {
+	0% {
+		bottom: -100%;
+   }
+	50%, 100% {
+		bottom: 100%;
+   }
+}
+
+
+
+
+
+/******************************************************** მესამე სტრიქონის ანიმაციები ***************************************************/
+/******************************************************** მესამე სტრიქონის ანიმაციები ***************************************************/
+/******************************************************** მესამე სტრიქონის ანიმაციები ***************************************************/
+
+
+.button3:hover {
+	border: 0px solid transparent;
+}
+.button3:hover span {
+	position: absolute;
+	display: block;
+}
+.button3:hover span:nth-child(1) {
+	filter: hue-rotate(0deg);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: linear-gradient(90deg, transparent, #3a86ff);
+	animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+	0% {
+		left: -100%;
+   }
+	50%, 100% {
+		left: 100%;
+   }
+}
+.button3:hover span:nth-child(2) {
+	filter: hue-rotate(60deg);
+	top: -100%;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #3a86ff);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+@keyframes animate2 {
+	0% {
+		top: -100%;
+   }
+	50%, 100% {
+		top: 100%;
+   }
+}
+.button3:hover span:nth-child(3) {
+	filter: hue-rotate(120deg);
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	background: linear-gradient(270deg, transparent, #3a86ff);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.5s;
+}
+@keyframes animate3 {
+	0% {
+		right: -100%;
+		height: 5px;
+   }
+	50%, 100% {
+		height: 2px;
+		right: 100%;
+   }
+}
+.button3:hover span:nth-child(4) {
+	filter: hue-rotate(300deg);
+	bottom: -100%;
+	left: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #3a86ff);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+@keyframes animate4 {
+	0% {
+		bottom: -100%;
+   }
+	50%, 100% {
+		bottom: 100%;
+   }
+}
+
+
+
+
+/*************************************************************************** დასასრული *******************************************************/
+/*************************************************************************** დასასრული *******************************************************/
+/*************************************************************************** დასასრული *******************************************************/
+/*************************************************************************** დასასრული *******************************************************/
+/*************************************************************************** დასასრული *******************************************************/
+
+
+
+
+
+
+
+
+/* 
+.button {
+	position: relative;
+	display: inline-block;
+	padding: 30px 61px;
+	border-radius: 4px;
+	color: #03e9f4;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	margin: 15px;
+	font-family: "Roboto", sans-serif;
+	filter: hue-rotate(0deg);
+	border: 2px solid #d2bdff;
+	transition: all 0.1s linear;
+	height: 20px;
+
+
+	border:none;
+	border-radius: 10px;
+	box-shadow: 2px 1px 46px -5px rgba(0,0,0,0.64);
+}
+
+
+.button:hover {
+	border: 0px solid transparent;
+}
+.button:hover span {
+	position: absolute;
+	display: block;
+}
+.button:hover span:nth-child(1) {
+	filter: hue-rotate(0deg);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: linear-gradient(90deg, transparent, #3a86ff);
+	animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+	0% {
+		left: -100%;
+   }
+	50%, 100% {
+		left: 100%;
+   }
+}
+.button:hover span:nth-child(2) {
+	filter: hue-rotate(60deg);
+	top: -100%;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #3a86ff);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+@keyframes animate2 {
+	0% {
+		top: -100%;
+   }
+	50%, 100% {
+		top: 100%;
+   }
+}
+.button:hover span:nth-child(3) {
+	filter: hue-rotate(120deg);
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	background: linear-gradient(270deg, transparent, #3a86ff);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.5s;
+}
+@keyframes animate3 {
+	0% {
+		right: -100%;
+		height: 5px;
+   }
+	50%, 100% {
+		height: 2px;
+		right: 100%;
+   }
+}
+.button:hover span:nth-child(4) {
+	filter: hue-rotate(300deg);
+	bottom: -100%;
+	left: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #3a86ff);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+@keyframes animate4 {
+	0% {
+		bottom: -100%;
+   }
+	50%, 100% {
+		bottom: 100%;
+   }
+}
+  */

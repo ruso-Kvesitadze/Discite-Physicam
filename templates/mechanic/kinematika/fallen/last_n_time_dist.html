@@ -1,0 +1,661 @@
+{% extends 'base_calc.html' %}
+
+
+
+{% block content%}
+
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/calculator.css') }}">
+
+
+
+<!--************************************************************* ნავიგაციის სექცია******************************************************* -->
+
+<section class="navigation">
+    <nav> 
+        <a href="/"> მთავარი </a>
+        <a href="/calculator"> დარგები </a>
+        <a href="/calculator/mechanic"> მექანიკა </a>
+        <a href="/calculator/mechanic/kinematika"> კინემატიკა </a>
+        <a href="/calculator/mechanic/kinematika/fallen"> ვარდნილი სხეული </a>
+
+ 
+        <div class="animation start-home"></div>
+    </nav>
+</section>
+
+
+<!--************************************************************* სათაურის სექცია******************************************************* -->
+<section class="main_header_secttion"> <div class="main_header">ბოლო n-წამში გავლილი მანძილი</div></section>
+
+
+
+
+<!--******************************************************* ინფორმაციისს ტრასფერის სექცია************************************************* -->
+<section class="input_variables_section">
+
+    <form name="passdata" action="." method="POST">
+
+    <div class="input_variables">
+
+        <div class="variable_1">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initial_speed">
+              
+                <div class="holder">
+                    <label for="firstname" class="placeholder_of_inputs" >საწყ.სიჩქარე</label>
+                </div>
+        </div>
+
+        <div class="variable_2">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="9.8" name="gravity">
+            
+                <div class="holder">
+                     <label for="firstname" class="placeholder_of_inputs" >გრავიტაცია</label>
+                </div>
+        </div>
+
+        <div class="variable_3">
+            <input type="number" class="input3"  placeholder=" " step="0.001" min=0 value="0" name="time">
+               
+            <div class="holder3">
+                
+                <label for="firstname" class="placeholder_of_inputs" >ფრენის დრო</label>
+            
+            </div>
+        </div>
+
+
+
+        <!-- გამზადებულია გამოსაყენებლად -->
+        <div class="variable_4">
+            <input type="number" class="input4"  placeholder=" " step="0.001" min=0 value="0" name="n_time">
+               
+            <div class="holder4">
+                
+                <label for="firstname" class="placeholder_of_inputs" >n წამი</label>
+            
+            </div>
+        </div>
+       
+
+
+        <!-- გამზადებულია გამოსაყენებლად -->
+        <div class="variable_5">
+
+        </div>
+
+
+
+
+
+
+        <!-- გამშვები ბათონი -->
+        <div class="submut_button">
+            <button type="submit" class="submit">გამოთვლა</button>
+        </div>
+
+    </div>
+
+
+    </form>
+</section>
+
+
+
+
+<!--******************************************************* პასუხების სექცია************************************************* -->
+<section class="answers_section">
+    <form name="passdata" action="." method="POST">
+
+  
+             <div class="answers">პასუხი: <div class="answer_number">{{height}} {{Dimension}} </div> </div>
+
+    </form>
+</section>
+
+
+
+
+
+<!--******************************************************* ფოტოს ************************************************* -->
+
+<section class="drawing">
+    <div>
+
+
+        <div class="union">  
+            <div class="main_header">დეტალურად</div>
+        </div>
+
+
+
+
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+
+        <div class="div_photo_txt_left">
+
+            
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+
+                    <div class="main_detail_left_short">
+
+                        <img class="photo_left" src="/static/images/mechanic/kinematika/fallen/free_fall.jpg" alt="">
+
+                            
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt" >
+                            ვარდნილი სხეულის მიერ ბოლო n წამში გავლილი მანძილის გამოსავლელად მთლიან H მანძილს უნდა გამოვაკლოთ 
+                              ის მანძილი, რომელსაც სხეული გაივლის t-n წამში:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+
+
+                            <math display='block'>
+                                <mrow>
+                                 <mi>S</mi><mo>=</mo><msub>
+                                  <mi>H</mi>
+                                  <mi>t</mi>
+                                 </msub>
+                                 <mo>&#x2212;</mo><msub>
+                                  <mi>H</mi>
+                                  <mrow>
+                                   <mi>t</mi><mo>&#x2212;</mo><mi>n</mi></mrow>
+                                 </msub>
+                                 </mrow>
+                                 <mo>&#x2192;</mo><mfenced class="SKT">
+                                    <mn>1</mn>
+                               </math>
+                        </div>
+                        
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt" style="margin-top: 55px;">
+                            
+
+                            სრული სიმაღლის გამოსათვლელად ვარდნილი სხეულისთვის ვარდნის სიმაღლის გამოსათვლელ ფორმულაში
+                            უნდა ჩავსვათ მოძრაობის სრული დრო-t, მივიღებთ, რომ მთლიანი H მანძილი ტოლია:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+
+                            <math display='block' class="answer_color">
+                                <mrow>
+                                 <msub>
+                                  <mi>H</mi>
+                                  <mi>t</mi>
+                                 </msub>
+                                 <mo>=</mo><msub>
+                                  <mi>V</mi>
+                                  <mn>0</mn>
+                                 </msub>
+                                 <mi>t</mi><mo>+</mo><mfrac>
+                                  <mrow>
+                                   <mi>g</mi><msup>
+                                    <mi>t</mi>
+                                    <mn>2</mn>
+                                   </msup>
+                                   </mrow>
+                                  <mn>2</mn>
+                                 </mfrac>
+                                 </mrow>
+                               </math>
+                        </div>
+                        
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt" style="margin-top: 50px;">
+                            ხოლო იმ სიმაღლის საპოვნელად, რომელიც სხეულმა გაიარა t-n წამში ვარდნილი სხეულის ვარდნის სიმაღლის
+                            გამოსათლელ ფორმულაში უნდა ჩავსვათ დროის t-n შუალედი:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+
+                            <math display='block' class="answer_color">
+                                <mrow>
+                                 <msub>
+                                  <mi>H</mi>
+                                  <mrow>
+                                   <mi>t</mi><mo>&#x2212;</mo><mi>n</mi></mrow>
+                                 </msub>
+                                 <mo>=</mo><msub>
+                                  <mi>V</mi>
+                                  <mn>0</mn>
+                                 </msub>
+                                 <mo stretchy='false'>(</mo><mi>t</mi><mo>&#x2212;</mo><mi>n</mi><mo stretchy='false'>)</mo><mo>+</mo><mfrac>
+                                  <mrow>
+                                   <mi>g</mi><msup>
+                                    <mrow>
+                                     <mo stretchy='false'>(</mo><mi>t</mi><mo>&#x2212;</mo><mi>n</mi><mo stretchy='false'>)</mo></mrow>
+                                    <mn>2</mn>
+                                   </msup>
+                                   </mrow>
+                                  <mn>2</mn>
+                                 </mfrac>
+                                 </mrow>
+                               </math>
+                        </div>
+
+                                                
+
+
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+
+                    </div>       
+                    
+    
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+
+                   <div class="main_detail_left_long">
+
+
+
+                                                      <!-- ტექსტი -->
+                        <div class="detail_txt" style="margin-top: 100px;">
+                            საბოლოოდ, ბოლო n წამში გავლილი მანძილი რომ ვიპოვოთ მთლიან მანძილს,
+                         რომელსაც სხეული გადის მოძრაობის მთელი დროის  განმავლობაში უნდა გამოვაკლოთ t-n წამში გავლილი მანძილი:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+
+                            <math display='block'>
+                                <mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>t</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfenced>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mfenced>
+                                   <mrow>
+                                    <mi>t</mi><mo>&#x2212;</mo><mi>n</mi></mrow>
+                                  </mfenced><mo>+</mo><mfrac>
+                                   <mrow>
+                                    <mi>g</mi><msup>
+                                     <mrow>
+                                      <mfenced>
+                                       <mrow>
+                                        <mi>t</mi><mo>&#x2212;</mo><mi>n</mi></mrow>
+                                      </mfenced></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    </mrow>
+                                   <mn>2</mn>
+                                  </mfrac>
+                                  </mrow>
+                                </mfenced>
+                               </math>
+                          
+                               
+                               <math display='block'>
+                                <mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>t</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>+</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>n</mi><mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><mfenced>
+                                   <mrow>
+                                    <msup>
+                                     <mi>t</mi>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>n</mi><mi>t</mi><mo>+</mo><msup>
+                                     <mi>n</mi>
+                                     <mn>2</mn>
+                                    </msup>
+                                    </mrow>
+                                  </mfenced></mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+                          
+                               
+                               <math display='block'>
+                                <mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>t</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>+</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>n</mi><mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><mfenced>
+                                   <mrow>
+                                    <msup>
+                                     <mi>t</mi>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>n</mi><mi>t</mi><mo>+</mo><msup>
+                                     <mi>n</mi>
+                                     <mn>2</mn>
+                                    </msup>
+                                    </mrow>
+                                  </mfenced></mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+                          
+                               
+                               <math display='block'>
+                                <mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>t</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>+</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>n</mi><mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>t</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi><mi>n</mi><mi>t</mi></mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+                          
+                               
+                          
+                               <math display='block'>
+                                <mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>n</mi><mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi><mi>n</mi><mi>t</mi></mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+                          
+                               
+                               <math display='block' class="answer_color">
+                                <mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>n</mi><mo>+</mo><mi>g</mi><mi>n</mi><mfenced>
+                                 <mrow>
+                                  <mi>t</mi><mo>&#x2212;</mo><mfrac>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </mfrac>
+                                  </mrow>
+                                </mfenced>
+                               </math>
+                        </div>
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+    
+
+                </div>  
+            </div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+
+
+
+
+            <style>
+
+            a:nth-child(5) {
+                width: 180px;
+            }       
+
+
+            nav .start-contact, a:nth-child(5):hover~.animation {
+                width: 185px;
+                left: 440px;
+                background-color: #e67e22;
+            }
+
+            .input3 {
+                background-color: #303245;
+                margin: 10px; 
+                border-radius: 10px;
+                border: 0;
+                box-sizing: border-box;
+                color: #eee;
+                font-size: 18px;
+                height: 50px;
+                outline: 0;
+                padding: 4px 20px 0;
+                width: 190px;
+            }
+
+
+            .holder3{
+            position: absolute;
+            background-color: var(--background_color);
+            border-radius: 40px;
+            text-align: center;
+            font-size: 16px;
+            width: 150px;
+            height: 25px;
+            color: rgb(206, 193, 193);
+            font-weight: bold;
+            margin-left: 30px;
+            bottom: 50px; 
+            }
+
+
+
+
+            .input4 {
+                background-color: #303245;
+                margin: 10px; 
+                border-radius: 10px;
+                border: 0;
+                box-sizing: border-box;
+                color: #eee;
+                font-size: 18px;
+                height: 50px;
+                outline: 0;
+                padding: 4px 20px 0;
+                width: 130px;
+            }
+
+
+            .holder4{
+            position: absolute;
+            background-color: var(--background_color);
+            border-radius: 40px;
+            text-align: center;
+            font-size: 16px;
+            width: 90px;
+            height: 25px;
+            color: rgb(206, 193, 193);
+            font-weight: bold;
+            margin-left: 30px;
+            bottom: 50px; 
+            }
+            </style>
+
+
+
+
+{% endblock %}

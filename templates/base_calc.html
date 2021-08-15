@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discite Physicam</title>
+
+
+    <link rel="icon" href="/static/images/first_page_ico/icon.png">
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+</head>
+<body>
+        
+
+                {% block content%}
+
+                {% endblock%}
+
+
+
+                <section class="footer"> 
+      
+                    <div class="footer_header"> <a class="social" href="https://www.facebook.com/DiscitePhysicam" target="blanck">Discite Physicam</a></div>
+                      <div class="seertificat">© All right Reversed 2021.</div>            
+     
+                    </section>
+
+
+
+
+
+<style>
+    
+    /* ფუტერის სულ უკანა ფონი */
+    .footer{
+    background-color: var(--background);
+    width: 1200px;
+    height: 70px;
+    position: relative;
+    margin: auto;
+    padding: auto;
+    margin-top: 00px;
+    }
+
+
+    /* ფუტერის მთავარი წარწერა */
+    .footer_header{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Brush Script MT', cursive;
+    letter-spacing: 1.8px; 
+    background: var(--background);
+    top: 30px;
+    }
+
+    /* ფუტერის მეორეული წარწერა  */
+    .seertificat{
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    background: var(--background);
+    top: 80px;
+    font-family: serif;
+    }
+
+
+    /* ფუტერის ძირითად ნაწილზე ლინკის ფორმის მიცემა */
+    .social {
+    font-size: 40px;
+    font-family: 'Brush Script MT', cursive;
+    letter-spacing: 1.8px; 
+    color: black;
+    text-decoration: none;
+    }
+
+
+
+
+    /* scroll bar ვიზუალი  */
+    ::-webkit-scrollbar{
+    width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+    background-color: rgb(102, 101, 101);
+    border-radius: 50px;
+    }
+
+</style>
+
+
+
+
+</body>
+</html>
