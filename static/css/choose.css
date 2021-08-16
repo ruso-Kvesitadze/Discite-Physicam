@@ -269,6 +269,7 @@ span {
 	text-decoration: none;
 	text-transform: uppercase;
 	overflow: hidden;
+	text-align: center;
 	/* margin: 15px; */
 	font-family: "Roboto", sans-serif;
 	filter: hue-rotate(0deg);

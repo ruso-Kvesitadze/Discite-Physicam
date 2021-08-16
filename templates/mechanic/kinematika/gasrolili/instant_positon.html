@@ -1,0 +1,925 @@
+{% extends 'base_calc.html' %}
+
+
+
+{% block content%}
+
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/calculator.css') }}">
+
+
+
+<!--************************************************************* ნავიგაციის სექცია******************************************************* -->
+
+<section class="navigation">
+    <nav> 
+        <a href="/"> მთავარი </a>
+        <a href="/calculator"> დარგები </a>
+        <a href="/calculator/mechanic"> მექანიკა </a>
+        <a href="/calculator/mechanic/kinematika"> კინემატიკა </a>
+        <a href="/calculator/mechanic/kinematika/gasrolili"> გასროლილი სხეული </a>
+
+ 
+        <div class="animation start-home"></div>
+    </nav>
+</section>
+
+
+<!--************************************************************* სათაურის სექცია******************************************************* -->
+<section class="main_header_secttion"> <div class="main_header">მყისი მდებარეობა</div></section>
+
+
+
+
+<!--******************************************************* ინფორმაციისს ტრასფერის სექცია************************************************* -->
+<section class="input_variables_section">
+
+    <form name="passdata" action="." method="POST">
+
+    <div class="input_variables">
+
+        <div class="variable_1">
+            <input type="number" class="input1"  placeholder=" " step="0.001" min=0 value="0" name="angle">
+              
+                <div class="holder1">
+                    <label for="firstname" class="placeholder_of_inputs" >კუთხე</label>
+                </div>
+        </div>
+
+        <div class="variable_2">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="9.8" name="gravity">
+            
+                <div class="holder">
+                     <label for="firstname" class="placeholder_of_inputs" >გრავიტაცია</label>
+                </div>
+        </div>
+
+        <div class="variable_3">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initaial_velocity">
+               
+            <div class="holder">
+                
+                <label for="firstname" class="placeholder_of_inputs" >საწყ.სიჩქარე</label>
+            
+            </div>
+        </div>
+
+
+
+        <!-- გამზადებულია გამოსაყენებლად -->
+        <div class="variable_4">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="time">
+               
+            <div class="holder">
+                
+                <label for="firstname" class="placeholder_of_inputs" >მე-n-ე წამი</label>
+            
+            </div>
+        </div>
+       
+
+
+        <!-- გამზადებულია გამოსაყენებლად -->
+        <div class="variable_5">
+
+        </div>
+
+
+
+
+
+
+        <!-- გამშვები ბათონი -->
+        <div class="submut_button">
+            <button type="submit" class="submit">გამოთვლა</button>
+        </div>
+
+    </div>
+
+
+    </form>
+</section>
+
+
+
+
+<!--******************************************************* პასუხების სექცია************************************************* -->
+<section class="answers_section">
+    <form name="passdata" action="." method="POST">
+
+  
+             <div class="answers">პოზიცია Y ღერძზე: <div class="answer_number">{{Y}} {{Dimension}} </div> </div>
+             <div class="answers">პოზიცია X ღერძზე: <div class="answer_number">{{X}} {{Dimension}} </div> </div>
+    </form>
+</section>
+
+
+
+
+
+<!--******************************************************* ფოტოს ************************************************* -->
+
+<section class="drawing">
+    <div>
+
+
+        <div class="union">  
+            <div class="main_header">დეტალურად</div>
+        </div>
+
+
+
+
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+
+ 
+
+
+
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
+
+
+
+
+            <div class="div_photo_txt_down">
+
+                     <img class="photo_down" src="/static/images/mechanic/kinematika/fallen/free_fall.jpg" alt="" style="width: 900px; height: 200px;">
+                     
+                     
+
+                    <div class="main_detail_down">
+
+                                       
+                           <!-- ტექსტი -->
+                           <div class="detail_txt">
+                            კოორდინატთა სათავედ ავიღოთ ის O წერტილი, საიდანაც გაისროლეს სხეული.
+                            X ღერძი მივმართოთ ჰორიზონტალურად მარჯვნივ, Y ვერტიკალურად ზევით. 
+                            საწყისი სიჩქარის გეგმილები (პროექციები) ამ ღერძებზე იქნება:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+
+                            <math display='block' >
+                                <mtable columnalign='left'>
+                                 <mtr>
+                                  <mtd>
+                                   <msub>
+                                    <mi>V</mi>
+                                    <mrow>
+                                     <mn>0</mn><mi>x</mi></mrow>
+                                   </msub>
+                                   <mo>=</mo><msub>
+                                    <mi>V</mi>
+                                    <mn>0</mn>
+                                   </msub>
+                                   <mi>cos</mi><mi>&#x03B1;</mi><mo>&#x2192;</mo><mfenced class="SKT">
+                                    <mn>1</mn>
+                                   </mfenced>
+                                  </mtd>
+                                 </mtr>
+                                 <mtr>
+                                  <mtd>
+                                   <msub>
+                                    <mi>V</mi>
+                                    <mrow>
+                                     <mn>0</mn><mi>y</mi></mrow>
+                                   </msub>
+                                   <mo>=</mo><msub>
+                                    <mi>V</mi>
+                                    <mn>0</mn>
+                                   </msub>
+                                   <mi>sin</mi><mi>&#x03B1;</mi><mo>&#x2192;</mo><mfenced class="SKT">
+                                    <mn>2</mn>
+                                   </mfenced>
+                                  </mtd>
+                                 </mtr>
+                                </mtable>
+                                
+                               </math>
+                        </div>
+                        
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            ჰორიზონტალური მიმართულებით სხეული მოძრაობს თანაბრად,
+                            ამიტომ სხეულის გადაადგილება გამოითვლება მე-(3)-ე ფორმულით, სადაც t ფრენის სრული დროა. 
+                            ხოლო თუ ამ ფორმულაში t-ს შევცვლით   
+                           T-თი (T არის ის დრო, რომელშიდაც გვაინტერესებს სხეულის კოორდინატები X და Y ღერძებზე)
+                           მივიღებთ სხეულის  მდებარეობას  X ღერძზე:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+
+                            <math display='block'>
+                                <mrow>
+                                 <mi>S</mi><mo>=</mo><msub>
+                                  <mi>V</mi>
+                                  <mrow>
+                                   <mn>0</mn><mi>x</mi></mrow>
+                                 </msub>
+                                 <mi>t</mi><mo>&#x2192;</mo><mfenced class="SKT">
+                                  <mn>3</mn>
+                                 </mfenced></mrow>
+                               </math>
+                               
+                               <math display='block' class="answer_color">
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>x</mi>
+                                </msub>
+                                <mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mrow>
+                                  <mn>0</mn><mi>x</mi></mrow>
+                                </msub>
+                                <mi>T</mi>
+                               </math>
+                        </div>
+                        
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            ვერტიკალური მიმართულებით სხეულის მოძრაობა თანაბარშენელებულია,
+                            ამიტომ უმაღლეს წერტილში სიჩქარის Y გეგმილი (მდგენელი) გახდება ნულის ტოლი,
+                             რის შემდეგაც სიჩქარის ფორმულა (4) დაიწერება როგორც (5).
+                            ხოლო თუ მე-(5)-დან გამოვსახავთ დროს მივიღებთ მე-(6)-ე ფორმულას.
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+
+                            <math display='block'>
+                                <mtable columnalign='left'>
+                                 <mtr>
+                                  <mtd>
+                                   <msub>
+                                    <mi>V</mi>
+                                    <mi>y</mi>
+                                   </msub>
+                                   <mo>=</mo><msub>
+                                    <mi>V</mi>
+                                    <mrow>
+                                     <mn>0</mn><mi>y</mi></mrow>
+                                   </msub>
+                                   <mo>&#x2212;</mo><mi>g</mi><msub>
+                                    <mi>t</mi>
+                                    <mn>1</mn>
+                                   </msub>
+                                   <mo>&#x2192;</mo><mfenced class="SKT">
+                                    <mn>4</mn>
+                                   </mfenced>
+                                  </mtd>
+                                 </mtr>
+                                 <mtr>
+                                  <mtd>
+                                   <mn>0</mn><mo>=</mo><msub>
+                                    <mi>V</mi>
+                                    <mrow>
+                                     <mn>0</mn><mi>y</mi></mrow>
+                                   </msub>
+                                   <mo>&#x2212;</mo><mi>g</mi><msub>
+                                    <mi>t</mi>
+                                    <mn>1</mn>
+                                   </msub>
+                                   <mo>&#x2192;</mo><mfenced class="SKT">
+                                    <mn>5</mn>
+                                   </mfenced>
+                                  </mtd>
+                                 </mtr>
+                                 <mtr>
+                                  <mtd>
+                                   <msub>
+                                    <mi>t</mi>
+                                    <mn>1</mn>
+                                   </msub>
+                                   <mo>=</mo><mfrac>
+                                    <mrow>
+                                     <msub>
+                                      <mi>V</mi>
+                                      <mrow>
+                                       <mn>0</mn><mi>y</mi></mrow>
+                                     </msub>
+                                     </mrow>
+                                    <mi>g</mi>
+                                   </mfrac>
+                                   <mo>&#x2192;</mo><mfenced class="SKT">
+                                    <mn>6</mn>
+                                   </mfenced>
+                                  </mtd>
+                                 </mtr>
+                                </mtable>
+                                
+                               </math>
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+
+                            მე-(6)-ე ფორმულაში არსებული <math>
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>1</mn>
+                                </msub>
+                                
+                               </math>
+                                დრო მხოლოდ ზევით ასვლის დროა, 
+                              მთელი დრო <math >
+                                <mi>t</mi><mo>=</mo><mn>2</mn><msub>
+                                 <mi>t</mi>
+                                 <mn>1</mn>
+                                </msub>
+                                
+                               </math>
+                                (ასვლის დრო ტოლია ჩამოსვლის დროისა),
+                              ამასთანავე თუ მე-(2)-ს შევიტანთ მე-(6)-ში და გავითვალისწინებთ, რომ <math >
+                                <mi>t</mi><mo>=</mo><mn>2</mn><msub>
+                                 <mi>t</mi>
+                                 <mn>1</mn>
+                                </msub>
+                                
+                               </math>
+                                მივიღებთ ფრენის სრულ დროს:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                            <math display='block'>
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>1</mn>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mrow>
+                                    <mn>0</mn><mi>y</mi></mrow>
+                                  </msub>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mi>sin</mi><mi>&#x03B1;</mi></mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                
+                               </math>
+                  
+                               
+                        
+                        <math display='block'>
+                            <mi>t</mi><mo>=</mo><mfrac>
+                             <mrow>
+                              <mn>2</mn><msub>
+                               <mi>V</mi>
+                               <mn>0</mn>
+                              </msub>
+                              <mi>sin</mi><mi>&#x03B1;</mi></mrow>
+                             <mi>g</mi>
+                            </mfrac>
+                            <mo>&#x2192;</mo><mo class="SKT" stretchy='false'>(</mo><mn class="SKT">7</mn><mo class="SKT" stretchy='false'>)</mo>
+                           </math>
+                             
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+
+                            როგორც ვიცით Y ღერძზე სხეული მოძრაობს თანაბარშენელებულად, 
+                            ამიტომ Y ღერძზე სხეულის მდებარეობის საპოვნელად უნდა გავიხსენოთ 
+                            თანაბარაჩქარებული მოძრაობისას სხეულის გადაადგილების ფორმულა (8) და ამ ფორმულაში უნდა შევიტანოთ ის T დრო, 
+                            რომელშიც გვაინტერესებს სხეულის მდებარეობა. ამ გზით მივიღებთ სხეულის მდებარეობას Y ღერძზე:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+
+                            <math display='block'>
+                                <mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>t</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mo class="SKT" stretchy='false'>(</mo><mn class="SKT">8</mn><mo class="SKT" stretchy='false'>)</mo>
+                               </math>
+                
+                               
+                               <math display='block' class="answer_color">
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>y</mi>
+                                </msub>
+                                <mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mrow>
+                                  <mn>0</mn><mi>y</mi></mrow>
+                                </msub>
+                                <mi>T</mi><mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>T</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+                        </div>
+
+                                                
+
+                    <!-- ტექსტი -->
+                    <div class="detail_txt">
+
+
+                        ეს უკანასკნელი ფორმულა მუშაობს მაშინ, როცა <math>
+                            <mfenced>
+                             <mrow>
+                              <mfrac>
+                               <mi>t</mi>
+                               <mn>2</mn>
+                              </mfrac>
+                              </mrow>
+                            </mfenced><mo>&#x003E;</mo><mi>T</mi>
+                           </math>
+                           , 
+                          ხოლო თუ <math >
+                            <mfenced>
+                             <mrow>
+                              <mfrac>
+                               <mi>t</mi>
+                               <mn>2</mn>
+                              </mfrac>
+                              </mrow>
+                            </mfenced><mo>=</mo><mi>T</mi>
+                           </math>
+                            მაშინ მაქსიმალური ასვლის სიმაღლე ემთხვევა სხეულის Y კოორდინატს.
+                    </div>
+
+
+
+                    <!-- ფორმულა -->
+                    <div class="detail_formula">
+
+
+                        <math display='block'>
+                            <mi>h</mi><mo>=</mo><msub>
+                            <mi>V</mi>
+                            <mn>0</mn>
+                            </msub>
+                            <mi>t</mi><mo>&#x2212;</mo><mfrac>
+                            <mrow>
+                                <mi>g</mi><msup>
+                                <mi>t</mi>
+                                <mn>2</mn>
+                                </msup>
+                                </mrow>
+                            <mn>2</mn>
+                            </mfrac>
+                            <mo>&#x2192;</mo><mo class="SKT" stretchy='false'>(</mo><mn class="SKT">9</mn><mo class="SKT" stretchy='false'>)</mo>
+                            </math>
+                            
+                    
+                            <math display='block'>
+                            <mi>h</mi><mo>=</mo><msub>
+                            <mi>V</mi>
+                            <mrow>
+                                <mn>0</mn><mi>y</mi></mrow>
+                            </msub>
+                            <msub>
+                            <mi>t</mi>
+                            <mn>1</mn>
+                            </msub>
+                            <mo>&#x2212;</mo><mfrac>
+                            <mrow>
+                                <mi>g</mi><msub>
+                                <mi>t</mi>
+                                <mn>1</mn>
+                                </msub>
+                                <msup>
+                                <mrow></mrow>
+                                <mn>2</mn>
+                                </msup>
+                                </mrow>
+                            <mn>2</mn>
+                            </mfrac>
+                            <mo>&#x2192;</mo><mo class="SKT" stretchy='false'>(</mo><mn class="SKT">10</mn><mo class="SKT" stretchy='false'>)</mo>
+                            </math>
+                    
+                            
+                            <math display='block'>
+                            <mi>h</mi><mo>=</mo><mo stretchy='false'>(</mo><msub>
+                            <mi>V</mi>
+                            <mn>0</mn>
+                            </msub>
+                            <mi>sin</mi><mi>&#x03B1;</mi><mfrac>
+                            <mrow>
+                                <msub>
+                                <mi>V</mi>
+                                <mn>0</mn>
+                                </msub>
+                                </mrow>
+                            <mi>g</mi>
+                            </mfrac>
+                            <mi>sin</mi><mi>&#x03B1;</mi><mo stretchy='false'>)</mo><mo>&#x2212;</mo><mfrac>
+                            <mrow>
+                                <mi>g</mi><msub>
+                                <mi>V</mi>
+                                <mn>0</mn>
+                                </msub>
+                                <msup>
+                                <mrow></mrow>
+                                <mn>2</mn>
+                                </msup>
+                                </mrow>
+                            <mrow>
+                                <mn>2</mn><msup>
+                                <mi>g</mi>
+                                <mn>2</mn>
+                                </msup>
+                                </mrow>
+                            </mfrac>
+                            <msup>
+                            <mi>sin</mi>
+                            <mn>2</mn>
+                            </msup>
+                            <mi>&#x03B1;</mi>
+                            </math>
+                    
+                            
+                            <math display='block'>
+                            <mi>h</mi><mo>=</mo><mo stretchy='false'>(</mo><mfrac>
+                            <mrow>
+                                <msub>
+                                <mi>V</mi>
+                                <mn>0</mn>
+                                </msub>
+                                <msup>
+                                <mrow></mrow>
+                                <mn>2</mn>
+                                </msup>
+                                </mrow>
+                            <mi>g</mi>
+                            </mfrac>
+                            <msup>
+                            <mi>sin</mi>
+                            <mn>2</mn>
+                            </msup>
+                            <mi>&#x03B1;</mi><mo stretchy='false'>)</mo><mo>&#x2212;</mo><mfrac>
+                            <mrow>
+                                <msub>
+                                <mi>V</mi>
+                                <mn>0</mn>
+                                </msub>
+                                <msup>
+                                <mrow></mrow>
+                                <mn>2</mn>
+                                </msup>
+                                </mrow>
+                            <mrow>
+                                <mn>2</mn><mi>g</mi></mrow>
+                            </mfrac>
+                            <msup>
+                            <mi>sin</mi>
+                            <mn>2</mn>
+                            </msup>
+                            <mi>&#x03B1;</mi>
+                            </math>
+                    
+                            
+                            <math display='block'>
+                            <mi>h</mi><mo>=</mo><mfrac>
+                            <mrow>
+                                <msub>
+                                <mi>V</mi>
+                                <mn>0</mn>
+                                </msub>
+                                <msup>
+                                <mrow></mrow>
+                                <mn>2</mn>
+                                </msup>
+                                </mrow>
+                            <mrow>
+                                <mn>2</mn><mi>g</mi></mrow>
+                            </mfrac>
+                            <msup>
+                            <mi>sin</mi>
+                            <mn>2</mn>
+                            </msup>
+                            <mi>&#x03B1;</mi>
+                            </math>
+                            
+                            <math display='block' class="answer_color">
+                                <mi>h</mi><mo>=</mo><mfrac>
+                                <mrow>
+                                <msubsup>
+                                <mi>V</mi>
+                                <mn>0</mn>
+                                <mn>2</mn>
+                                </msubsup>
+                                </mrow>
+                                <mrow>
+                                <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                <msup>
+                                <mi>sin</mi>
+                                <mn>2</mn>
+                                </msup>
+                                <mfenced>
+                                <mi>a</mi>
+                                </mfenced><mo>=</mo><msub>
+                                <mi>S</mi>
+                                <mi>y</mi>
+                                </msub>
+                                
+                            </math>
+                    </div>
+
+
+
+
+                    <!-- ტექსტი -->
+                    <div class="detail_txt">
+
+                        ხოლო თუ  <math >
+                            <mfenced>
+                             <mrow>
+                              <mfrac>
+                               <mi>t</mi>
+                               <mn>2</mn>
+                              </mfrac>
+                              </mrow>
+                            </mfenced><mo>&#x003C;</mo><mi>T</mi>
+                           </math>
+                            მაშინ მუშაობს შემდეგი ლოგიკა: ვითვლით მაქსიმალური ასვლის სიმაღლეს, 
+                           შემდეგ ვიგებთ მაქსიმალური სიმაღლის გავლის  შემდეგ კიდევ რამდენი წამი მოძრაობდა სხეული,
+                           ბოლოს კი ვითვლით თუ რა მანძილი გაიარა მან Y ღერძზე მაქსიმალური ასვლის წერტილიდან.
+                           საბოლოო პასუხი კი იქნება მაქსიმალური სიმაღლისა და Y ღერძზე მაქსიმალური წერტილიდან განვლილი მანძილის სხვაობა.
+                    </div>
+
+
+
+                    <!-- ფორმულა -->
+                    <div class="detail_formula">
+
+
+                        <math display='block'>
+                            <mi>T</mi><mo>&#x2212;</mo><mfrac>
+                             <mi>t</mi>
+                             <mn>2</mn>
+                            </mfrac>
+                            <mo>=</mo><msup>
+                             <mi>T</mi>
+                             <mo>&#x0027;</mo>
+                            </msup>
+                            
+                           </math>
+            
+                           
+                           <math display='block'>
+                            <msup>
+                             <mi>S</mi>
+                             <mo>&#x0027;</mo>
+                            </msup>
+                            <mo>=</mo><msub>
+                             <mi>V</mi>
+                             <mrow>
+                              <mn></mn><mi>y</mi></mrow>
+                            </msub>
+                            <msup>
+                             <mi>T</mi>
+                             <mo>&#x0027;</mo>
+                            </msup>
+                            <mo>&#x2212;</mo><mfrac>
+                             <mrow>
+                              <mi>g</mi><msup>
+                               <mi>T</mi>
+                               <mrow>
+                                <mo>&#x0027;</mo><mn>2</mn></mrow>
+                              </msup>
+                              </mrow>
+                             <mn>2</mn>
+                            </mfrac>
+                            <mo>=</mo><mfrac>
+                             <mrow>
+                              <mi>g</mi><msup>
+                               <mi>T</mi>
+                               <mrow>
+                                <mo>&#x0027;</mo><mn>2</mn></mrow>
+                              </msup>
+                              </mrow>
+                             <mn>2</mn>
+                            </mfrac>
+                            
+                           </math>
+                           
+                           <math display='block' class="answer_color">
+                            <msub>
+                             <mi>S</mi>
+                             <mi>y</mi>
+                            </msub>
+                            <mo>=</mo><mi>h</mi><mo>&#x2212;</mo><msup>
+                             <mi>S</mi>
+                             <mo>&#x0027;</mo>
+                            </msup>
+                            
+                           </math>
+                    </div>                        
+
+
+
+
+
+
+                    <!-- ტექსტი -->
+                    <div class="detail_txt">
+
+                    </div>
+
+
+
+                    <!-- ფორმულა -->
+                    <div class="detail_formula">
+
+                    </div>
+
+
+
+
+                    <!-- ტექსტი -->
+                    <div class="detail_txt">
+
+                    </div>
+
+
+
+                    <!-- ფორმულა -->
+                    <div class="detail_formula">
+
+                    </div>
+
+
+
+                    <!-- ტექსტი -->
+                    <div class="detail_txt">
+
+                    </div>
+
+
+
+                    <!-- ფორმულა -->
+                    <div class="detail_formula">
+
+                    </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+
+
+
+
+            <style>
+
+            a:nth-child(5) {
+                width: 180px;
+            }       
+
+
+            nav .start-contact, a:nth-child(5):hover~.animation {
+                width: 190px;
+                left: 440px;
+                background-color: #e67e22;
+            }
+
+            .input3 {
+                background-color: #303245;
+                margin: 10px; 
+                border-radius: 10px;
+                border: 0;
+                box-sizing: border-box;
+                color: #eee;
+                font-size: 18px;
+                height: 50px;
+                outline: 0;
+                padding: 4px 20px 0;
+                width: 210px;
+                
+            }
+
+
+            .holder3{
+            position: absolute;
+            background-color: var(--background_color);
+            border-radius: 40px;
+            text-align: center;
+            font-size: 16px;
+            width: 170px;
+            height: 25px;
+            color: rgb(206, 193, 193);
+            font-weight: bold;
+            margin-left: 30px;
+            bottom: 50px; 
+            }
+
+
+            .input1 {
+                background-color: #303245;
+                margin: 10px; 
+                border-radius: 10px;
+                border: 0;
+                box-sizing: border-box;
+                color: #eee;
+                font-size: 18px;
+                height: 50px;
+                outline: 0;
+                padding: 4px 20px 0;
+                width: 140px;
+                
+            }
+
+
+            .holder1{
+            position: absolute;
+            background-color: var(--background_color);
+            border-radius: 40px;
+            text-align: center;
+            font-size: 16px;
+            width: 100px;
+            height: 25px;
+            color: rgb(206, 193, 193);
+            font-weight: bold;
+            margin-left: 30px;
+            bottom: 50px; 
+            }
+
+            .answers{
+                font-size: 24px;
+            }
+            </style>
+
+
+
+
+{% endblock %}
