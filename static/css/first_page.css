@@ -9,8 +9,8 @@
 
 
 
-  --nav_front_color:rgba(198, 231, 199, 1); /* შემოსატრიალებელი კარტის წინა ფონი */
-  --nav_back_color:rgba(198, 231, 199, 1); /* შემოსატრიალებელი კარტის უკანა ფონი */
+  --nav_front_color:rgba(221, 232, 231, 1); /* შემოსატრიალებელი კარტის წინა ფონი */
+  --nav_back_color:rgba(221, 232, 231, 1); /* შემოსატრიალებელი კარტის უკანა ფონი */
 
   --card_front_txt_color: rgb(0, 0, 0);  /* შემოსატრიალებელი კარტის წინა ტექსტების ფერი */
   --card_back_txt_color: rgb(0, 0, 0);  /* შემოსატრიალებელი კარტის უკანა ტექსტების ფერი */
@@ -66,11 +66,12 @@ section{
 }
 
 .a_header{
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Brush Script MT', cursive; 
     letter-spacing: 1.8px;
     color: black;
     font-size: 40px;
     text-decoration: none;
+
 }
 
 
@@ -464,6 +465,7 @@ font-family: serif;
   
   border-radius: 5px;
   backface-visibility: hidden; 
+  opacity: .8;
   
 }
 
@@ -501,11 +503,13 @@ font-family: serif;
   height: 150px;
   left: 25px;
   margin-top: 30px;
+  font-size: 15px;
 }
 
 
 .front_txt_1{
  color: var(--card_front_txt_color);
+ font-size: 15px;
 }
 
 
@@ -516,6 +520,7 @@ font-family: serif;
   height: 150px;
   left: 15px;
   margin-top: 0px; 
+  font-size: 15px;
 }
 
 
@@ -523,7 +528,7 @@ font-family: serif;
 max-height: 290px;
 width: 220px;
 color: var(--card_back_txt_color);
-font-size: 16px;
+font-size: 15px;
 overflow: auto;
 }
 
@@ -729,7 +734,7 @@ overflow: auto;
   margin: 1em 0.75em 0 0;
   color: var(--timeline_txt_color);
   font-size: 0.77777em;
-  font-style: italic;
+  /* font-style: italic; */
   line-height: 1.5em;
 }
 
