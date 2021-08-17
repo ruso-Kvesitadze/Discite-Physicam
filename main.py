@@ -50,7 +50,9 @@ def gasrolili():
     return render_template ('/mechanic/kinematika/gasrolili/gasrolili.html')
 
 
-
+@app.route('/calculator/mechanic/kinematika/asrolili')
+def asrolili():
+    return render_template ('/mechanic/kinematika/asrolili/asrolili.html')
 
 
 
