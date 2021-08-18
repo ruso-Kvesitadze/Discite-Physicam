@@ -25,7 +25,7 @@
 
 
 <!--************************************************************* სათაურის სექცია******************************************************* -->
-<section class="main_header_secttion"> <div class="main_header">ფრენის დრო</div></section>
+<section class="main_header_secttion"> <div class="main_header">სხეულის გადაადგილება</div></section>
 
 
 
@@ -38,10 +38,10 @@
     <div class="input_variables">
 
         <div class="variable_1">
-            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initaial_velocity">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initaial_height">
               
                 <div class="holder">
-                    <label for="firstname" class="placeholder_of_inputs" >საწყ.სიჩქარე</label>
+                    <label for="firstname" class="placeholder_of_inputs" >საწყ.სიმაღლე</label>
                 </div>
         </div>
 
@@ -54,14 +54,11 @@
         </div>
 
         <div class="variable_3">
-            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="selectable">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initaial_velocity">
                
             <div class="holder">
                 
-                    <select class="choose" name="select">
-                        <option>მყისი სიჩქარე</option>
-                        <option>სიმაღლე</option>
-                    </select>
+                <label for="firstname" class="placeholder_of_inputs" >საწყ.სიჩქარე</label>
             
             </div>
         </div>
@@ -70,7 +67,13 @@
 
         <!-- გამზადებულია გამოსაყენებლად -->
         <div class="variable_4">
+            <input type="number" class="input3"  placeholder=" " step="0.001" min=0 value="0" name="time">
+               
+            <div class="holder3">
+                
+                <label for="firstname" class="placeholder_of_inputs" >გადაადგილების დრო</label>
             
+            </div>
         </div>
        
 
@@ -104,7 +107,7 @@
     <form name="passdata" action="." method="POST">
 
   
-             <div class="answers">პასუხი: <div class="answer_number">{{  time}} {{Dimension}} </div> </div>
+             <div class="answers">პასუხი: <div class="answer_number">{{displacement}} {{Dimension}} </div> </div>
 
     </form>
 </section>
@@ -344,115 +347,6 @@
 
 
 
-
-            <div class="div_photo_txt_down">
-
-                     <img class="photo_down" src="/static/images/mechanic/kinematika/fallen/free_fall.jpg" alt="" style="width: 900px; height: 200px;">
-                     
-                     
-
-                    <div class="main_detail_down">
-
-                                       
-                           <!-- ტექსტი -->
-                           <div class="detail_txt">
-                            
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-
-                        </div>
-                        
-                        
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-                            
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-
-                        </div>
-                        
-                                                
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-                            
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-
-                        </div>
-
-                                                
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-                            
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-
-                        </div>
-
-                                                
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-                            
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-
-                        </div>
-
-                                                
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-                            
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-
-                        </div>
-
-
-               
-                        
-
-
-             
-                    </div>
-
-
-
-
-
-
-
-
-
-        </div>
     </div>
 </section>
 
@@ -495,7 +389,7 @@
                 height: 50px;
                 outline: 0;
                 padding: 4px 20px 0;
-                width: 210px;
+                width: 250px;
                 
             }
 
@@ -506,7 +400,7 @@
             border-radius: 40px;
             text-align: center;
             font-size: 16px;
-            width: 170px;
+            width: 210px;
             height: 25px;
             color: rgb(206, 193, 193);
             font-weight: bold;

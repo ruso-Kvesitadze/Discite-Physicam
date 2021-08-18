@@ -82,12 +82,12 @@ def get_value_time_fallen():
 
     if choose=='სიმაღლე' and gravity>0 and selectable>=0 and velocity>=0:
         time=(math.sqrt((velocity**2)+2*gravity*selectable)-velocity)/gravity
-        time=round(time,2)
+        time=round(time,4)
         return render_template ('/mechanic/kinematika/fallen/time_calculate.html' , time=time ,Dimension='წმ')
 
     elif choose=='მყისი სიჩქარე' and gravity>0 and velocity<=selectable and velocity>=0 :
         time=(selectable-velocity)/gravity
-        time=round(time,2)
+        time=round(time,4)
         return render_template ('/mechanic/kinematika/fallen/time_calculate.html' , time=time, Dimension='წმ' )
 
     else:
@@ -640,6 +640,330 @@ def get_value_position_x_y():
 ###################################################### ასროლილი სხეული დასაწყისი ######################################################
 ###################################################### ასროლილი სხეული დასაწყისი ######################################################
 ###################################################### ასროლილი სხეული დასაწყისი ######################################################
+
+
+# ითვლის ასროლილი სხეულისთვსი ფრენის სრულ დროს
+@app.route('/calculator/mechanic/kinematika/asrolili/time/calculate')
+def asrolili_time():
+    return render_template('/mechanic/kinematika/asrolili/time.html')
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/time/', methods=['GET','POST'])
+def asrolili_time_calculate():
+    gravity=float(request.form['gravity'])
+    height=float(request.form['height'])
+    selectable=float(request.form['initaial_velocity'])
+    select=request.form['select']
+    
+
+    if select=="საწყისი სიჩქარე":
+        time1=(selectable + math.sqrt(2*gravity*height + selectable**2))/gravity
+
+        time=round(time1,3)
+
+        return render_template('/mechanic/kinematika/asrolili/time.html', time=time , Dimension="წმ")
+
+    elif select=="მასიმალური სიმაღლე":
+        
+        time1= math.sqrt(2*(selectable+height)/gravity) + math.sqrt(2*selectable/gravity)
+        time=round(time1,3)
+
+
+        return render_template('/mechanic/kinematika/asrolili/time.html', time=time , Dimension="წმ")
+
+
+
+
+
+
+
+# ითვლის ასროლილი სხეულისთვსი მყის სიჩქარეს
+@app.route('/calculator/mechanic/kinematika/asrolili/instant_velocity/calculate')
+def asrolili_instant_velocity():
+    return render_template('/mechanic/kinematika/asrolili/instant_velocity.html')
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/instant_velocity/', methods=['GET','POST'])
+def asrolili_instant_velocity_calculate():
+    gravity=float(request.form['gravity'])
+    height=float(request.form['height'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    time=float(request.form['time'])
+
+    time_bc=initaial_velocity/gravity
+    time_full=(initaial_velocity + math.sqrt(2*gravity*height + initaial_velocity**2))/gravity
+
+    if time<=time_bc:
+
+        instant_velocity_1= initaial_velocity - (gravity*time)
+        instant_velocity=round(instant_velocity_1 , 3)
+
+        return render_template('/mechanic/kinematika/asrolili/instant_velocity.html', instant_velocity=instant_velocity , Dimension="მ/წმ" )   
+
+    elif time>time_bc and time_full>=time :
+
+        time_ca=time-time_bc
+
+        instant_velocity_1=gravity*time_ca
+        instant_velocity=round(instant_velocity_1 , 3)
+
+        return render_template('/mechanic/kinematika/asrolili/instant_velocity.html', instant_velocity=instant_velocity , Dimension="მ/წმ" )  
+
+
+    else:
+         return render_template('/mechanic/kinematika/asrolili/instant_velocity.html', instant_velocity="მოცემული მოძრაობა შეუძლებელია" )
+
+
+
+
+
+
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/initial_height/calculate')
+def asrolili_initial_height():
+    return render_template('/mechanic/kinematika/asrolili/initial_height.html')
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/initial_height/', methods=['GET','POST'])
+def asrolili_initial_height_calc():
+        gravity=float(request.form['gravity'])
+        initaial_velocity=float(request.form['initaial_velocity'])
+        time=float(request.form['time'])
+
+        if (gravity * time**2)>=(2 * time * initaial_velocity):
+
+            initial_height= ((gravity * time**2) - (2 * time * initaial_velocity))/2
+
+            initial_height= round(initial_height , 3)
+
+            return render_template('/mechanic/kinematika/asrolili/initial_height.html', initial_height=initial_height, Dimension="მ")
+
+        else:
+            return render_template('/mechanic/kinematika/asrolili/initial_height.html', initial_height="მოძრაობა შეუძლებელია")
+
+
+
+
+
+
+
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/initial_velocity/calculate')
+def asrolili_initial_velocity():
+    return render_template('/mechanic/kinematika/asrolili/initial_velocity.html')
+
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/initial_velocity/', methods=['GET','POST'])
+def asrolili_initial_velocity_calc():
+        gravity=float(request.form['gravity'])
+        initaial_height=float(request.form['initaial_height'])
+        selectable=float(request.form['selectable'])
+        select= request.form['select']
+
+
+
+
+        if select=="სრული დრო" and selectable>0 and ((gravity * selectable**2) - 2 * initaial_height) >0 :
+
+            initial_velocity=((gravity * selectable**2) - 2 * initaial_height) / (2*selectable)
+            initial_velocity=round(initial_velocity , 3)
+
+            return render_template('/mechanic/kinematika/asrolili/initial_velocity.html', initial_velocity=initial_velocity, Dimension="მ/წმ")
+
+        if select=="ასვლის სიმაღლე" and (selectable - initaial_height) >0:
+       
+            initial_velocity=math.sqrt(2*gravity*(selectable - initaial_height))
+            initial_velocity=round(initial_velocity , 3)
+
+
+            return render_template('/mechanic/kinematika/asrolili/initial_velocity.html', initial_velocity=initial_velocity, Dimension="მ/წმ")
+        else:
+            return render_template('/mechanic/kinematika/asrolili/initial_velocity.html', initial_velocity="მოძრაობა შეუძლებელია")
+
+
+
+
+
+
+
+
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/height/calculate')
+def asrolili_height():
+    return render_template('/mechanic/kinematika/asrolili/height.html')
+
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/height/', methods=['GET','POST'])
+def asrolili_height_calc():
+        gravity=float(request.form['gravity'])
+        initaial_height=float(request.form['initaial_height'])
+        selectable=float(request.form['selectable'])
+        select= request.form['select']
+
+
+        if select=="საწყისი სიჩქარე" :
+          
+            height= (selectable**2)/(2*gravity)
+            height_e=height+initaial_height
+
+            height=round(height , 3)
+            height_e=round(height_e , 3)
+
+
+            return render_template('/mechanic/kinematika/asrolili/height.html',height_e=height_e, height=height, Dimension="მ"  )
+
+        elif select=="ფრენის დრო" and (((gravity*selectable**2)- 2*initaial_height)**2)>0:
+
+            height=(((gravity*selectable**2)- 2*initaial_height)**2) / (8 * gravity * selectable**2)
+            height_e=height+initaial_height
+
+            height=round(height , 3)
+            height_e=round(height_e , 3)
+
+            return render_template('/mechanic/kinematika/asrolili/height.html',height_e=height_e, height=height, Dimension="მ"  )
+
+        else:
+            return render_template('/mechanic/kinematika/asrolili/initial_velocity.html', height_e="მოძრაობა შეუძლებელია", height="მოძრაობა შეუძლებელია")
+
+
+
+
+
+
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/displacement/calculate')
+def asrolili_displacement():
+    return render_template('/mechanic/kinematika/asrolili/displacement.html')
+
+
+@app.route('/calculator/mechanic/kinematika/asrolili/displacement/', methods=['GET','POST'])
+def asrolili_displacement_calc():
+        gravity=float(request.form['gravity'])
+        initaial_height=float(request.form['initaial_height'])
+        initaial_velocity=float(request.form['initaial_velocity'])
+        time=float(request.form['time'])
+
+
+        Time_bc= initaial_velocity/ (gravity)
+        Time_ac= (2*gravity*initaial_height + initaial_velocity**2)/ gravity
+        
+        time_full=(initaial_velocity + math.sqrt(2*gravity*initaial_height + initaial_velocity**2))/gravity
+        
+        if Time_bc>=time :
+           
+            displacement= (initaial_velocity*time) - ((gravity*time**2)/2)
+            
+            displacement=round(displacement,1)
+
+            return render_template('/mechanic/kinematika/asrolili/displacement.html', displacement=displacement, Dimension="მ" )
+
+
+
+        elif time>Time_bc and time<=time_full :
+
+            time_1= time - Time_bc
+
+            height_up= (initaial_velocity**2) / (2*gravity)
+            Height_down=(gravity*time_1**2)/2
+
+            displacement= height_up - Height_down
+            displacement=round(displacement,1)
+
+            return render_template('/mechanic/kinematika/asrolili/displacement.html', displacement=displacement, Dimension="მ" )
+
+        else:
+             return render_template('/mechanic/kinematika/asrolili/displacement.html', displacement="მოძრაობა შეუძლებელია")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
