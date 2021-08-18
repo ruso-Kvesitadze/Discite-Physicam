@@ -331,7 +331,7 @@ def get_value_last_n_time_dist():
   
     if time>=last_n :
         height=(velocity*last_n) + (gravity*last_n*((2*time) - last_n))/2
-        height= round(height , 2)
+        height= round(height , 1)
         return render_template ('/mechanic/kinematika/fallen/last_n_time_dist.html' ,height=height ,Dimension='მ')
     else:
         return render_template ('/mechanic/kinematika/fallen/last_n_time_dist.html' , height="მოძრაობა შეუძლებელია" )
@@ -719,7 +719,7 @@ def asrolili_instant_velocity_calculate():
 
 
 
-
+# ითვლის ასროლილი სხეულისთვსი საწყის სმაღლეს
 @app.route('/calculator/mechanic/kinematika/asrolili/initial_height/calculate')
 def asrolili_initial_height():
     return render_template('/mechanic/kinematika/asrolili/initial_height.html')
@@ -749,11 +749,10 @@ def asrolili_initial_height_calc():
 
 
 
-
+# ითვლის ასროლილი სხეულისთვსი საწყის სიჩქარეს
 @app.route('/calculator/mechanic/kinematika/asrolili/initial_velocity/calculate')
 def asrolili_initial_velocity():
     return render_template('/mechanic/kinematika/asrolili/initial_velocity.html')
-
 
 
 @app.route('/calculator/mechanic/kinematika/asrolili/initial_velocity/', methods=['GET','POST'])
@@ -791,11 +790,10 @@ def asrolili_initial_velocity_calc():
 
 
 
-
+# ითვლის ასროლილი სხეულისთვსი ასვლის სიმაღლეს
 @app.route('/calculator/mechanic/kinematika/asrolili/height/calculate')
 def asrolili_height():
     return render_template('/mechanic/kinematika/asrolili/height.html')
-
 
 
 @app.route('/calculator/mechanic/kinematika/asrolili/height/', methods=['GET','POST'])
@@ -836,7 +834,7 @@ def asrolili_height_calc():
 
 
 
-
+# ითვლის ასროლილი სხეულისთვსი გადაადგილებას
 @app.route('/calculator/mechanic/kinematika/asrolili/displacement/calculate')
 def asrolili_displacement():
     return render_template('/mechanic/kinematika/asrolili/displacement.html')
@@ -888,25 +886,55 @@ def asrolili_displacement_calc():
 
 
 
+# ითვლის ასროლილი სხეულისთვსი მე-n წამში გავლილ მანძილს
+@app.route('/calculator/mechanic/kinematika/asrolili/in_n_time_dis/calculate')
+def asrolili_in_n_time_dis():
+    return render_template('/mechanic/kinematika/asrolili/in_n_time_dis.html')
 
 
+@app.route('/calculator/mechanic/kinematika/asrolili/in_n_time_dis/' , methods=['GET','POST'])
+def asrolili_in_n_time_dis_calc():
+    gravity=float(request.form['gravity'])
+    initaial_height=float(request.form['initaial_height'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    n_time=float(request.form['n_time'])
 
 
+    Time_bc= initaial_velocity/ (gravity)
+    Time_ac= math.sqrt(2*gravity*initaial_height + initaial_velocity**2)/ gravity
+    
+    time_full=(initaial_velocity + math.sqrt(2*gravity*initaial_height + initaial_velocity**2))/gravity
 
 
+    if n_time<Time_bc:
 
+        distance= initaial_velocity - gravity*n_time + gravity/2
+        distance= round(distance, 2)
 
+        return render_template('/mechanic/kinematika/asrolili/in_n_time_dis.html', distance=distance, Dimension="მ" )
 
 
+    elif n_time>Time_bc and n_time<=time_full:
 
+        distance= gravity*n_time - gravity * Time_bc - gravity/2
+        distance= round(distance, 2)
 
+        return render_template('/mechanic/kinematika/asrolili/in_n_time_dis.html', distance=distance, Dimension="მ" )
 
+    elif n_time>Time_bc and (n_time-time_full)<1 and (n_time-time_full)>0 :
 
 
 
+        distance_1= (gravity*Time_ac**2)/2
+        distance_2= (gravity*(math.floor(Time_ac))**2)/2
+        distance= distance_1 - distance_2
 
+        distance= round(distance, 2)
 
+        return render_template('/mechanic/kinematika/asrolili/in_n_time_dis.html', distance=distance, Dimension="მ" )
 
+    else :
+        return render_template('/mechanic/kinematika/asrolili/in_n_time_dis.html', distance="მოძრაობა შეუძლებელია")
 
 
 
@@ -915,21 +943,42 @@ def asrolili_displacement_calc():
 
 
 
+# ითვლის ასროლილი სხეულისთვსი მე-n მეტრის გავლის დროს
+@app.route('/calculator/mechanic/kinematika/asrolili/in_n_meter_time/calculate')
+def asrolili_in_n_meter_time():
+    return render_template('/mechanic/kinematika/asrolili/in_n_meter_time.html')
 
 
+@app.route('/calculator/mechanic/kinematika/asrolili/in_n_meter_time/' , methods=['GET','POST'])
+def asrolili_in_n_meter_time_calc():
+    gravity=float(request.form['gravity'])
+    initaial_height=float(request.form['initaial_height'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    n_meter=float(request.form['n_meter'])
 
 
+    height_bc= (initaial_velocity**2)/ (2*gravity)
 
 
+    if n_meter<=(height_bc*2 + initaial_height) and  n_meter<=height_bc:
 
+        time= (math.sqrt((initaial_velocity**2) - 2*gravity*(n_meter-1)) - math.sqrt((initaial_velocity**2) - 2*gravity*n_meter))/gravity
 
+        time= round(time, 5)
 
+        return render_template('/mechanic/kinematika/asrolili/in_n_meter_time.html', time=time , Dimension='წმ' )
 
+    elif n_meter<=(height_bc*2 + initaial_height) and n_meter>height_bc:
 
+        time= math.sqrt(2*(n_meter-height_bc)/gravity) - math.sqrt(2*(n_meter-height_bc-1)/gravity)
 
+        time= round(time, 5)
 
+        return render_template('/mechanic/kinematika/asrolili/in_n_meter_time.html', time=time , Dimension='წმ' )
 
+    else:
 
+        return render_template('/mechanic/kinematika/asrolili/in_n_meter_time.html', time="მოცემული მოძრაობა შეუძლებელია")
 
 
 
@@ -938,20 +987,43 @@ def asrolili_displacement_calc():
 
 
 
+# ითვლის ასროლილი სხეულისთვსი ბოლო n-წამში გავლილი მანძილს
+@app.route('/calculator/mechanic/kinematika/asrolili/last_n_time_dis/calculate')
+def asrolili_last_n_time_dis():
+    return render_template('/mechanic/kinematika/asrolili/last_n_time_dis.html')
 
 
+@app.route('/calculator/mechanic/kinematika/asrolili/last_n_time_dis/' , methods=['GET','POST'])
+def asrolili_last_n_time_dis_calc():
+    gravity=float(request.form['gravity'])
+    initaial_height=float(request.form['initaial_height'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    n_time=float(request.form['n_time'])
 
 
+    time_ac= math.sqrt(2*gravity*initaial_height + initaial_velocity**2) / gravity
+    time_full=(initaial_velocity + math.sqrt(2*gravity*initaial_height + initaial_velocity**2))/gravity
+    S= (initaial_velocity**2) / (2*gravity)
 
 
+    if n_time<= time_ac and n_time < time_full:
 
+        distance= gravity * time_ac * n_time  - (gravity*n_time**2)/2
 
+        distance=round(distance , 1)
 
+        return render_template('/mechanic/kinematika/asrolili/last_n_time_dis.html', distance=distance , Dimension="მ")
 
+    if n_time> time_ac and n_time < time_full:
 
+        distance= ((gravity*(n_time - time_ac)**2)/2) + initaial_height + S
 
+        distance=round(distance , 1)
 
+        return render_template('/mechanic/kinematika/asrolili/last_n_time_dis.html', distance=distance , Dimension="მ")
 
+    else:
+        return render_template('/mechanic/kinematika/asrolili/last_n_time_dis.html', distance='მოძრაობა შეუძლებელია')
 
 
 
@@ -960,16 +1032,134 @@ def asrolili_displacement_calc():
 
 
 
+# ითვლის ასროლილი სხეულისთვსი პირველ n-წამში გავლილი მანძილს
+@app.route('/calculator/mechanic/kinematika/asrolili/first_n_time_dis/calculate')
+def asrolili_first_n_time_dis():
+    return render_template('/mechanic/kinematika/asrolili/first_n_time_dis.html')
 
 
+@app.route('/calculator/mechanic/kinematika/asrolili/first_n_time_dis/' , methods=['GET','POST'])
+def asrolili_first_n_time_dis_calc():
+    gravity=float(request.form['gravity'])
+    initaial_height=float(request.form['initaial_height'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    n_time=float(request.form['n_time'])
 
+    time_bc= initaial_velocity / gravity
+    time_ac= math.sqrt(2*gravity*initaial_height + initaial_velocity**2) / gravity
+    time_full=(initaial_velocity + math.sqrt(2*gravity*initaial_height + initaial_velocity**2))/gravity
+    S= (initaial_velocity**2) / (2*gravity)
 
 
+    if n_time<=time_bc :
 
+        distance= initaial_velocity*n_time - (gravity * n_time**2)/2
 
+        distance= round(distance , 2)
 
+        return render_template('/mechanic/kinematika/asrolili/first_n_time_dis.html', distance=distance , Dimension="მ")
 
+    elif n_time>time_bc and n_time<time_full :
 
+        distance= S + (gravity/2)* (n_time - time_bc)**2
+
+        distance= round(distance , 2)
+
+        return render_template('/mechanic/kinematika/asrolili/first_n_time_dis.html', distance=distance , Dimension="მ")
+
+    else:
+        return render_template('/mechanic/kinematika/asrolili/first_n_time_dis.html', distance='მოძრაობა შეუძლებელია')
+
+
+
+
+
+
+
+
+
+
+# ითვლის ასროლილი სხეულისთვსი ბოლო n-მეტის გავლილის დროს
+@app.route('/calculator/mechanic/kinematika/asrolili/last_n_meter_time/calculate')
+def asrolili_last_n_meter_time():
+    return render_template('/mechanic/kinematika/asrolili/last_n_meter_time.html')
+
+
+@app.route('//calculator/mechanic/kinematika/asrolili/last_n_meter_time/' , methods=['GET','POST'])
+def asrolili_last_n_meter_time_calc():
+    gravity=float(request.form['gravity'])
+    initaial_height=float(request.form['initaial_height'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    n_meter=float(request.form['n_meter'])
+
+    time_bc= initaial_velocity / gravity
+    time_ac= math.sqrt(2*gravity*initaial_height + initaial_velocity**2) / gravity
+    time_full=(initaial_velocity + math.sqrt(2*gravity*initaial_height + initaial_velocity**2))/gravity
+    S= (initaial_velocity**2) / (2*gravity)
+
+
+    if n_meter <= (S+initaial_height ) :
+
+        time= math.sqrt(2*(initaial_height + S)/gravity) - math.sqrt(2*(initaial_height + S -n_meter )/gravity)
+
+        time= round(time , 4)
+
+        return render_template('/mechanic/kinematika/asrolili/last_n_meter_time.html', time=time , Dimension="წმ")
+
+    if n_meter > (S+initaial_height ) and n_meter <= (2*S+initaial_height ):
+
+        time= math.sqrt(2*(initaial_height + S)/gravity) + math.sqrt(2*(n_meter -initaial_height - S )/gravity)
+
+        time= round(time , 4)
+
+        return render_template('/mechanic/kinematika/asrolili/last_n_meter_time.html', time=time , Dimension="წმ")
+    else:
+        return render_template('/mechanic/kinematika/asrolili/last_n_meter_time.html', time='მოძრაობა შეუძლებელია')
+
+
+
+
+
+
+# ითვლის ასროლილი სხეულისთვსი პირველი n-მეტის გავლილის დროს
+@app.route('/calculator/mechanic/kinematika/asrolili/first_n_meter_time/calculate')
+def asrolili_first_n_meter_time():
+    return render_template('/mechanic/kinematika/asrolili/first_n_meter_time.html')
+
+
+@app.route('//calculator/mechanic/kinematika/asrolili/first_n_meter_time/' , methods=['GET','POST'])
+def asrolili_first_n_meter_time_calc():
+    gravity=float(request.form['gravity'])
+    initaial_height=float(request.form['initaial_height'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    n_meter=float(request.form['n_meter'])
+
+    time_bc= initaial_velocity / gravity
+    time_full=(initaial_velocity + math.sqrt(2*gravity*initaial_height + initaial_velocity**2))/gravity
+    S= (initaial_velocity**2) / (2*gravity)
+
+
+    if n_meter<=S :
+
+        time= (initaial_velocity - math.sqrt((initaial_velocity**2) - 2*gravity*n_meter))/gravity
+
+        time= round(time , 4)
+
+        return render_template('/mechanic/kinematika/asrolili/first_n_meter_time.html', time=time , Dimension="წმ")
+
+    elif n_meter>S and n_meter<= (2*S + initaial_height):
+
+        meter_1= n_meter - S
+
+        time_ac= math.sqrt(meter_1 * 2 / gravity)
+
+        time = time_ac + time_bc
+
+        time= round(time , 4)
+
+        return render_template('/mechanic/kinematika/asrolili/first_n_meter_time.html', time=time , Dimension="წმ")
+    else:
+        return render_template('/mechanic/kinematika/asrolili/first_n_meter_time.html', time='მოძრაობა შეუძლებელია')
 
 
 
