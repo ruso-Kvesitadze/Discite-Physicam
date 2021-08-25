@@ -41,9 +41,9 @@
             <input type="number" class="input3"  placeholder=" " step="0.001" min=0 value="0" name="selectable">
               
                 <div class="holder3">
-                    <select class="choose" name="select_second">
-                        <option>სიმაღლე</option>
-                        <option>საბოლოო სიჩქარე</option>
+                    <select class="choose" name="select_second" id="sel1" onchange="giveSelection(this.value)">
+                        <option value="სიმაღლე">სიმაღლე</option>
+                        <option value="საბოლოო სიჩქარე">საბოლოო სიჩქარე</option>
                     </select>
                 </div>
         </div>
@@ -61,9 +61,10 @@
                
             <div class="holder3">
                 
-                    <select class="choose" name="select">
-                        <option>საბოლოო სიჩქარე</option>
-                        <option>ვარდნის დრო</option>
+                    <select class="choose" name="select" id="sel2">
+                        <option data-option="სიმაღლე">საბოლოო სიჩქარე</option>
+                        <option data-option="სიმაღლე">ვარდნის დრო</option>
+                        <option data-option="საბოლოო სიჩქარე">ვარდნის დრო</option>
                     </select>
             
             </div>
@@ -566,7 +567,22 @@
 
             </style>
 
+        <script>
+            var sel1 = document.querySelector('#sel1');
+            var sel2 = document.querySelector('#sel2');
+            var options2 = sel2.querySelectorAll('option');
 
+            function giveSelection(selValue) {
+            sel2.innerHTML = '';
+            for(var i = 0; i < options2.length; i++) {
+                if(options2[i].dataset.option === selValue) {
+                sel2.appendChild(options2[i]);
+                }
+            }
+            }
+
+            giveSelection(sel1.value);
+        </script>
 
 
 {% endblock %}

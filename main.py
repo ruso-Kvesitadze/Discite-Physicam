@@ -55,6 +55,10 @@ def asrolili():
     return render_template ('/mechanic/kinematika/asrolili/asrolili.html')
 
 
+@app.route('/calculator/mechanic/kinematika/height_gasrolili')
+def height_gasrolili():
+    return render_template ('/mechanic/kinematika/height_gasrolili/height_gasrolili.html')
+
 
 
 
@@ -363,7 +367,7 @@ def gasrolili_distance_calc():
     
     angle=math.radians(angle_user)
 
-    if gravity>0 and angle_user<=90 and velocity>0:
+    if gravity>0 and angle<=1.5708 and velocity>0:
 
         distance=round((2*velocity**2*math.sin(angle)*math.cos(angle)/gravity),2)
 
@@ -397,11 +401,11 @@ def getvalue_height():
 
     angle=math.radians(angle_user)
     
-    if choose == "საწყისი სიჩქარე" and gravity>0 and angle_user<=90 and velocity>0:
+    if choose == "საწყისი სიჩქარე" and gravity>0 and angle<=1.5708 and velocity>0:
         
         max_haight=round( (((velocity**2)/(2*gravity))*((math.sin(angle))**2)),2)
         return render_template('/mechanic/kinematika/gasrolili/height.html', height=max_haight, Dimension="მ")
-    elif choose == "ფრენის მანძილი" and gravity>0 and angle_user<=90 and velocity>0:
+    elif choose == "ფრენის მანძილი" and gravity>0 and angle<=1.5708 and velocity>0:
         velocity_k=math.sqrt((velocity*gravity)/math.sin(2*angle))
         max_haight=round((((velocity_k**2)/(2*gravity))*((math.sin(angle))**2)),2)
         return render_template('/mechanic/kinematika/gasrolili/height.html', height=max_haight, Dimension="მ" )
@@ -433,11 +437,11 @@ def getvalue_time():
    
     angle=math.radians(angle_user)
 
-    if choose == "საწყისი სიჩქარე" and gravity>0 and angle_user<=90 and velocity>0:
+    if choose == "საწყისი სიჩქარე" and gravity>0 and angle<=1.5708 and velocity>0:
         
         time=round((((2*velocity)/gravity)*math.sin(angle)),2)
         return render_template('/mechanic/kinematika/gasrolili/time.html', time=time, Dimension="წმ" )
-    elif choose == "ფრენის მანძილი" and gravity>0 and angle_user<=90 and velocity>0:
+    elif choose == "ფრენის მანძილი" and gravity>0 and angle<=1.5708 and velocity>0:
 
         velocity_k=math.sqrt((velocity*gravity)/math.sin(2*angle))
         time=round((((2*velocity_k)/gravity)*math.sin(angle)),2)
@@ -468,16 +472,16 @@ def getvalue_velocity():
     
     angle=math.radians(angle_user)
 
-    if choose == "ფრენის დრო" and gravity>0 and angle_user<=90 and user_choose_variable>0:
+    if choose == "ფრენის დრო" and gravity>0 and angle<=1.5708 and user_choose_variable>0:
         
         velocity_real=round((user_choose_variable*gravity/(2*math.sin(angle))),2)
         return render_template('/mechanic/kinematika/gasrolili/initaial_velocity.html', velocity=velocity_real, Dimension="მ/წმ" )
 
-    elif choose == "ფრენის მანძილი" and gravity>0 and angle_user<=90 and user_choose_variable>0:
+    elif choose == "ფრენის მანძილი" and gravity>0 and angle<=1.5708 and user_choose_variable>0:
         velocity_real=round((math.sqrt((user_choose_variable*gravity)/(2*math.sin(angle)*math.cos(angle)))),2)
         return render_template('/mechanic/kinematika/gasrolili/initaial_velocity.html', velocity=velocity_real , Dimension="მ/წმ")
 
-    elif choose == "ასვლის სიმაღლე" and gravity>0 and angle_user<=90 and user_choose_variable>0:
+    elif choose == "ასვლის სიმაღლე" and gravity>0 and angle<=1.5708 and user_choose_variable>0:
         velocity_real=round((math.sqrt((2*gravity*user_choose_variable)/(math.sin(angle)**2))),2)
         return render_template('/mechanic/kinematika/gasrolili/initaial_velocity.html', velocity=velocity_real , Dimension="მ/წმ")
 
@@ -561,7 +565,7 @@ def get_value_inst_velocity():
     angle=math.radians(angle_user)
     velocity_Y=velocity* math.sin(angle)
 
-    if gravity>0 and velocity>0 and time>0 and angle_user<=90 and time<=0.000001+(2*velocity_Y/gravity):
+    if gravity>0 and velocity>0 and time>0 and angle<=1.5708 and time<=0.000001+(2*velocity_Y/gravity):
         # Y laber
         instant_velocity=velocity_Y-gravity*time
         #Real_velocity_Y=round((math.sqrt(instant_velocity**2)),2)
@@ -603,14 +607,14 @@ def get_value_position_x_y():
     #გამოვთვალოთ პრენის სრული დრო
     time=round((((2*velocity)/gravity)*math.sin(angle)),2)
 
-    if gravity>0 and velocity>0 and angle_user<=90 and momentum<(time/2) and momentum>0:
+    if gravity>0 and velocity>0 and angle<=1.5708 and momentum<(time/2) and momentum>0:
         velocity_Y=velocity*math.sin(angle)
 
         position_Y=round(( (velocity_Y * momentum) - ((gravity*momentum**2)/2)),2)
         position_X=round((momentum*velocity*math.cos(angle)),2)
 
         return render_template('/mechanic/kinematika/gasrolili/instant_positon.html' ,X=position_X , Y=position_Y , Dimension="მ" )
-    elif gravity>0 and velocity>0 and angle_user<=90 and momentum>(time/2) and momentum<=(time):
+    elif gravity>0 and velocity>0 and angle<=1.5708 and momentum>(time/2) and momentum<=(time):
         max_haight=((velocity**2)/(2*gravity))*((math.sin(angle))**2)
         time_need= momentum-(time/2)
         position_Y_top=(gravity*time_need**2)/2
@@ -619,7 +623,7 @@ def get_value_position_x_y():
         position_X= round((momentum*velocity*math.cos(angle)),2)
 
         return render_template('/mechanic/kinematika/gasrolili/instant_positon.html' ,X=position_X , Y=position_Y , Dimension="მ" )
-    elif gravity>0 and velocity>0 and angle_user<=90 and momentum==(time/2):
+    elif gravity>0 and velocity>0 and angle<=1.5708 and momentum==(time/2):
         max_haight=((velocity**2)/(2*gravity))*((math.sin(angle))**2)
        
         position_Y=round((max_haight),2)
@@ -665,6 +669,7 @@ def asrolili_time_calculate():
 
     elif select=="მასიმალური სიმაღლე":
         
+        """ selectable= selectable - height """
         time1= math.sqrt(2*(selectable+height)/gravity) + math.sqrt(2*selectable/gravity)
         time=round(time1,3)
 
@@ -1160,6 +1165,475 @@ def asrolili_first_n_meter_time_calc():
         return render_template('/mechanic/kinematika/asrolili/first_n_meter_time.html', time=time , Dimension="წმ")
     else:
         return render_template('/mechanic/kinematika/asrolili/first_n_meter_time.html', time='მოძრაობა შეუძლებელია')
+
+
+
+
+
+
+
+
+
+
+
+###############################################სიმაღლდიან გასროლილი სხეული დასაწყისი ######################################################
+###############################################სიმაღლდიან გასროლილი სხეული დასაწყისი ######################################################
+###############################################სიმაღლდიან გასროლილი სხეული დასაწყისი ######################################################
+###############################################სიმაღლდიან გასროლილი სხეული დასაწყისი ######################################################
+
+
+
+
+#სიმაღლდიან გასროლილი სხეულისთვის ითვლის                     ვარდნის სიშორეს
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/distance/calculate')
+def height_gasrolili_distance():
+    return render_template('/mechanic/kinematika/height_gasrolili/dist.html')
+
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/distance/', methods=['GET','POST'])
+def height_gasrolili_distance_calc():
+    gravity=float(request.form['gravity'])
+    angle=float(request.form['angle'])
+    velocity=float(request.form['initial_speed'])
+    initial_height=float(request.form['initial_height'])
+
+    
+    angle=math.radians(angle)
+
+    velocity_Y=velocity*math.sin(angle)
+    velocity_X=velocity*math.cos(angle)
+
+
+    if angle<=1.5708:
+
+        distance=velocity_X*(velocity_Y + math.sqrt(2*initial_height*gravity + velocity_Y**2)) / gravity
+
+        distance=round(distance,2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/dist.html', distance=distance , Dimension="მ" ,)
+    else:
+        
+        return render_template('/mechanic/kinematika/height_gasrolili/dist.html', distance="შეუძლებელია" ,)
+
+
+
+
+
+
+
+#სიმაღლდიან გასროლილი სხეულისთვის ითვლის                 ასვლის მაქსიმალურ სიმაღლეს
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/height/calculate')
+def height_gasrolili_height():
+    return render_template('/mechanic/kinematika/height_gasrolili/height.html')
+
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/height/', methods=['GET','POST'])
+def height_gasrolili_getvalue_height():
+
+    
+    gravity=float(request.form['gravity'])
+    angle=float(request.form['angle'])
+    velocity=float(request.form['initial_speed'])
+    initial_height=float(request.form['initial_height'])
+
+    
+    angle=math.radians(angle)
+
+    velocity_Y=velocity*math.sin(angle)
+    velocity_X=velocity*math.cos(angle)
+    
+    if angle<=1.5708:
+
+        height1= (velocity_Y**2) / (2 * gravity)
+        height= initial_height + height1
+        height= round(height, 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/height.html', height=height , Dimension="მ" ,)
+
+    else:
+       
+        return render_template('/mechanic/kinematika/height_gasrolili/height.html', height="შეუძლებელია" )
+
+
+
+
+
+
+
+
+#სიმაღლდიან გასროლილი სხეულისთვის ითვლის                    ფრენის სრულ დროს
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/time/calculate')
+def height_gasrolili_time():
+    return render_template('/mechanic/kinematika/height_gasrolili/time.html')
+
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/time/', methods=['GET','POST'])
+def height_gasrolili_getvalue_time():
+    
+    gravity=float(request.form['gravity'])
+    angle=float(request.form['angle'])
+    velocity=float(request.form['initial_speed'])
+    initial_height=float(request.form['initial_height'])
+
+    
+    angle=math.radians(angle)
+
+    velocity_Y=velocity*math.sin(angle)
+    velocity_X=velocity*math.cos(angle)
+
+
+    if  angle<=1.5708 :
+        
+        time= (velocity_Y + math.sqrt(2*initial_height*gravity + velocity_Y**2)) / gravity
+
+        time=round(time,3)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/time.html', time=time, Dimension="წმ" )
+    
+    else:
+        
+        return render_template('/mechanic/kinematika/height_gasrolili/time.html', time="შეუძლებელია" )
+
+
+
+
+
+
+
+#სიმაღლდიან გასროლილი სხეულისთვის ითვლის                საწყის სიჩქარეს
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/initaial_velocity/calculate')
+def height_gasrolili_velocity():
+    return render_template('/mechanic/kinematika/height_gasrolili/initaial_velocity.html')
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/initaial_velocity/', methods=['GET','POST'])
+def height_gasrolili_getvalue_velocity():
+    gravity=float(request.form['gravity'])
+    angle=float(request.form['angle'])
+    initial_height=float(request.form['initial_height'])
+    selectable=float(request.form['selectable'])
+    choose=request.form['select']
+    
+    angle=math.radians(angle)
+
+ 
+    if choose == "ფრენის დრო" and angle<=1.5708 :
+        
+        initial_velocity= ((gravity*selectable**2) - 2 * initial_height) / (2 * selectable * math.sin(angle) )
+
+        initial_velocity=round(initial_velocity,2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/initaial_velocity.html', initial_velocity=initial_velocity, Dimension="მ/წმ" )
+
+    elif choose == "საბოლოო სიჩქარე" and angle<=1.5708 and  (selectable**2 - 2*initial_height*gravity )>0:
+
+        initial_velocity= math.sqrt (selectable**2 - 2*initial_height*gravity ) 
+
+        initial_velocity=round(initial_velocity,2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/initaial_velocity.html', initial_velocity=initial_velocity , Dimension="მ/წმ")
+
+    elif choose == "ასვლის სიმაღლე" and angle<=1.5708 and (selectable - initial_height) >0  :
+
+        initial_velocity= (math.sqrt( 2* gravity * (selectable - initial_height))) / math.sin(angle)
+
+        initial_velocity=round(initial_velocity,2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/initaial_velocity.html', initial_velocity=initial_velocity , Dimension="მ/წმ")
+
+    elif choose == "ფრენის მანძილი" and angle<=1.5708  :
+
+        initial_velocity= math.sqrt((gravity* selectable**2 ) / (2*math.cos(angle)*initial_height*math.cos(angle) +  selectable * math.sin(2*angle)  ) )
+
+        initial_velocity=round(initial_velocity,2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/initaial_velocity.html', initial_velocity=initial_velocity , Dimension="მ/წმ")
+    else:
+    
+        return render_template('/mechanic/kinematika/height_gasrolili/initaial_velocity.html', initial_velocity="შეუძლებელია" )
+
+
+
+
+
+
+
+#სიმაღლდიან გასროლილი სხეულისთვის ითვლის              კუთხეს
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/angle/calculate')
+def height_gasrolili_angle():
+    return render_template('/mechanic/kinematika/height_gasrolili/angle.html')
+
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/angle/', methods=['GET','POST'])
+def height_gasrolili_getvalue_angle2():
+    gravity=float(request.form['gravity'])
+    initaial_height=float(request.form['initaial_height'])
+    selectable=float(request.form['selectable'])
+    selectable2=float(request.form['selectable2'])
+    choose=request.form['select']
+    choose2=request.form['select2']
+    
+
+    if choose=="b" and choose2=="ფრენის მანძილი":
+        angle=math.atan(((gravity * selectable**2) - 2 * initaial_height) / (2* selectable2) )
+
+
+        angle=round((math.degrees(angle)),2)
+        return render_template('/mechanic/kinematika/height_gasrolili/angle.html', angle=angle, Dimension="°" )
+
+
+
+    elif choose=="a" and choose2=="ასვლის სიმაღლე":
+        angle=math.asin(math.sqrt(2*(selectable2- initaial_height) * gravity /selectable**2 ))
+
+        angle=round((math.degrees(angle)),2)
+        return render_template('/mechanic/kinematika/height_gasrolili/angle.html', angle=angle, Dimension="°" )
+
+
+    elif choose=="a" and choose2=="ფრენის დრო":
+        angle=math.asin( ((gravity * selectable2**2) - 2 * initaial_height) / (2 *selectable * selectable2 ) ) 
+
+        angle=round((math.degrees(angle)),2)
+        return render_template('/mechanic/kinematika/height_gasrolili/angle.html', angle=angle, Dimension="°" )
+
+    else:
+        return render_template('/mechanic/kinematika/height_gasrolili/angle.html', angle="შეუძლებელია" )
+
+
+
+
+
+
+
+
+
+#სიმაღლდიან გასროლილი სხეულისთვის ითვლის               მომენტალურ სიჩქარეს
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/instant_velocity/calculate')
+def height_gasrolili_inst_velocity():
+    return render_template('/mechanic/kinematika/height_gasrolili/instant_velocity.html')
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/instant_velocity/', methods=['GET','POST'])
+def height_gasrolili_get_value_inst_velocity():
+    gravity=float(request.form['gravity'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    initial_height=float(request.form['initial_height'])
+    time=float(request.form['n_time'])
+    angle=float(request.form['angle'])
+
+    angle=math.radians(angle)
+
+    velocity_Y=initaial_velocity * math.sin(angle)
+    inst_X=initaial_velocity * math.cos(angle)
+
+    time_bc=velocity_Y/gravity
+    time_full=(velocity_Y + math.sqrt(2*initial_height*gravity + velocity_Y**2)) / gravity
+
+
+
+    if time<= time_bc :
+
+        inst_Y= initaial_velocity - (gravity*time)
+        
+        inst_E=math.sqrt(inst_Y**2 + inst_X**2)
+
+        inst_Y=round(inst_Y , 2)
+        inst_X=round(inst_X , 2)
+        inst_E=round(inst_E , 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/instant_velocity.html', inst_Y=inst_Y , inst_X=inst_X, inst_E=inst_E, Dimension="მ/წმ" )   
+
+    elif time>time_bc and time_full >= time :
+
+        time_ca=time-time_bc
+
+        inst_Y= time_ca * gravity
+
+        inst_E=math.sqrt(inst_Y**2 + inst_X**2)
+
+        inst_Y=round(inst_Y , 2)
+        inst_X=round(inst_X , 2)
+        inst_E=round(inst_E , 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/instant_velocity.html', inst_Y=inst_Y , inst_X=inst_X, inst_E=inst_E, Dimension="მ/წმ"  )
+    else:
+        return render_template('/mechanic/kinematika/height_gasrolili/instant_velocity.html' , inst_Y="ასეთი მოძრაობა შეუძლებელია" , inst_X="ასეთი მოძრაობა შეუძლებელია", inst_E="ასეთი მოძრაობა შეუძლებელია")
+
+
+
+
+
+
+
+
+#სიმაღლდიან გასროლილი სხეულისთვის ითვლის              position X Y
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/instant_positon/calculate')
+def height_gasrolili_position_x_y():
+    return render_template('/mechanic/kinematika/height_gasrolili/instant_positon.html')
+
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/instant_positon/', methods=['GET','POST'])
+def height_gasrolili_get_value_position_x_y():
+    gravity=float(request.form['gravity'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    initial_height=float(request.form['initial_height'])
+    time=float(request.form['time'])
+    angle=float(request.form['angle'])
+
+    angle=math.radians(angle)
+
+    velocity_Y=initaial_velocity * math.sin(angle)
+    inst_X=initaial_velocity * math.cos(angle)
+
+    time_bc=velocity_Y/gravity
+    time_full=(velocity_Y + math.sqrt(2*initial_height*gravity + velocity_Y**2)) / gravity
+
+
+
+    if  angle<=1.5708 and  time<=time_bc:
+        
+        position_Y= initial_height + velocity_Y * time - (gravity * time**2) / 2
+        position_X= inst_X * time
+        
+        position_Y=round(position_Y , 2)
+        position_X=round(position_X , 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/instant_positon.html' ,X=position_X , Y=position_Y , Dimension="მ" )
+    
+    elif angle<=1.5708 and  time>time_bc and time <= time_full:
+
+        new_time=time-time_bc
+
+        position_Y = (initial_height + velocity_Y * time_bc - (gravity * time_bc**2) / 2) - ((gravity * new_time**2) / 2)
+        position_X= inst_X * time
+
+        position_Y=round(position_Y , 2)
+        position_X=round(position_X , 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/instant_positon.html' ,X=position_X , Y=position_Y , Dimension="მ" )
+    
+    else:
+        return render_template('/mechanic/kinematika/height_gasrolili/instant_positon.html' ,X="მოცემული მოძრაობა შეუძლებელია" , Y="მოცემული მოძრაობა შეუძლებელია")
+
+
+
+
+
+
+
+
+#სიმაღლდიან გასროლილი სხეულისთვის ითვლის             დაცემის  კუთხეს
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/fall_angle/calculate')
+def height_gasrolili_fall_angle():
+    return render_template('/mechanic/kinematika/height_gasrolili/fall_angle.html')
+
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/fall_angle/', methods=['GET','POST'])
+def height_gasrolili_getvalue_fall_angle():
+    gravity=float(request.form['gravity'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    initial_height=float(request.form['initial_height'])
+    angle=float(request.form['angle'])
+
+
+
+    angle=math.radians(angle)
+
+    velocity_Y=initaial_velocity * math.sin(angle)
+    inst_X=initaial_velocity * math.cos(angle)
+
+    time_bc=velocity_Y/gravity
+    time_full=(velocity_Y + math.sqrt(2*initial_height*gravity + velocity_Y**2)) / gravity
+
+
+
+    if angle<=1.5708:
+
+        new_time=time_full - time_bc
+        velocity_Y_last= (gravity * new_time)
+
+        fall_angle= math.atan(velocity_Y_last / inst_X )
+        
+        fall_angle=round((math.degrees(fall_angle)),2)
+        
+        return render_template('/mechanic/kinematika/height_gasrolili/fall_angle.html', fall_angle=fall_angle, Dimension="°" )   
+
+    else:
+        return render_template('/mechanic/kinematika/height_gasrolili/fall_angle.html' , fall_angle="ასეთი მოძრაობა შეუძლებელია" )
+
+
+
+
+
+
+
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/initial_height/calculate')
+def height_gasrolili_initial_height():
+    return render_template('/mechanic/kinematika/height_gasrolili/initial_height.html')
+
+
+@app.route('/calculator/mechanic/kinematika/height_gasrolili/initial_height/' , methods=['GET','POST'])
+def height_gasrolili_initial_height_calculate():
+    gravity=float(request.form['gravity'])
+    initaial_velocity=float(request.form['initaial_velocity'])
+    angle=float(request.form['angle'])
+    selectable=float(request.form['selectable'])
+    choose=request.form['select']
+    
+    angle=math.radians(angle)
+
+    velocity_Y=initaial_velocity * math.sin(angle)
+    inst_X=initaial_velocity * math.cos(angle)
+
+    if choose=="ასვლის სიმაღლე" and angle<=1.5708 and ((velocity_Y**2)/(2*gravity))<= selectable :
+
+        initial_height= selectable  -  ( (velocity_Y ** 2) / (2* gravity) )
+
+        initial_height= round(initial_height , 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/initial_height.html', initial_height=initial_height, Dimension='მ' )
+
+
+    elif choose=="ფრენის დრო" and angle<=1.5708  and (gravity*selectable**2-2*velocity_Y*selectable)>=0:
+
+        initial_height= ( gravity*selectable**2  - 2 * velocity_Y * selectable ) / 2
+        
+        initial_height= round(initial_height , 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/initial_height.html', initial_height=initial_height, Dimension='მ' )
+
+
+    elif choose=="ფრენის მანძილი" and angle<=1.5708 and inst_X>0 and (gravity*selectable**2-selectable*math.sin(2*angle)*initaial_velocity**2)>=0:
+
+        initial_height= (gravity*selectable**2 - selectable * math.sin(2*angle) * initaial_velocity**2) / (2 * inst_X**2 )
+        
+        initial_height= round(initial_height , 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/initial_height.html', initial_height=initial_height, Dimension='მ' )
+
+    elif choose=="საბოლოო სიჩქარე" and angle<=1.5708 and gravity>0:
+        
+        velocity_Y_last= math.sqrt(selectable**2 - inst_X**2)
+
+        initial_height= (velocity_Y_last**2 - velocity_Y**2) / (2*gravity)
+        
+        initial_height= round(initial_height , 2)
+
+        return render_template('/mechanic/kinematika/height_gasrolili/initial_height.html', initial_height=initial_height, Dimension='მ' )
+
+    else:
+        return render_template('/mechanic/kinematika/height_gasrolili/initial_height.html', initial_height='შეუძლებელია')
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
