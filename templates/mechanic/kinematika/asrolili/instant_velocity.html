@@ -25,7 +25,7 @@
 
 
 <!--************************************************************* სათაურის სექცია******************************************************* -->
-<section class="main_header_secttion"> <div class="main_header">მყისი სიჩქარე</div></section>
+<section class="main_header_secttion"> <div class="main_header">საწყისი სიჩქარე</div></section>
 
 
 
@@ -38,9 +38,9 @@
     <div class="input_variables">
 
         <div class="variable_1">
-            <input type="number" class="input3"  placeholder=" " step="0.001" min=0 value="0" name="height">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initaial_height">
               
-                <div class="holder3">
+                <div class="holder">
                     <label for="firstname" class="placeholder_of_inputs" >საწყ.სიმაღლე</label>
                 </div>
         </div>
@@ -54,11 +54,14 @@
         </div>
 
         <div class="variable_3">
-            <input type="number" class="input3"  placeholder=" " step="0.001" min=0 value="0" name="initaial_velocity">
+            <input type="number" class="input3"  placeholder=" " step="0.001" min=0 value="0" name="selectable">
                
             <div class="holder3">
                 
-                <label for="firstname" class="placeholder_of_inputs" >საწყ.სიჩქარე</label>
+                    <select class="choose" name="select">
+                        <option>ასვლის სიმაღლე</option>
+                        <option>სრული დრო</option>
+                    </select>
             
             </div>
         </div>
@@ -67,13 +70,7 @@
 
         <!-- გამზადებულია გამოსაყენებლად -->
         <div class="variable_4">
-            <input type="number" class="input1"  placeholder=" " step="0.001" min=0 value="0" name="time">
-               
-            <div class="holder1">
-                
-                <label for="firstname" class="placeholder_of_inputs" >მე-n-ე წამი</label>
             
-            </div>
         </div>
        
 
@@ -107,7 +104,7 @@
     <form name="passdata" action="." method="POST">
 
   
-             <div class="answers">პასუხი: <div class="answer_number">{{instant_velocity}} {{Dimension}} </div> </div>
+             <div class="answers">პასუხი: <div class="answer_number">{{initial_velocity}} {{Dimension}} </div> </div>
 
     </form>
 </section>
@@ -149,7 +146,8 @@
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            ზოგადად, თანაბარაჩქარებული მოძრაობის დროს მყისი სიჩქარე გამოითვლება ფორმულით:
+                            იმისათვის, რომ ვიპოვოთ სხეულის ასვლის მაქსიმალური სიმაღლე გასროლის წერტილიდან,რომელიც ამ შემთხვევაში აღნიშნულია S სიმბოლოთი,
+                             უნდა გამოვიყენოთ თანაბარაჩქრებული მოძრაობის დროს მანძილის გამოსათვლელი ფორმულა:
                         </div>
 
 
@@ -157,89 +155,102 @@
                             <!-- ფორმულა -->
                         <div class="detail_formula">
                             <math display='block'>
-                                <msub>
-                                 <mi>V</mi>
+                                <mi>S</mi><mo>=</mo><mfrac>
                                  <mrow>
-                                  <mi>მ</mi><mi>ყ</mi></mrow>
-                                </msub>
-                                <mo>=</mo><msub>
-                                 <mi>V</mi>
-                                 <mn>0</mn>
-                                </msub>
-                                <mo>&#x00B1;</mo><mi>g</mi><mi>T</mi><mo>&#x2192;</mo><mfenced class="SKT">
-                                 <mn>1</mn>
-                                </mfenced>
+                                  <msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  <mo>&#x2212;</mo><msub>
+                                   <mi>V</mi>
+                                   <mi>c</mi>
+                                  </msub>
+                                  <msup>
+                                   <mrow></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                
                                </math>
-                               
                         </div>
                         
                         
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                           თუმცა, რადგან სხეული ჯერ თანაბარშენელებულად მოძრაობს BC მონაკვეთზე და  შემდეგ თანაბარაჩქარებულად CA მონაკვეთზე 
-                           აუცილებელია, რომ მოძრაობა დაიყოს ორ ნაწილად. პირველად განვიხილოთ ის შემთვხვევა, როდესაც მოცემული დრო (მე-n-ე წამი)
-                           ნაკლებია ან ტოლია BC მონაკვეთის გავლისათვის საჭირო დროზე : <math>
-                            <msub>
-                             <mi>T</mi>
-                             <mi>n</mi>
-                            </msub>
-                            <mo>&#x2264;</mo><msub>
-                             <mi>T</mi>
-                             <mrow>
-                              <mi>b</mi><mi>c</mi></mrow>
-                            </msub>
-                            
-                           </math>
-                           .
-                           ამ შემთხვევაში მყისი სიჩქარის გამოსათვლელი ფორმულა იქნება შემდეგი:
+                            C წერტილში სხეულის სიჩქარე ტოლია 0-ის, ამიტომ მაქსიმალურ სიმაღლეზე ასვლის ფორმულა
+                            მიიღებს შემდეგ სახეს:
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-                            <math display='block' class="SKT">
-                                <msub>
-                                 <mi>V</mi>
+                            <math display='block'>
+                                <mi>S</mi><mo>=</mo><mfrac>
                                  <mrow>
-                                  <mi>მ</mi><mi>ყ</mi></mrow>
-                                </msub>
-                                <mo>=</mo><msub>
-                                 <mi>V</mi>
-                                 <mn>0</mn>
-                                </msub>
-                                <mo>&#x2212;</mo><mi>g</mi><msub>
-                                 <mi>T</mi>
-                                 <mi>n</mi>
-                                </msub>
-                                
+                                  <msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>1</mn>
+                                </mfenced>
                                </math>
-                               
                         </div>
                         
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            ხოლო თუ მოცემული დრო (მე-n-ე წამი) მეტია BC მონაკვეთის გავლისათვის საჭირო დროზე: <math>
-                                <msub>
-                                 <mi>T</mi>
-                                 <mi>n</mi>
-                                </msub>
-                                <mo>&#x003E;</mo><msub>
-                                 <mi>T</mi>
-                                 <mrow>
-                                  <mi>b</mi><mi>c</mi></mrow>
-                                </msub>
-                                
+                            თუ პირველი ფორმულიდან გამოვსახავთ საწყის სიჩქარეს მივიღებთ მის დამოკიდებულებას ასვლის მაქსიმალურ სიმაღლეზე:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block' class="answer_color">
+                                <mrow>
+                                 <msub>
+                                  <mi>V</mi>
+                                  <mn>0</mn>
+                                 </msub>
+                                 <mo>=</mo><msqrt>
+                                  <mrow>
+                                   <mn>2</mn><mi>g</mi><mi>S</mi></mrow>
+                                 </msqrt>
+                                 </mrow>
                                </math>
-                               , მაშინ ჯერ უნდა გავიგოთ რამდენი ხანი მოძრაობდა სხეული CA მონაკვეთზე, ეს დრო რომ ვიპოვოთ
-                               მოცემულ დროს (n წამს) უნდა გამოვაკლოთ, ის დრო, რომელიც საჭიროა BC მონაკვეთის გასავლელად:
-
                                
+                        </div>
 
-                               
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            C წერტილში ასვლის შემდეგ სხეული იწყებს თავისუფალ ვარდნას, ამიტომ CA მონაკვეთის სიგრძე 
+                        შეგვიძლია გამოვითვალოთ თანაბარაჩქარებული მოძრაობის დროს სხეულის მიერ გავლილი მანძილის
+                        გამოსათვლელი ფორმულით(<math>
+                            <msub>
+                             <mi>T</mi>
+                             <mrow>
+                              <mi>c</mi><mi>a</mi></mrow>
+                            </msub>
+                            
+                           </math>
+                           არის  დრო, რომელიც საჭიროა CA მონაკვეთის გასავლელად
+                           
+                           ):
                         </div>
 
 
@@ -247,81 +258,67 @@
                             <!-- ფორმულა -->
                         <div class="detail_formula">
                             <math display='block'>
+                                <mi>C</mi><mi>A</mi><mo>=</mo><mi>H</mi><mo>+</mo><mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mi>c</mi>
+                                </msub>
                                 <msub>
-                                 <msup>
-                                  <mi>T</mi>
-                                  <mo>&#x2032;</mo>
-                                 </msup>
-                                 
-                                 <mi>n</mi>
-                                </msub>
-                                <mo>=</mo><msub>
-                                 <mi>T</mi>
-                                 <mi>n</mi>
-                                </msub>
-                                <mo>&#x2212;</mo><msub>
                                  <mi>T</mi>
                                  <mrow>
-                                  <mi>b</mi><mi>c</mi></mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
                                 </msub>
+                                <mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+
+                               <math display='block'>
+                                <msub>
+                                 <mi>V</mi>
+                                 <mi>c</mi>
+                                </msub>
+                                <mo>=</mo><mn>0</mn>
+                               </math>
+
+                               <math display='block'>
+                                <mi>C</mi><mi>A</mi><mo>=</mo><mi>H</mi><mo>+</mo><mi>S</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
                                 <mo>&#x2192;</mo><mfenced class="SKT">
                                  <mn>2</mn>
                                 </mfenced>
                                </math>
-                               
-                               
                         </div>
 
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                           რადგან ვიპოვეთ CA მონაკვეთზე მოძრაობის დრო უკვე მარტივად შეგვიძლია განვსაზღვროთ მყისი სიჩქარე.
+                            
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-                            <math display='block'>
-                                <msub>
-                                 <mi>V</mi>
-                                 <mrow>
-                                  <mi>მ</mi><mi>ყ</mi></mrow>
-                                </msub>
-                                <mo>=</mo><msub>
-                                 <mi>V</mi>
-                                 <mi>c</mi>
-                                </msub>
-                                <mo>+</mo><mi>g</mi><msub>
-                                 <msup>
-                                  <mi>T</mi>
-                                  <mo>&#x2032;</mo>
-                                 </msup>
-                                 
-                                 <mi>n</mi>
-                                </msub>
-                                
-                               </math>
-                               
 
-                                </div>
-
-                                                
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-
-
-                        </div>
-                            
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-                            
-                               
                         </div>
 
                                                 
@@ -352,48 +349,125 @@
 
                            <!-- ტექსტი -->
                            <div class="detail_txt">
-                            თუმცა, რადგან C წერტილში ამ სხეულის სიჩქარე ნოლის ტოლია, მყისი სიჩქარის გამოსათვლელი ფორმულა მიიღებს შემდეგ სახეს:
+                            თუ მე-(2)-ე ფორმულაში შევიტანთ S-ის მნიშვნელობას პირველი ფორმულიდან (S წარმოადგენს ასვლის მაქსიმალურ სიმაღლეს 
+                            გასროლის წერტილიდან და ნახაზიდან
+                            გამომდინარე იგი BC მონაკვეთის სიგრძის ტოლია) მივიღებთ, რომ CA მონაკვეთზე მოძრაობის დრო: 
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-                            
                             <math display='block'>
-                                <msub>
-                                 <mi>V</mi>
-                                 <mi>c</mi>
-                                </msub>
-                                <mo>=</mo><mn>0</mn>
+                                <mi>H</mi><mo>+</mo><mfrac>
+                                 <mrow>
+                                  <msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
                                </math>
 
+
+                               <math display='block'>
+                                <mfrac>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                 <mn>2</mn>
+                                </msubsup>
+                                <mo>=</mo><msup>
+                                 <mi>g</mi>
+                                 <mn>2</mn>
+                                </msup>
+                                <msubsup>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                 <mn>2</mn>
+                                </msubsup>
+                                
+                               </math>
+
+                               
                                <math display='block'>
                                 <msub>
-                                 <mi>V</mi>
+                                 <mi>T</mi>
                                  <mrow>
-                                  <mi>მ</mi><mi>ყ</mi></mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
                                 </msub>
-                                <mo>=</mo><mi>g</mi><msub>
-                                 <msup>
-                                  <mi>T</mi>
-                                  <mo>&#x2032;</mo>
-                                 </msup>
-                                 
-                                 <mi>n</mi>
-                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msqrt>
+                                   <mrow>
+                                    <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                     <mn>2</mn>
+                                    </msubsup>
+                                    </mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
                                 <mo>&#x2192;</mo><mfenced class="SKT">
                                  <mn>3</mn>
                                 </mfenced>
                                </math>
+                               
                         </div>
                         
                         
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            ასევე მარტივად შეგვიძლია ვიპოვოთ BC მონაკვეთის გავლისათვის საჭირო დრო. გავიხსენოთ თანაბარაჩქარებული მოძრაობის დროს
-                        სხეულის მყისი სიჩქარის გამოსათვლელი ფორმულა:
+                            თუმცა სრული დროის საპოვნელად აუცილებელია ვიპოვოთ ის დროც, რომელიც სხეულს
+                        დაჭირდა  BC მონაკვეთის გასავლელად, ანუ გასროლის წერტილიდან მაქსიმალურ სიმაღლემდე ასასვლელად, გავიხსენოთ
+                        თანაბარაჩქარებული მოძრაობის დროს მყისი სიჩქარის გამოსათვლელი ფორმულა, ამ ფორმულიდან
+                        კი მარტივად შეგვიძლია ვიპოვოთ BC მონაკვეთის გავლისათვის საჭირო დრო:
+                           :
                         </div>
 
 
@@ -418,6 +492,7 @@
                                  <mn>4</mn>
                                 </mfenced>
                                </math>
+                               
 
                                <math display='block'>
                                 <msub>
@@ -426,6 +501,7 @@
                                 </msub>
                                 <mo>=</mo><mn>0</mn>
                                </math>
+
                                
                                <math display='block'>
                                 <mi>g</mi><msub>
@@ -459,13 +535,14 @@
                                  <mn>5</mn>
                                 </mfenced>
                                </math>
+                               
                         </div>
                         
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            თუ მე-(2)-ე ფორმულაში შევიტანთ BC მონაკვეთის გავლისათვის საჭირო  დროს მივიღებთ, რომ:
+                            საბოლოოდ, სრული მოძრაობის დრო ტოლი იქნება:
                         </div>
 
 
@@ -474,18 +551,30 @@
                         <div class="detail_formula">
                             <math display='block'>
                                 <msub>
-                                 <msup>
-                                  <mi>T</mi>
-                                  <mo>&#x2032;</mo>
-                                 </msup>
-                                 
-                                 <mi>n</mi>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
                                 </msub>
                                 <mo>=</mo><msub>
                                  <mi>T</mi>
-                                 <mi>n</mi>
+                                 <mrow>
+                                  <mi>b</mi><mi>c</mi></mrow>
                                 </msub>
-                                <mo>&#x2212;</mo><mfrac>
+                                <mo>+</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                
+                               </math>
+
+                               <math display='block'>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                </msub>
+                                <mo>=</mo><mfrac>
                                  <mrow>
                                   <msub>
                                    <mi>V</mi>
@@ -494,44 +583,49 @@
                                   </mrow>
                                  <mi>g</mi>
                                 </mfrac>
+                                <mo>+</mo><mfrac>
+                                 <mrow>
+                                  <msqrt>
+                                   <mrow>
+                                    <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                     <mn>2</mn>
+                                    </msubsup>
+                                    </mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
                                 
                                </math>
                                
-                        </div>
-
-                                                
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-                            საბოლოოდ კი მიღებული დრო უნდა შევიტანოთ მყისი სიჩქარის გამოსათვლელ მე-(3)-ე ფორმულაში:
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-                            <math display='block' class="answer_color">
+                               <math display='block'>
                                 <msub>
-                                 <mi>V</mi>
+                                 <mi>T</mi>
                                  <mrow>
-                                  <mi>მ</mi><mi>ყ</mi></mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
                                 </msub>
-                                <mo>=</mo><mi>g</mi><mfenced>
+                                <mo>=</mo><mfrac>
                                  <mrow>
-                                  <msub>
-                                   <mi>T</mi>
-                                   <mi>n</mi>
-                                  </msub>
-                                  <mo>&#x2212;</mo><mfrac>
+                                  <msqrt>
                                    <mrow>
-                                    <msub>
+                                    <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
                                      <mi>V</mi>
                                      <mn>0</mn>
-                                    </msub>
+                                     <mn>2</mn>
+                                    </msubsup>
                                     </mrow>
-                                   <mi>g</mi>
-                                  </mfrac>
+                                  </msqrt>
+                                  <mo>+</mo><msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
                                   </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>6</mn>
                                 </mfenced>
                                </math>
                                
@@ -541,13 +635,176 @@
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                        სრული დროის გამოსათვლელი ფორმულიდან მარტივად შეგვიძლია საწყისი სიჩქარის განსაზღვრა:  
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <mrow>
+                                 <mi>g</mi><msub>
+                                  <mi>T</mi>
+                                  <mrow>
+                                   <mi>ს</mi><mi>რ</mi></mrow>
+                                 </msub>
+                                 <mo>=</mo><msqrt>
+                                  <mrow>
+                                   <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                    <mi>V</mi>
+                                    <mn>0</mn>
+                                    <mn>2</mn>
+                                   </msubsup>
+                                   </mrow>
+                                 </msqrt>
+                                 <mo>+</mo><msub>
+                                  <mi>V</mi>
+                                  <mn>0</mn>
+                                 </msub>
+                                 </mrow>
+                               </math>
+
+                               <math display='block'>
+                                <mrow>
+                                 <mi>g</mi><msub>
+                                  <mi>T</mi>
+                                  <mrow>
+                                   <mi>ს</mi><mi>რ</mi></mrow>
+                                 </msub>
+                                 <mo>-</mo><msub>
+                                  <mi>V</mi>
+                                  <mn>0</mn>
+                                 </msub>
+                                 <mo>=</mo><msqrt>
+                                  <mrow>
+                                   <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                    <mi>V</mi>
+                                    <mn>0</mn>
+                                    <mn>2</mn>
+                                   </msubsup>
+                                   </mrow>
+                                 </msqrt>
+                                 </mrow>
+                               </math>
+                               
+                               
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            ავიყვანოთ ორივე მხარე კვადრატში:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <msup>
+                                 <mi>g</mi>
+                                 <mn>2</mn>
+                                </msup>
+                                <msubsup>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                 <mn>2</mn>
+                                </msubsup>
+                                <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                </msub>
+                                <msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mo>+</mo><msubsup>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                 <mn>2</mn>
+                                </msubsup>
+                                <mo>=</mo><mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                 <mn>2</mn>
+                                </msubsup>
+                                
+                               </math>
+
+                               <math display='block'>
+                                <msup>
+                                 <mi>g</mi>
+                                 <mn>2</mn>
+                                </msup>
+                                <msubsup>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                 <mn>2</mn>
+                                </msubsup>
+                                <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                </msub>
+                                <msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mo>=</mo><mn>2</mn><mi>g</mi><mi>H</mi>
+                               </math>
+
+                               
+
+                               <math display='block'>
+                                <mi>g</mi><msubsup>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                 <mn>2</mn>
+                                </msubsup>
+                                <mo>&#x2212;</mo><mn>2</mn><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                </msub>
+                                <msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mo>=</mo><mn>2</mn><mi>H</mi>
+                               </math>
+
+                               
+                               <math display='block' class="answer_color">
+                                <msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>ს</mi><mi>რ</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  <mo>&#x2212;</mo><mn>2</mn><mi>H</mi></mrow>
+                                 <mrow>
+                                  <mn>2</mn><msub>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>ს</mi><mi>რ</mi></mrow>
+                                  </msub>
+                                  </mrow>
+                                </mfrac>
+                                
+                               </math>
+                               
 
                         </div>
 
@@ -586,7 +843,6 @@
 <!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
 <!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
 <!--********************************************** გამოიყენება მაშინ როცა სურათი არის ზევით მხარეს  **************************************-->
-
 
     </div>
 </section>
@@ -630,7 +886,7 @@
                 height: 50px;
                 outline: 0;
                 padding: 4px 20px 0;
-                width: 190px;
+                width: 210px;
                 
             }
 
@@ -641,37 +897,7 @@
             border-radius: 40px;
             text-align: center;
             font-size: 16px;
-            width: 150px;
-            height: 25px;
-            color: rgb(206, 193, 193);
-            font-weight: bold;
-            margin-left: 30px;
-            bottom: 50px; 
-            }
-
-            .input1 {
-                background-color: #303245;
-                margin: 10px; 
-                border-radius: 10px;
-                border: 0;
-                box-sizing: border-box;
-                color: #eee;
-                font-size: 18px;
-                height: 50px;
-                outline: 0;
-                padding: 4px 20px 0;
-                width: 150px;
-                
-            }
-
-
-            .holder1{
-            position: absolute;
-            background-color: var(--background_color);
-            border-radius: 40px;
-            text-align: center;
-            font-size: 16px;
-            width: 110px;
+            width: 170px;
             height: 25px;
             color: rgb(206, 193, 193);
             font-weight: bold;
