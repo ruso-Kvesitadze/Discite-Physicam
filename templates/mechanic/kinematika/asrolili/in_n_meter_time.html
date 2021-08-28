@@ -25,7 +25,7 @@
 
 
 <!--************************************************************* სათაურის სექცია******************************************************* -->
-<section class="main_header_secttion"> <div class="main_header">მე-n მეტრის გავლის დრო</div></section>
+<section class="main_header_secttion"> <div class="main_header">მე-n-ე მეტრის გავლის დრო</div></section>
 
 
 
@@ -70,7 +70,7 @@
             <input type="number" class="input3"  placeholder=" " step="1" min=0 value="0" name="n_meter">
               
             <div class="holder3">
-                <label for="firstname" class="placeholder_of_inputs" >მე-n მეტრი</label>
+                <label for="firstname" class="placeholder_of_inputs" >მე-n-ე მეტრი</label>
             </div>
         </div>
        
@@ -147,42 +147,167 @@
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                           იმისათვის, რომ ვიპოვოთ მე-n-ე მეტრის გავლის დრო უნდა განვიხილოთ ორი შემთხვევა.
+                           პირველ შემთხვევაში, როცა n მეტრი ნაკლებია ან ტოლია BC მონაკვეთის სიგრძეზე (BC მონაკვეთი 
+                           ნახაზიდან გამომდინარე წარმოადგენს ასვლის მაქსიმალურ სიმაღლეს და მისი სიგრძე აღნიშნულია
+                           S სიმბოლოთი), ანუ <math>
+                            <mi>n</mi><mo>&#x2264;</mo><mi>S</mi>
+                           </math>
+                           ,
+                           მე-n-ე მეტრის გავლისათვის საჭირო დროის საპოვნელად n მეტრის გასავლელად საჭირო დროს უნდა
+                           გამოვაკლოთ n-1 მეტრის გასავლელად საჭირო დრო (მაგალითად თუ გვინდა ვიპოვოთ მე-(5)-ე მეტრის
+                           გასავლელად საჭირო დრო, 5 მეტრის გასავლელად საჭირო დროს უნდა გამოვაკლოთ 4 მეტრის გასავლელად საჭირო
+                           დრო):
+                           
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-
+                            <math display='block'>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>მ</mi><mi>ე</mi><mo>&#x2212;</mo><mi>n</mi><mo>&#x2212;</mo><mi>ე</mi></mrow>
+                                </msub>
+                                <mo>=</mo><msub>
+                                 <mi>T</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>&#x2212;</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                </msub>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>1</mn>
+                                </mfenced>
+                               </math>
+                               
                         </div>
                         
                         
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            n და n-1 მეტრის საპოვნელად გამოვიყენოთ თანაბარაჩქარებული მოძრაობის დროს მანძილის გამოსათვლელი
+                            ფორმულა:
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <mi>n</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>t</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>2</mn>
+                                </mfenced>
+                               </math>
+                               
 
+                               <math display='block'>
+                                <mi>n</mi><mo>&#x2212;</mo><mn>1</mn><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <msup>
+                                 <mi>t</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <msup>
+                                    <mi>t</mi>
+                                    <mo>&#x2032;</mo>
+                                   </msup>
+                                   
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>3</mn>
+                                </mfenced>
+                               </math>
+                               
+                               
                         </div>
                         
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
+                           t წარმოადგენს n მეტრის გასავლელად საჭირო დროს (
+                            <math>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>t</mi>
+                               </math>
+                               
+                           ), ხოლო  <math>
+                            <msup>
+                             <mi>t</mi>
+                             <mo>&#x2032;</mo>
+                            </msup>
                             
+                           </math> არის დრო, რომელიც საჭიროა n-1 მეტრის გასავლელად (
+                            <math>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                </msub>
+                                <mo>=</mo><msup>
+                                 <mi>t</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math>
+                               
+                           )
+                           .
+                           მე-(2)-ე ფორმულა წარმოადგენს კვადრატულ  განტოლებას, ამ განტოლებაში საძიებელ უცნობი არის
+                           n მეტრის გასავლელად საჭირო დრო:
+                           
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <mi>g</mi><msup>
+                                 <mi>t</mi>
+                                 <mn>2</mn>
+                                </msup>
+                                <mo>&#x2212;</mo><mn>2</mn><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <mi>t</mi><mo>+</mo><mn>2</mn><mi>n</mi><mo>=</mo><mn>0</mn>
+                               </math>
 
+                               
+                               
+                               
                         </div>
 
                                                 
@@ -241,87 +366,939 @@
 
                            <!-- ტექსტი -->
                            <div class="detail_txt">
-                            
+                            ამოვხსნათ მიღებული კვადრატული განტოლება:
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <mi>D</mi><mo>=</mo><mn>4</mn><msubsup>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                 <mn>2</mn>
+                                </msubsup>
+                                <mo>&#x2212;</mo><mn>8</mn><mi>g</mi><mi>n</mi>
+                               </math>
 
+                               
+                               <math display='block'>
+                                <mi>t</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mn>2</mn><msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mo>&#x00B1;</mo><msqrt>
+                                   <mrow>
+                                    <mn>4</mn><msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>8</mn><mi>g</mi><mi>n</mi></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                
+                               </math>
+
+                               <math display='block'>
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>1</mn>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mo>+</mo><msqrt>
+                                   <mrow>
+                                    <msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><mi>n</mi></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>2</mn>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mo>&#x2212;</mo><msqrt>
+                                   <mrow>
+                                    <msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><mi>n</mi></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                
+                               </math>
                         </div>
                         
                         
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                           მე-(3)-ე ფორმულა კი წარმოადგენს კვადრატულ განტოლებას, სადაც საძიებელი უცნობი არის n-1 
+                           მეტრის გავლისთვის საჭირო დრო:
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-
+                            <math display='block'>
+                                <mi>g</mi><msup>
+                                 <msup>
+                                  <mi>t</mi>
+                                  <mo>&#x2032;</mo>
+                                 </msup>
+                                 
+                                 <mn>2</mn>
+                                </msup>
+                                <mo>&#x2212;</mo><mn>2</mn><msub>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                </msub>
+                                <msup>
+                                 <mi>t</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>+</mo><mn>2</mn><mfenced>
+                                 <mrow>
+                                  <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                </mfenced><mo>=</mo><mn>0</mn>
+                               </math>
+                               
                         </div>
                         
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            ამოვხსნათ ეს კვადრატული განტოლებაც:
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <mi>D</mi><mo>=</mo><mn>4</mn><msubsup>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                 <mn>2</mn>
+                                </msubsup>
+                                <mo>&#x2212;</mo><mn>8</mn><mi>g</mi><mfenced>
+                                 <mrow>
+                                  <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                </mfenced>
+                               </math>
 
+                               
+                               <math display='block'>
+                                <msup>
+                                 <mi>t</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mn>2</mn><msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mo>&#x00B1;</mo><msqrt>
+                                   <mrow>
+                                    <mn>4</mn><msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>8</mn><mi>g</mi><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <msub>
+                                 <msup>
+                                  <mi>t</mi>
+                                  <mo>&#x2032;</mo>
+                                 </msup>
+                                 
+                                 <mn>1</mn>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mo>+</mo><msqrt>
+                                   <mrow>
+                                    <msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <msub>
+                                 <msup>
+                                  <mi>t</mi>
+                                  <mo>&#x2032;</mo>
+                                 </msup>
+                                 
+                                 <mn>2</mn>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mo>&#x2212;</mo><msqrt>
+                                   <mrow>
+                                    <msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                
+                               </math>
+                               
                         </div>
 
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
+                            ორივე განტოლების ამოხსნის შემდეგ მიღებული ფესვებიდან ჩვენ უნდა გამოვიყენოთ მინუსიანი ფესვები,
+                            ანუ <math>
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>2</mn>
+                                </msub>
+                                
+                               </math> და <math>
+                                <msub>
+                                 <msup>
+                                  <mi>t</mi>
+                                  <mo>&#x2032;</mo>
+                                 </msup>
+                                 
+                                 <mn>2</mn>
+                                </msub>
+                                
+                               </math>
+                               
+                               (<math >
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>2</mn>
+                                </msub>
+                                
+                               </math> იქნება n  მეტრის გავლისათვის საჭირო დრო და <math>
+                                <msub>
+                                 <msup>
+                                  <mi>t</mi>
+                                  <mo>&#x2032;</mo>
+                                 </msup>
+                                 
+                                 <mn>2</mn>
+                                </msub>
+                                
+                               </math> იქნება n-1 მეტრის გავლისათვის საჭირო დრო) პლიუსიან ფესვებს არ ვიყენებთ, რადგან
+                               მათი ჩასმით მე-(n)-ე მეტრის გავლის დროის საპოვნელ ფორმულაში ვღებულობთ უარყოფით დროს.
+                               შესაბამისად პლიუსიან ფესვებს ვერ ექნება ფიზიკური აზრი. 
+                               საბოლოოდ, მე-(n)-ე მეტრის გავლისათვის საჭირო დროის საპოვნელად პირველ ფორმულაში შევიტანოთ <math>
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>2</mn>
+                                </msub>
+                                
+                               </math> (n მეტრის გავლის დრო) და <math>
+                                <msub>
+                                 <msup>
+                                  <mi>t</mi>
+                                  <mo>&#x2032;</mo>
+                                 </msup>
+                                 
+                                 <mn>2</mn>
+                                </msub>
+                                
+                               </math> (n-1 მეტრის გავლის დრო):
+                               
+                               
                             
+                               
+                               
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>მ</mi><mi>ე</mi><mo>&#x2212;</mo><mi>n</mi><mo>&#x2212;</mo><mi>ე</mi></mrow>
+                                </msub>
+                                <mo>=</mo><msub>
+                                 <mi>t</mi>
+                                 <mn>2</mn>
+                                </msub>
+                                <mo>&#x2212;</mo><msub>
+                                 <msup>
+                                  <mi>t</mi>
+                                  <mo>&#x2032;</mo>
+                                 </msup>
+                                 
+                                 <mn>2</mn>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mo>&#x2212;</mo><msqrt>
+                                   <mrow>
+                                    <msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><mi>n</mi></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <msub>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                  </msub>
+                                  <mo>&#x2212;</mo><msqrt>
+                                   <mrow>
+                                    <msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                
+                               </math>
 
+                               <math display='block' class="answer_color">
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>მ</mi><mi>ე</mi><mo>&#x2212;</mo><mi>n</mi><mo>&#x2212;</mo><mi>ე</mi></mrow>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msqrt>
+                                   <mrow>
+                                    <msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                  </msqrt>
+                                  <mo>&#x2212;</mo><msqrt>
+                                   <mrow>
+                                    <msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <msup>
+                                     <mrow></mrow>
+                                     <mn>2</mn>
+                                    </msup>
+                                    <mo>&#x2212;</mo><mn>2</mn><mi>g</mi><mi>n</mi></mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                
+                               </math>
+                               
+                               
                         </div>
 
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            მეორე შემთხვევაში, როცა n მეტრი მეტია BC მონაკვეთის სიგრძეზე, ანუ S-ზე (<math>
+                                <mi>n</mi><mo>&#x003E;</mo><mi>S</mi>
+                               </math>
+                               ). ამ შემთხვევაში სხეული გადის BC მონაკვეთს სრულად და იწყებს C წერტილიდან თავისუფალ ვარდნას.
+                            შესაბამისად n შეიცვლება <math>
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math>-ით, რომელიც ამ შემთხვევაში მიიღება მოცემული n მეტრისა და S-ის სხვაობით (
+                                <math>
+                                    <msup>
+                                     <mi>n</mi>
+                                     <mo>&#x2032;</mo>
+                                    </msup>
+                                    <mo>=</mo><mi>n</mi><mo>&#x2212;</mo><mi>S</mi>
+                                   </math>
+                                   
+                               ), ხოლო მე-(n)-ე მეტრის გავლის დროის გამოსათვლელად <math>
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math>-ის გასავლელად საჭირო დროს უნდა  გამოვაკლოთ <math>
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>&#x2212;</mo><mn>1</mn>
+                               </math> მანძილის გასავლელად საჭირო  დრო:
+                               
+                               
+                               
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-
+                            <math display='block'>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>მ</mi><mi>ე</mi><mo>&#x2212;</mo><mi>n</mi><mo>&#x2212;</mo><mi>ე</mi></mrow>
+                                </msub>
+                                <mo>=</mo><msub>
+                                 <mi>T</mi>
+                                 <msup>
+                                  <mi>n</mi>
+                                  <mo>&#x2032;</mo>
+                                 </msup>
+                                 
+                                </msub>
+                                <mo>&#x2212;</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <msup>
+                                   <mi>n</mi>
+                                   <mo>&#x2032;</mo>
+                                  </msup>
+                                  <mo>&#x2212;</mo><mn>1</mn></mrow>
+                                </msub>
+                                <mo>&#x2192;</mo><mfenced  class="SKT">
+                                 <mn>4</mn>
+                                </mfenced>
+                               </math>
+                               
                         </div>
 
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            რადგან სხეული C წერტილიდან თავისუფლად ვარდება და მისი საწყისი სიჩქარე ნოლის ტოლია, 
+                            <math >
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math>
+                               და <math>
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>&#x2212;</mo><mn>1</mn>
+                               </math>
+                               მანძილის გამოსათვლელი ფორმულები მიიღებს შემდეგ სახეს:
+                               
+                               
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>t</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>5</mn>
+                                </mfenced>
+                               </math>
 
+
+                               <math display='block'>
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>&#x2212;</mo><mn>1</mn><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msub>
+                                   <mi>t</mi>
+                                   <mn>1</mn>
+                                  </msub>
+                                  <msup>
+                                   <mrow></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>6</mn>
+                                </mfenced>
+                               </math>
+                               
+                               
                         </div>
 
     
+
+                          <!-- ტექსტი -->
+                          <div class="detail_txt">
+                            მე-(5)-ე ფორმულიდან დროის გამოსახვით მივიღებთ <math>
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math>
+                               მანძილის გასავლელად საჭირო დროს:
+                               
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <mi>t</mi><mo>=</mo><msqrt>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <mn>2</mn><msup>
+                                     <mi>n</mi>
+                                     <mo>&#x2032;</mo>
+                                    </msup>
+                                    </mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  </mrow>
+                                </msqrt>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>7</mn>
+                                </mfenced>
+                               </math>
+                               
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            ხოლო მე-(6)-ე ფორმულიდან დროის გამოსახვით მივიღებთ <math>
+                                <msup>
+                                 <mi>n</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>&#x2212;</mo><mn>1</mn>
+                               </math> მანძილის გასავლელად საჭირო დროს:
+                               
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>1</mn>
+                                </msub>
+                                <mo>=</mo><msqrt>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <mn>2</mn><mfenced>
+                                     <mrow>
+                                      <msup>
+                                       <mi>n</mi>
+                                       <mo>&#x2032;</mo>
+                                      </msup>
+                                      <mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  </mrow>
+                                </msqrt>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>8</mn>
+                                </mfenced>
+                               </math>
+                               
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            საბოლოოდ, მე-(n)-ე მეტრის გასავლელად საჭირო დროის გამოსათვლელ მე-(4)-ე ფორმულაში
+                            <math>
+                                <mi>t</mi>
+                               </math> და <math>
+                                <msub>
+                                 <mi>t</mi>
+                                 <mn>1</mn>
+                                </msub>
+                                
+                               </math>
+                               დროების შეტანით მივიღებთ:
+                               
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>მ</mi><mi>ე</mi><mo>&#x2212;</mo><mi>n</mi><mo>&#x2212;</mo><mi>ე</mi></mrow>
+                                </msub>
+                                <mo>=</mo><msqrt>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <mn>2</mn><msup>
+                                     <mi>n</mi>
+                                     <mo>&#x2032;</mo>
+                                    </msup>
+                                    </mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  </mrow>
+                                </msqrt>
+                                <mo>&#x2212;</mo><msqrt>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <mn>2</mn><mfenced>
+                                     <mrow>
+                                      <msup>
+                                       <mi>n</mi>
+                                       <mo>&#x2032;</mo>
+                                      </msup>
+                                      <mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  </mrow>
+                                </msqrt>
+                                
+                               </math>
+
+
+                               <math display='block'>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>მ</mi><mi>ე</mi><mo>&#x2212;</mo><mi>n</mi><mo>&#x2212;</mo><mi>ე</mi></mrow>
+                                </msub>
+                                <mo>=</mo><msqrt>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <mn>2</mn><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mi>S</mi></mrow>
+                                    </mfenced></mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  </mrow>
+                                </msqrt>
+                                <mo>&#x2212;</mo><msqrt>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <mn>2</mn><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mi>S</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  </mrow>
+                                </msqrt>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>9</mn>
+                                </mfenced>
+                               </math>
+                               
+                               
+                        </div>
+
+                        <!-- ტექსტი -->
+                        <div class="detail_txt">
+                         აუცილებელია ვიპოვოთ სხეულის ასვლის მაქსიმალური სიმაღლე გასროლის წერტილიდან,რომელიც ამ შემთხვევაში აღნიშნულია S სიმბოლოთი,
+                             უნდა გამოვიყენოთ თანაბარაჩქრებული მოძრაობის დროს მანძილის გამოსათვლელი ფორმულა:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <mi>S</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  <mo>&#x2212;</mo><msub>
+                                   <mi>V</mi>
+                                   <mi>c</mi>
+                                  </msub>
+                                  <msup>
+                                   <mrow></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                        </div>
+                        
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                           C წერტილში სხეულის სიჩქარე ტოლია 0-ის, ამიტომ მაქსიმალურ სიმაღლეზე ასვლის ფორმულა
+                            მიიღებს შემდეგ სახეს:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <mi>S</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>10</mn>
+                                </mfenced>
+                               </math>
+                               
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            S-ის მიღებული მნიშვნელობის შეტანით მე-(9)-ე ფორმულაში მივიღებთ:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block' class="answer_color">
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>მ</mi><mi>ე</mi><mo>&#x2212;</mo><mi>n</mi><mo>&#x2212;</mo><mi>ე</mi></mrow>
+                                </msub>
+                                <mo>=</mo><msqrt>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <mn>2</mn><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mfrac>
+                                       <mrow>
+                                        <msubsup>
+                                         <mi>V</mi>
+                                         <mn>0</mn>
+                                         <mn>2</mn>
+                                        </msubsup>
+                                        </mrow>
+                                       <mrow>
+                                        <mn>2</mn><mi>g</mi></mrow>
+                                      </mfrac>
+                                      </mrow>
+                                    </mfenced></mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  </mrow>
+                                </msqrt>
+                                <mo>&#x2212;</mo><msqrt>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <mn>2</mn><mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><mfrac>
+                                       <mrow>
+                                        <msubsup>
+                                         <mi>V</mi>
+                                         <mn>0</mn>
+                                         <mn>2</mn>
+                                        </msubsup>
+                                        </mrow>
+                                       <mrow>
+                                        <mn>2</mn><mi>g</mi></mrow>
+                                      </mfrac>
+                                      <mo>&#x2212;</mo><mn>1</mn></mrow>
+                                    </mfenced></mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  </mrow>
+                                </msqrt>
+                                
+                               </math>
+                               
+                        </div>
+
+                        <!-- ტექსტი -->
+                        <div class="detail_txt">
+                                                
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
 
                 </div>  
             </div>
