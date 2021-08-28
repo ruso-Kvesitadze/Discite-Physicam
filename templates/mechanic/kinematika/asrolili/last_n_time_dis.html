@@ -25,7 +25,7 @@
 
 
 <!--************************************************************* სათაურის სექცია******************************************************* -->
-<section class="main_header_secttion"> <div class="main_header">ბოლო n-წამში გავლილი მანძილი</div></section>
+<section class="main_header_secttion"> <div class="main_header">ბოლო n წამში გავლილი მანძილი</div></section>
 
 
 
@@ -147,21 +147,81 @@
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            ბოლო n წამში  გავლილი მანძილის გამოთვლისას უნდა გავითვალისწინოთ 2 პირობა. პირველ შემთხვევაში თუ n წამი ნაკლებია ან ტოლია CA
+                            მონაკვეთის  გავლისათვის საჭირო დროზე (<math>
+                                <mi>n</mi><mo>&#x2264;</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                
+                               </math>
+                               )
+                               , მაშინ ბოლო n წამში გავლილი მანძილის საპოვნელად CA მონაკვეთის სიგრძეს უნდა გამოვაკლოთ ის <math>
+                                <msup>
+                                 <mi>S</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math>
+                               მანძილი
+                               , რომელსაც სხეული გაივლის <math>
+                                <msup>
+                                 <mi>T</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math> დროში (<math>
+                                <msup>
+                                 <mi>T</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math> ამ შემთხვევაში აღნიშნავს დროს, რომელიც მიიღება CA მონაკვეთის გავლისათვის საჭირო დროის და n წამის სხვაობით:
+                               <math >
+                                <msup>
+                                 <mi>T</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>=</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                <mo>&#x2212;</mo><mi>n</mi>
+                               </math>
+                               )
+                               
+
+                               
+                               
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-
+                            <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>C</mi><mi>A</mi><mo>&#x2212;</mo><msup>
+                                 <mi>S</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>1</mn>
+                                </mfenced>
+                               </math>
+                               
                         </div>
                         
                         
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            გავლილი მანძილების საპოვნელად უნდა გამოვიყენოთ თანაბარაჩქარებული მოძრაობის დროს მანძილის გამოსათვლელი ფორმულა:
                         </div>
 
 
@@ -169,34 +229,116 @@
                             <!-- ფორმულა -->
                         <div class="detail_formula">
 
+                                <math display='block'>
+                                    <mi>S</mi><mo>=</mo><msub>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                    </msub>
+                                    <mi>t</mi><mo>&#x2212;</mo><mfrac>
+                                     <mrow>
+                                      <mi>g</mi><msup>
+                                       <mi>t</mi>
+                                       <mn>2</mn>
+                                      </msup>
+                                      </mrow>
+                                     <mn>2</mn>
+                                    </mfrac>
+                                    <mo>&#x2192;</mo><mfenced class="SKT">
+                                     <mn>2</mn>
+                                    </mfenced>
+                                   </math>
                         </div>
                         
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                         რადგან C წერტილში სხეულის სიჩქარე ნოლის ტოლია CA მონაკვეთის სიგრძის გამოსათვლელი ფორმულა მიიღებს შემდეგ სახეს:
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-
+                            <math display='block'>
+                                <mi>C</mi><mi>A</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>3</mn>
+                                </mfenced>
+                               </math>
+                               
                         </div>
 
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            ხოლო <math>
+                                <msup>
+                                 <mi>S</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math>
+                               გამოითვლება შემდეგი ფორმულით:
+                               
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
-
+                            <math display='block'>
+                                <msup>
+                                 <mi>S</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <msup>
+                                    <mi>T</mi>
+                                    <mo>&#x2032;</mo>
+                                   </msup>
+                                   
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mrow>
+                                    <mfenced>
+                                     <mrow>
+                                      <msub>
+                                       <mi>T</mi>
+                                       <mrow>
+                                        <mi>c</mi><mi>a</mi></mrow>
+                                      </msub>
+                                      <mo>&#x2212;</mo><mi>n</mi></mrow>
+                                    </mfenced></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>4</mn>
+                                </mfenced>
+                               </math>
+                               
                         </div>
 
                                                 
@@ -241,84 +383,952 @@
 
                            <!-- ტექსტი -->
                            <div class="detail_txt">
+                        საბოლოოდ თუ CA-ს და <math>
+                            <msup>
+                             <mi>S</mi>
+                             <mo>&#x2032;</mo>
+                            </msup>
                             
+                           </math>-ის მნიშვნელობებს შევიტანთ ბოლო n წამში გავლილი მანძილის  გამოსათვლელ ფორმულაში მივიღებთ:
+                           
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>A</mi><mi>C</mi><mo>&#x2212;</mo><msup>
+                                 <mi>S</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mrow>
+                                    <mfenced>
+                                     <mrow>
+                                      <msub>
+                                       <mi>T</mi>
+                                       <mrow>
+                                        <mi>c</mi><mi>a</mi></mrow>
+                                      </msub>
+                                      <mo>&#x2212;</mo><mi>n</mi></mrow>
+                                    </mfenced></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
 
+                               <math display='block'>
+                                <msup>
+                                 <mfenced>
+                                  <mrow>
+                                   <msub>
+                                    <mi>T</mi>
+                                    <mrow>
+                                     <mi>c</mi><mi>a</mi></mrow>
+                                   </msub>
+                                   <mo>&#x2212;</mo><mi>n</mi></mrow>
+                                 </mfenced>
+                                 <mn>2</mn>
+                                </msup>
+                                <mo>=</mo><mfenced>
+                                 <mrow>
+                                  <msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  <mo>&#x2212;</mo><mn>2</mn><msub>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                  </msub>
+                                  <mi>n</mi><mo>+</mo><msup>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                </mfenced>
+                               </math>
+                               
+
+                               
+                               <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi><msub>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                  </msub>
+                                  <mi>n</mi></mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>g</mi><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                <mi>n</mi><mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>5</mn>
+                                </mfenced>
+                               </math>
+                               
+                               
+                        </div>
+                        
+                         
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            მეორე შემთხვევაში თუ n წამი მეტია CA მონაკვეთის გავლისათვის საჭირო დროზე და ნაკლებია სრული მოძრაობის დროზე(<math>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                <mo>&#x003C;</mo><mi>n</mi><mo>&#x003C;</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                </msub>
+                                
+                               </math>
+                            )
+                            ბოლო n წამში გავლილი მანძილის საპოვნელად CA მონაკვეთის სიგრძეს უნდა დავუმატოთ იმ CD მონაკვეთის სიგრძე, 
+                               რომელიც სხეულმა გაიარა  
+                               <math>
+                                <msup>
+                                 <mi>T</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math> 
+                               დროში (<math>
+                                <msup>
+                                 <mi>T</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                
+                               </math> 
+                               ამ შემთხვევაში აღნიშნავს დროს, რომელიც მიიღება n წამისა და CA მონაკვეთის გავლისათვის საჭირო დროის სხვაობით:<math>
+                                <msup>
+                                 <mi>T</mi>
+                                 <mo>&#x2032;</mo>
+                                </msup>
+                                <mo>=</mo><mi>n</mi><mo>&#x2212;</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>a</mi><mi>c</mi></mrow>
+                                </msub>
+                                
+                               </math>
+                               
+                               )
+                               
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>C</mi><mi>A</mi><mo>+</mo><mi>C</mi><mi>D</mi><mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>6</mn>
+                                </mfenced>
+                               </math>
+                               
+                        </div>
+                        
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            CD მონაკვეთის სიგრძეც გამოითლება თანაბარაჩაქარებული მოძრაობის დროს მანძილის გამოსათვლელი ფორმულით, იმის გათვალისწინებით 
+                            რომ C წერტილში სხეულის სიჩქარე ნოლის ტოლია გვექნება:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <mi>C</mi><mi>D</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <msup>
+                                    <mi>T</mi>
+                                    <mo>&#x2032;</mo>
+                                   </msup>
+                                   
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mrow>
+                                    <mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><msub>
+                                       <mi>T</mi>
+                                       <mrow>
+                                        <mi>c</mi><mi>a</mi></mrow>
+                                      </msub>
+                                      </mrow>
+                                    </mfenced></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced  class="SKT">
+                                 <mn>7</mn>
+                                </mfenced>
+                               </math>
+                               
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            საბოლოოდ, CA და CD მონაკვეთების სიგრძეების შეტანით მე-(6)-ე ფორმულაში მივიღებთ:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mrow>
+                                    <mfenced>
+                                     <mrow>
+                                      <mi>n</mi><mo>&#x2212;</mo><msub>
+                                       <mi>T</mi>
+                                       <mrow>
+                                        <mi>c</mi><mi>a</mi></mrow>
+                                      </msub>
+                                      </mrow>
+                                    </mfenced></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <msup>
+                                 <mfenced>
+                                  <mrow>
+                                   <mi>n</mi><mo>&#x2212;</mo><msub>
+                                    <mi>T</mi>
+                                    <mrow>
+                                     <mi>c</mi><mi>a</mi></mrow>
+                                   </msub>
+                                   </mrow>
+                                 </mfenced>
+                                 <mn>2</mn>
+                                </msup>
+                                <mo>=</mo><mfenced>
+                                 <mrow>
+                                  <mi>n</mi><mo>&#x2212;</mo><mn>2</mn><mi>n</mi><msub>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                  </msub>
+                                  <mo>+</mo><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                </mfenced>
+                               </math>
+
+
+                               <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi><mi>n</mi><msub>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                  </msub>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mi>g</mi><mi>n</mi><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                <mo>+</mo><mi>g</mi><msubsup>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                 <mn>2</mn>
+                                </msubsup>
+                                
+                               </math>
+
+                               <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>g</mi><mfenced>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <msup>
+                                     <mi>n</mi>
+                                     <mn>2</mn>
+                                    </msup>
+                                    </mrow>
+                                   <mn>2</mn>
+                                  </mfrac>
+                                  <mo>&#x2212;</mo><mi>n</mi><msub>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                  </msub>
+                                  <mo>+</mo><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                </mfenced><mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>8</mn>
+                                </mfenced>
+                               </math>
+
+
+
+                            
+                               
+                               
+                               
+                        </div>
+
+
+                        <div class="detail_txt">
+                            იმისათვის, რომ ვიპოვოთ სხეულის ასვლის მაქსიმალური სიმაღლე გასროლის წერტილიდან,რომელიც ამ შემთხვევაში აღნიშნულია S სიმბოლოთი,
+                             უნდა გამოვიყენოთ თანაბარაჩქრებული მოძრაობის დროს მანძილის გამოსათვლელი ფორმულა:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <mi>S</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  <mo>&#x2212;</mo><msub>
+                                   <mi>V</mi>
+                                   <mi>c</mi>
+                                  </msub>
+                                  <msup>
+                                   <mrow></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                
+                               </math>
+
+                               
                         </div>
                         
                         
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                           C წერტილში სხეულის სიჩქარე ტოლია 0-ის, ამიტომ მაქსიმალურ სიმაღლეზე ასვლის ფორმულა
+                            მიიღებს შემდეგ სახეს:
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <mi>S</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>9</mn>
+                                </mfenced>
+                               </math>
+                               
+                        </div>
+                         
+                        <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            C წერტილში ასვლის შემდეგ სხეული იწყებს თავისუფალ ვარდნას, ამიტომ CA მონაკვეთის სიგრძე 
+                        შეგვიძლია გამოვითვალოთ თანაბარაჩქარებული მოძრაობის დროს სხეულის მიერ გავლილი მანძილის
+                        გამოსათვლელი ფორმულით(<math>
+                            <msub>
+                             <mi>T</mi>
+                             <mrow>
+                              <mi>c</mi><mi>a</mi></mrow>
+                            </msub>
+                            
+                           </math>
+                           არის  დრო, რომელიც საჭიროა CA მონაკვეთის გასავლელად
+                           
+                           ):
+                        </div>
 
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <mi>C</mi><mi>A</mi><mo>=</mo><mi>H</mi><mo>+</mo><mi>S</mi><mo>=</mo><msub>
+                                 <mi>V</mi>
+                                 <mi>c</mi>
+                                </msub>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                <mo>+</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+
+                               <math display='block'>
+                                <msub>
+                                 <mi>V</mi>
+                                 <mi>c</mi>
+                                </msub>
+                                <mo>=</mo><mn>0</mn>
+                               </math>
+
+                               <math display='block'>
+                                <mi>C</mi><mi>A</mi><mo>=</mo><mi>H</mi><mo>+</mo><mi>S</mi><mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>10</mn>
+                                </mfenced>
+                               </math>
+                               
+                        </div>
+
+                        <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            თუ მე-(10)-ე ფორმულაში შევიტანთ S-ის მნიშვნელობას მე-(9)-ე ფორმულიდან (S წარმოადგენს ასვლის მაქსიმალურ სიმაღლეს 
+                            გასროლის წერტილიდან და ნახაზიდან
+                            გამომდინარე იგი BC მონაკვეთის სიგრძის ტოლია) მივიღებთ, რომ CA მონაკვეთზე მოძრაობის დრო:
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+                            <math display='block'>
+                                <mi>H</mi><mo>+</mo><mfrac>
+                                 <mrow>
+                                  <msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+
+
+                               <math display='block'>
+                                <mfrac>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                   <mi>V</mi>
+                                   <mn>0</mn>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mrow>
+                                  <mn>2</mn><mi>g</mi></mrow>
+                                </mfrac>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msubsup>
+                                   <mi>T</mi>
+                                   <mrow>
+                                    <mi>c</mi><mi>a</mi></mrow>
+                                   <mn>2</mn>
+                                  </msubsup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                 <mi>V</mi>
+                                 <mn>0</mn>
+                                 <mn>2</mn>
+                                </msubsup>
+                                <mo>=</mo><msup>
+                                 <mi>g</mi>
+                                 <mn>2</mn>
+                                </msup>
+                                <msubsup>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                 <mn>2</mn>
+                                </msubsup>
+                                
+                               </math>
+
+                               
+                               <math display='block'>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                <mo>=</mo><mfrac>
+                                 <mrow>
+                                  <msqrt>
+                                   <mrow>
+                                    <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                     <mn>2</mn>
+                                    </msubsup>
+                                    </mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                <mo>&#x2192;</mo><mfenced class="SKT">
+                                 <mn>11</mn>
+                                </mfenced>
+                               </math>
+                               
                         </div>
                         
-                                                
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            CA მონაკვეთზე მოძრაობის დროის შეტანით მე-(5)-ე და მე-(8)-ე ფორმულებში მივიღებთ ბოლო n  წამში გავლილი მანძილის
+                            დამოკიდებულებას საწყის სიმაღლესა და საწყის სიჩქარეზე. როცა <math>
+                                <mi>n</mi><mo>&#x2264;</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                
+                               </math>
+                               გვექნება:
+                               
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>g</mi><mi>n</mi><mfrac>
+                                 <mrow>
+                                  <msqrt>
+                                   <mrow>
+                                    <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                     <mn>2</mn>
+                                    </msubsup>
+                                    </mrow>
+                                  </msqrt>
+                                  </mrow>
+                                 <mi>g</mi>
+                                </mfrac>
+                                <mo>&#x2212;</mo><mfrac>
+                                 <mrow>
+                                  <mi>g</mi><msup>
+                                   <mi>n</mi>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                 <mn>2</mn>
+                                </mfrac>
+                                
+                               </math>
 
+                               
+                               <math display='block' class="answer_color">
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>n</mi><mfenced>
+                                 <mrow>
+                                  <msqrt>
+                                   <mrow>
+                                    <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                     <mn>2</mn>
+                                    </msubsup>
+                                    </mrow>
+                                  </msqrt>
+                                  <mo>&#x2212;</mo><mfrac>
+                                   <mrow>
+                                    <mi>g</mi><mi>n</mi></mrow>
+                                   <mn>2</mn>
+                                  </mfrac>
+                                  </mrow>
+                                </mfenced>
+                               </math>
+                               
                         </div>
 
                                                 
 
                             <!-- ტექსტი -->
                         <div class="detail_txt">
-                            
+                            ხოლო როდესაც <math>
+                                <msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>c</mi><mi>a</mi></mrow>
+                                </msub>
+                                <mo>&#x003C;</mo><mi>n</mi><mo>&#x003C;</mo><msub>
+                                 <mi>T</mi>
+                                 <mrow>
+                                  <mi>ს</mi><mi>რ</mi></mrow>
+                                </msub>
+                                
+                               </math>
+                               მაშინ გვექნება:
+                               
                         </div>
 
 
 
                             <!-- ფორმულა -->
                         <div class="detail_formula">
+                            <math display='block'>
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>g</mi><mfenced>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <msup>
+                                     <mi>n</mi>
+                                     <mn>2</mn>
+                                    </msup>
+                                    </mrow>
+                                   <mn>2</mn>
+                                  </mfrac>
+                                  <mo>&#x2212;</mo><mi>n</mi><mfrac>
+                                   <mrow>
+                                    <msqrt>
+                                     <mrow>
+                                      <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                       <mi>V</mi>
+                                       <mn>0</mn>
+                                       <mn>2</mn>
+                                      </msubsup>
+                                      </mrow>
+                                    </msqrt>
+                                    </mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  <mo>+</mo><msup>
+                                   <mrow>
+                                    <mfenced>
+                                     <mrow>
+                                      <mfrac>
+                                       <mrow>
+                                        <msqrt>
+                                         <mrow>
+                                          <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                           <mi>V</mi>
+                                           <mn>0</mn>
+                                           <mn>2</mn>
+                                          </msubsup>
+                                          </mrow>
+                                        </msqrt>
+                                        </mrow>
+                                       <mi>g</mi>
+                                      </mfrac>
+                                      </mrow>
+                                    </mfenced></mrow>
+                                   <mn>2</mn>
+                                  </msup>
+                                  </mrow>
+                                </mfenced>
+                               </math>
 
-                        </div>
-
-                                                
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-                            
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-
-                        </div>
-
-                                                
-
-                            <!-- ტექსტი -->
-                        <div class="detail_txt">
-                            
-                        </div>
-
-
-
-                            <!-- ფორმულა -->
-                        <div class="detail_formula">
-
+                               
+                               <math display='block' class="answer_color">
+                                <msub>
+                                 <mi>S</mi>
+                                 <mi>n</mi>
+                                </msub>
+                                <mo>=</mo><mi>g</mi><mfenced>
+                                 <mrow>
+                                  <mfrac>
+                                   <mrow>
+                                    <msup>
+                                     <mi>n</mi>
+                                     <mn>2</mn>
+                                    </msup>
+                                    </mrow>
+                                   <mn>2</mn>
+                                  </mfrac>
+                                  <mo>&#x2212;</mo><mi>n</mi><mfrac>
+                                   <mrow>
+                                    <msqrt>
+                                     <mrow>
+                                      <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                       <mi>V</mi>
+                                       <mn>0</mn>
+                                       <mn>2</mn>
+                                      </msubsup>
+                                      </mrow>
+                                    </msqrt>
+                                    </mrow>
+                                   <mi>g</mi>
+                                  </mfrac>
+                                  <mo>+</mo><mfrac>
+                                   <mrow>
+                                    <mn>2</mn><mi>g</mi><mi>H</mi><mo>+</mo><msubsup>
+                                     <mi>V</mi>
+                                     <mn>0</mn>
+                                     <mn>2</mn>
+                                    </msubsup>
+                                    </mrow>
+                                   <mrow>
+                                    <msup>
+                                     <mi>g</mi>
+                                     <mn>2</mn>
+                                    </msup>
+                                    </mrow>
+                                  </mfrac>
+                                  </mrow>
+                                </mfenced>
+                               </math>
+                               
                         </div>
 
     
