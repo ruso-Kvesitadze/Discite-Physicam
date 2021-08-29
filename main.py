@@ -60,6 +60,11 @@ def height_gasrolili():
     return render_template ('/mechanic/kinematika/height_gasrolili/height_gasrolili.html')
 
 
+@app.route('/calculator/mechanic/kinematika/angle_fall')
+def angle_fall():
+    return render_template ('/mechanic/kinematika/chamosrolili/angle_fall.html')
+
+
 
 
 
