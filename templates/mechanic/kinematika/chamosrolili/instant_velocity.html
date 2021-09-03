@@ -1,0 +1,440 @@
+{% extends 'base_calc.html' %}
+
+
+
+{% block content%}
+
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/calculator.css') }}">
+
+
+
+<!--************************************************************* ნავიგაციის სექცია******************************************************* -->
+
+<section class="navigation">
+    <nav> 
+        <a href="/"> მთავარი </a>
+        <a href="/calculator"> დარგები </a>
+        <a href="/calculator/mechanic"> მექანიკა </a>
+        <a href="/calculator/mechanic/kinematika"> კინემატიკა </a>
+        <a href="/calculator/mechanic/kinematika/angle_fall"> ამოცანა</a>
+
+ 
+        <div class="animation start-home"></div>
+    </nav>
+</section>
+
+
+<!--************************************************************* სათაურის სექცია******************************************************* -->
+<section class="main_header_secttion"> <div class="main_header">მყისი სიჩქარე</div></section>
+
+
+
+
+<!--******************************************************* ინფორმაციისს ტრასფერის სექცია************************************************* -->
+<section class="input_variables_section">
+
+    <form name="passdata" action="." method="POST">
+
+    <div class="input_variables">
+
+        <div class="variable_1">
+            <input type="number" class="input1"  placeholder=" " step="0.001" min=0 max=90 value="0" name="angle">
+              
+                <div class="holder1">
+                    <label for="firstname" class="placeholder_of_inputs" >კუთხე</label>
+                </div>
+        </div>
+
+
+        <div class="variable_2">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initial_height">
+              
+                <div class="holder">
+                    <label for="firstname" class="placeholder_of_inputs" >საწყ.სიმაღლე</label>
+                </div>
+        </div>
+
+        
+        <div class="variable_2">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="9.8" name="gravity">
+            
+                <div class="holder">
+                     <label for="firstname" class="placeholder_of_inputs" >გრავიტაცია</label>
+                </div>
+        </div>
+
+        <div class="variable_3">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initaial_velocity">
+               
+            <div class="holder">
+                
+                <label for="firstname" class="placeholder_of_inputs" >საწყ.სიჩქარე</label>
+            
+            </div>
+        </div>
+
+
+
+        <!-- გამზადებულია გამოსაყენებლად -->
+        <div class="variable_4">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="n_time">
+               
+            <div class="holder">
+                
+                <label for="firstname" class="placeholder_of_inputs" >მე-n-ე წამი</label>
+            
+            </div>
+        </div>
+       
+
+
+        <!-- გამზადებულია გამოსაყენებლად -->
+        <div class="variable_5">
+
+        </div>
+
+
+
+
+
+
+        <!-- გამშვები ბათონი -->
+        <div class="submut_button">
+            <button type="submit" class="submit">გამოთვლა</button>
+        </div>
+
+    </div>
+
+
+    </form>
+</section>
+
+
+
+
+<!--******************************************************* პასუხების სექცია************************************************* -->
+<section class="answers_section">
+    <form name="passdata" action="." method="POST">
+
+  
+             <div class="answers">სიჩქარე დედამიწის მიმართ: <div class="answer_number">{{inst_E}} {{Dimension}} </div> </div>
+             <div class="answers">სიჩქარე Y ღერძზე: <div class="answer_number">{{inst_Y}} {{Dimension}} </div> </div>
+             <div class="answers">სიჩქარე X ღერძზე: <div class="answer_number">{{inst_X}} {{Dimension}} </div> </div>
+
+    </form>
+</section>
+
+
+
+
+
+<!--******************************************************* ფოტოს ************************************************* -->
+<section class="drawing">
+    <div>
+
+
+        <div class="union">  
+            <div class="main_header">დეტალურად</div>
+        </div>
+
+
+
+
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+
+        <div class="div_photo_txt_left">
+
+            
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+
+                    <div class="main_detail_left_short">
+
+                        <img class="photo_left" src="/static/images/mechanic/kinematika/fallen/free_fall.jpg" alt="">
+
+                            
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+                        
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+                        
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+
+                    </div>       
+                    
+    
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+
+                   <div class="main_detail_left_long">
+
+
+
+                           <!-- ტექსტი -->
+                           <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+                        
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+                        
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+    
+
+                </div>  
+            </div>
+        </div>
+</section>
+
+
+
+
+
+
+
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+
+
+
+
+            <style>
+
+            a:nth-child(5) {
+                width: 90px;
+            }       
+
+
+            nav .start-contact, a:nth-child(5):hover~.animation {
+                width: 90px;
+                left: 445px;
+                background-color: #e67e22;
+            }
+
+            .input3 {
+                background-color: #303245;
+                margin: 10px; 
+                border-radius: 10px;
+                border: 0;
+                box-sizing: border-box;
+                color: #eee;
+                font-size: 18px;
+                height: 50px;
+                outline: 0;
+                padding: 4px 20px 0;
+                width: 210px;
+                
+            }
+
+
+            .holder3{
+            position: absolute;
+            background-color: var(--background_color);
+            border-radius: 40px;
+            text-align: center;
+            font-size: 16px;
+            width: 170px;
+            height: 25px;
+            color: rgb(206, 193, 193);
+            font-weight: bold;
+            margin-left: 30px;
+            bottom: 50px; 
+            }
+
+
+            .input1 {
+                background-color: #303245;
+                margin: 10px; 
+                border-radius: 10px;
+                border: 0;
+                box-sizing: border-box;
+                color: #eee;
+                font-size: 18px;
+                height: 50px;
+                outline: 0;
+                padding: 4px 20px 0;
+                width: 140px;
+                
+            }
+
+
+            .holder1{
+            position: absolute;
+            background-color: var(--background_color);
+            border-radius: 40px;
+            text-align: center;
+            font-size: 16px;
+            width: 100px;
+            height: 25px;
+            color: rgb(206, 193, 193);
+            font-weight: bold;
+            margin-left: 30px;
+            bottom: 50px; 
+            }
+
+
+            .answers{
+                font-size: 24px;
+            }
+            </style>
+
+
+           
+
+{% endblock %}

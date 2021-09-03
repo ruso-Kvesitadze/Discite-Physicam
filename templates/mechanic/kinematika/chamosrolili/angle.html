@@ -1,0 +1,407 @@
+{% extends 'base_calc.html' %}
+
+
+
+{% block content%}
+
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/calculator.css') }}">
+
+
+
+<!--************************************************************* ნავიგაციის სექცია******************************************************* -->
+
+<section class="navigation">
+    <nav> 
+        <a href="/"> მთავარი </a>
+        <a href="/calculator"> დარგები </a>
+        <a href="/calculator/mechanic"> მექანიკა </a>
+        <a href="/calculator/mechanic/kinematika"> კინემატიკა </a>
+        <a href="/calculator/mechanic/kinematika/angle_fall"> ამოცანა </a>
+
+ 
+        <div class="animation start-home"></div>
+    </nav>
+</section>
+
+
+<!--************************************************************* სათაურის სექცია******************************************************* -->
+<section class="main_header_secttion"> <div class="main_header">გასროლის კუთხე</div></section>
+
+
+
+
+<!--******************************************************* ინფორმაციისს ტრასფერის სექცია************************************************* -->
+<section class="input_variables_section">
+
+    <form name="passdata" action="." method="POST">
+
+    <div class="input_variables">
+
+        <div class="variable_1">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="initaial_velocity">
+              
+                <div class="holder">
+                    <label for="firstname" class="placeholder_of_inputs" >საწყ.სიჩქარე</label>
+                </div>
+        </div>
+
+        <div class="variable_2">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="9.8" name="gravity">
+            
+                <div class="holder">
+                     <label for="firstname" class="placeholder_of_inputs" >გრავიტაცია</label>
+                </div>
+        </div>
+
+
+        <div class="variable_3">
+            <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="time">
+            
+                <div class="holder">
+                     <label for="firstname" class="placeholder_of_inputs" >ფრენის დრო</label>
+                </div>
+        </div>
+
+
+        <div class="variable_4">
+            <input type="number" class="input4"  placeholder=" " step="0.001" min=0 value="0" name="selectable">
+               
+            <div class="holder4">
+                
+                    <select class="choose" name="select">
+                        <option >საბოლოო სიჩქარე</option>
+                        <option >ფრენის მანძილი</option>
+                        <option >საწყისი სიმაღლე</option>
+                    </select>
+            
+            </div>
+        </div>
+
+
+
+
+        <!-- გამზადებულია გამოსაყენებლად -->
+        <div class="variable_4">
+            
+        </div>
+       
+
+
+        <!-- გამზადებულია გამოსაყენებლად -->
+        <div class="variable_5">
+
+        </div>
+
+
+
+
+
+
+        <!-- გამშვები ბათონი -->
+        <div class="submut_button">
+            <button type="submit" class="submit">გამოთვლა</button>
+        </div>
+
+    </div>
+
+
+    </form>
+</section>
+
+
+
+
+<!--******************************************************* პასუხების სექცია************************************************* -->
+<section class="answers_section">
+    <form name="passdata" action="." method="POST">
+
+  
+             <div class="answers">პასუხი: <div class="answer_number">{{angle}} {{Dimension}} </div> </div>
+
+    </form>
+</section>
+
+
+
+
+
+<!--******************************************************* ფოტოს ************************************************* -->
+
+<section class="drawing">
+    <div>
+
+
+        <div class="union">  
+            <div class="main_header">დეტალურად</div>
+        </div>
+
+
+
+
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+<!--********************************************** გამოიყენება მაშინ როცა სურათი არის მარცხენა მხარეს  **************************************-->
+
+        <div class="div_photo_txt_left">
+
+            
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+<!---------------------------------------------------- მოკლე ტექსტები და ფოტო---------------------------------------------------- -->
+
+                    <div class="main_detail_left_short">
+
+                        <img class="photo_left" src="/static/images/mechanic/kinematika/fallen/free_fall.jpg" alt="">
+
+                            
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+                        
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+                        
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+
+                    </div>       
+                    
+    
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+<!-------------------------------------------------------- გრძელი ტექსტები ------------------------------------------------------- -->
+
+                   <div class="main_detail_left_long">
+
+
+
+                           <!-- ტექსტი -->
+                           <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+                        
+                        
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+                        
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+                                                
+
+                            <!-- ტექსტი -->
+                        <div class="detail_txt">
+                            
+                        </div>
+
+
+
+                            <!-- ფორმულა -->
+                        <div class="detail_formula">
+
+                        </div>
+
+    
+
+                </div>  
+            </div>
+        </div>
+</section>
+
+
+
+
+
+
+
+
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+<!--******************************************************** სტილების კორექტირებები *******************************************************-->
+
+
+
+
+            <style>
+
+            a:nth-child(5) {
+                width: 90px;
+            }       
+
+
+            nav .start-contact, a:nth-child(5):hover~.animation {
+                width: 90px;
+                left: 445px;
+                background-color: #e67e22;
+            }
+
+
+
+            .input4 {
+                background-color: #303245;
+                margin: 10px; 
+                border-radius: 10px;
+                border: 0;
+                box-sizing: border-box;
+                color: #eee;
+                font-size: 18px;
+                height: 50px;
+                outline: 0;
+                padding: 4px 20px 0;
+                width: 220px;
+                
+            }
+
+
+            .holder4{
+            position: absolute;
+            background-color: var(--background_color);
+            border-radius: 40px;
+            text-align: center;
+            font-size: 16px;
+            width: 180px;
+            height: 25px;
+            color: rgb(206, 193, 193);
+            font-weight: bold;
+            margin-left: 30px;
+            bottom: 50px; 
+            }
+
+
+            </style>
+
+
+
+
+{% endblock %}
