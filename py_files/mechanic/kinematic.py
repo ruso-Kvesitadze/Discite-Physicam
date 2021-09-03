@@ -12,13 +12,14 @@ kinematic= Blueprint ("kinematic", __name__ , static_folder="static", template_f
 
 
 ##################################################### ვარდნილი სხეული დასაწყისი ######################################################
-###################################################### ვარდნილი სხეული დასაწყისი ######################################################
-###################################################### ვარდნილი სხეული დასაწყისი ######################################################
-###################################################### ვარდნილი სხეული დასაწყისი ######################################################
+##################################################### ვარდნილი სხეული დასაწყისი ######################################################
+##################################################### ვარდნილი სხეული დასაწყისი ######################################################
+##################################################### ვარდნილი სხეული დასაწყისი ######################################################
 
 
 
-#----------------------------------------------------------ითვლის დაცემის დრო ----------------------------------------------------------
+
+#ვარდნილი სხეულისთვის ითვლის დაცემის დროს 
 @kinematic.route('/calculator/mechanic/kinematika/fallen/time/calculate')
 def time_calculate_fallen():
     return render_template ('/mechanic/kinematika/fallen/time_calculate.html')
@@ -46,16 +47,7 @@ def get_value_time_fallen():
         return render_template ('/mechanic/kinematika/fallen/time_calculate.html' , time='მოცემული მოძრაობა შეუძლებელია' )
 
 
-
-
-
-
-
-
-
-
-
-#----------------------------------------------------------ითვლის მომენტალურ სიჩქარეს----------------------------------------------------------
+#ვარდნილი სხეულისთვის ითვლის ითვლის მომენტალურ სიჩქარეს
 @kinematic.route('/calculator/mechanic/kinematika/fallen/instant_velocity/calculate')
 def fallen_inst_velocity():
     return render_template ('/mechanic/kinematika/fallen/instant_velocity.html')
@@ -83,16 +75,7 @@ def get_value_fallem_inst_velocity():
         return render_template ('/mechanic/kinematika/fallen/instant_velocity.html' , velocity='მოცემული მოძრაობა შეუძლებელია' )
 
 
-
-
-
-
-
-
-
-
-
-#----------------------------------------------------------ითვლის ვარდნის სიმაღლეს----------------------------------------------------------
+#ვარდნილი სხეულისთვის ითვლის ითვლის ვარდნის სიმაღლეს
 @kinematic.route('/calculator/mechanic/kinematika/fallen/height/calculate')
 def fallen_height():
     return render_template ('/mechanic/kinematika/fallen/height.html')
@@ -120,17 +103,7 @@ def get_value_fallem_fallen_height():
         return render_template ('/mechanic/kinematika/fallen/height.html' , height='მოცემული მოძრაობა შეუძლებელია' )
 
 
-
-
-
-
-
-
-
-
-
-
-#----------------------------------------------------------ითვლის საწყის სიჩქარეს----------------------------------------------------------
+#ვარდნილი სხეულისთვის ითვლის ითვლის საწყის სიჩქარეს
 @kinematic.route('/calculator/mechanic/kinematika/fallen/initial_velocity/calculate')
 def fallen_velocity_0():
     return render_template('/mechanic/kinematika/fallen/initial_velocity.html')
@@ -170,15 +143,7 @@ def get_value_fallem_velocity_0():
         return render_template('/mechanic/kinematika/fallen/initial_velocity.html' , initial_velocity='მოცემული მოძრაობა შეუძლებელია')
 
 
-
-
-
-
-
-
-
-
-#-------------------------------------------------------ითვლის მე-n წამში გავლილი მანძილს--------------------------------------------------------
+#ვარდნილი სხეულისთვის ითვლის ითვლის მე-n წამში გავლილი მანძილს
 @kinematic.route('/calculator/mechanic/kinematika/fallen/in_n_time_dist/calculate')
 def fallen_in_n_time_dist():
     return render_template ('/mechanic/kinematika/fallen/in_n_time_dist.html')
@@ -200,15 +165,7 @@ def get_value_in_n_time_dist():
         return render_template ('/mechanic/kinematika/fallen/in_n_time_dist.html' , distance="შეუძლებელია")
 
 
-
-
-
-
-
-
-
-
-#-------------------------------------------------------ითვლის მე-n მეტრის გავლილის დროს--------------------------------------------------------
+#ვარდნილი სხეულისთვის ითვლის ითვლის მე-n მეტრის გავლილის დროს
 @kinematic.route('/calculator/mechanic/kinematika/fallen/in_n_meter_time/calculate')
 def fallen_in_n_metre_time():
     return render_template ('/mechanic/kinematika/fallen/in_n_meter_time.html')
@@ -229,15 +186,7 @@ def get_value_in_n_metre_time():
         return render_template ('/mechanic/kinematika/fallen/in_n_meter_time.html' , time="შეუძლებელია" )
 
 
-
-
-
-
-
-
-
-
-#------------------------------------------------------ითვლის ბოლო n-მეტრის გავლის დროს------------------------------------------------------
+#ვარდნილი სხეულისთვის ითვლის ითვლის ბოლო n-მეტრის გავლის დროს
 @kinematic.route('/calculator/mechanic/kinematika/fallen/last_n_meter_time/calculate')
 def fallen_last_n_metre_time():
     return render_template('/mechanic/kinematika/fallen/last_n_meter_time.html')
@@ -259,16 +208,7 @@ def get_value_last_n_metre_time():
         return render_template ('/mechanic/kinematika/fallen/last_n_meter_time.html' , time="შეუძლებელია")
 
 
-
-
-
-
-
-
-
-
-
-#------------------------------------------------------ითვლის ბოლო n-წამში გავლილი მანძილს------------------------------------------------------
+#ვარდნილი სხეულისთვის ითვლის ითვლის ბოლო n-წამში გავლილი მანძილს
 @kinematic.route('/calculator/mechanic/kinematika/fallen/last_n_time_dist/calculate')
 def fallen_last_n_time_dist():
     return render_template ('/mechanic/kinematika/fallen/last_n_time_dist.html')
@@ -291,8 +231,6 @@ def get_value_last_n_time_dist():
 
 
 
-
-
 ###################################################### გასროლილი სხეული დასაწყისი ######################################################
 ###################################################### გასროლილი სხეული დასაწყისი ######################################################
 ###################################################### გასროლილი სხეული დასაწყისი ######################################################
@@ -300,7 +238,8 @@ def get_value_last_n_time_dist():
 
 
 
-#გასროლილი სხეულისთვის ითვლის                     ვარდნის სიშორეს
+
+#გასროლილი სხეულისთვის ითვლის ვარდნის სიშორეს
 @kinematic.route('/calculator/mechanic/kinematika/gasrolili/distance/calculate')
 def gasrolili_distance():
     return render_template('/mechanic/kinematika/gasrolili/dist.html')
@@ -325,14 +264,7 @@ def gasrolili_distance_calc():
         return render_template('/mechanic/kinematika/gasrolili/dist.html', distance="შეუძლებელია" ,)
 
 
-
-
-
-
-
-
-
-#გასროლილი სხეულისთვის ითვლის                ასვლის მაქსიმალურ სიმაღლეს
+#გასროლილი სხეულისთვის ითვლის ასვლის მაქსიმალურ სიმაღლეს
 @kinematic.route('/calculator/mechanic/kinematika/gasrolili/height/calculate')
 def height():
     return render_template('/mechanic/kinematika/gasrolili/height.html')
@@ -362,15 +294,7 @@ def getvalue_height():
         return render_template('/mechanic/kinematika/gasrolili/height.html', height="შეუძლებელია" )
 
 
-
-
-
-
-
-
-
-
-#გასროლილი სხეულისთვის ითვლის                    ფრენის სრულ დროს
+#გასროლილი სხეულისთვის ითვლის ფრენის სრულ დროს
 @kinematic.route('/calculator/mechanic/kinematika/gasrolili/time/calculate')
 def time():
     return render_template('/mechanic/kinematika/gasrolili/time.html')
@@ -399,14 +323,7 @@ def getvalue_time():
         return render_template('/mechanic/kinematika/gasrolili/time.html', time="შეუძლებელია" )
 
 
-
-
-
-
-
-
-
-#გასროლილი სხეულისთვის ითვლის               საწყის სიჩქარეს
+#გასროლილი სხეულისთვის ითვლის საწყის სიჩქარეს
 @kinematic.route('/calculator/mechanic/kinematika/gasrolili/initaial_velocity/calculate')
 def velocity():
     return render_template('/mechanic/kinematika/gasrolili/initaial_velocity.html')
@@ -438,14 +355,7 @@ def getvalue_velocity():
         return render_template('/mechanic/kinematika/gasrolili/initaial_velocity.html', velocity="შეუძლებელია" )
 
 
-
-
-
-
-
-
-
-#გასროლილი სხეულისთვის ითვლის              კუთხეს
+#გასროლილი სხეულისთვის ითვლის კუთხეს
 @kinematic.route('/calculator/mechanic/kinematika/gasrolili/angle/calculate')
 def angle():
     return render_template('/mechanic/kinematika/gasrolili/angle.html')
@@ -490,15 +400,7 @@ def getvalue_angle():
         return render_template('/mechanic/kinematika/gasrolili/angle.html', angle="შეუძლებელია" )
 
 
-
-
-
-
-
-
-
-
-#გასროლილი სხეულისთვის ითვლის              მომენტალურ სიჩქარეს
+#გასროლილი სხეულისთვის ითვლის მომენტალურ სიჩქარეს
 @kinematic.route('/calculator/mechanic/kinematika/gasrolili/instant_velocity/calculate')
 def inst_velocity():
     return render_template('/mechanic/kinematika/gasrolili/instant_velocity.html')
@@ -529,16 +431,7 @@ def get_value_inst_velocity():
         return render_template('/mechanic/kinematika/gasrolili/instant_velocity.html' , RY="ასეთი მოძრაობა შეუძლებელია" , RX="ასეთი მოძრაობა შეუძლებელია", RR="ასეთი მოძრაობა შეუძლებელია")
 
 
-
-
-
-
-
-
-
-
-
-#გასროლილი სხეულისთვის ითვლის              position X Y
+#გასროლილი სხეულისთვის ითვლის მყისი მდებარეობა
 @kinematic.route('/calculator/mechanic/kinematika/gasrolili/instant_positon/calculate')
 def position_x_y():
     return render_template('/mechanic/kinematika/gasrolili/instant_positon.html')
@@ -584,14 +477,12 @@ def get_value_position_x_y():
 
 
 
-
-
-
-
 ###################################################### ასროლილი სხეული დასაწყისი ######################################################
 ###################################################### ასროლილი სხეული დასაწყისი ######################################################
 ###################################################### ასროლილი სხეული დასაწყისი ######################################################
 ###################################################### ასროლილი სხეული დასაწყისი ######################################################
+
+
 
 
 # ითვლის ასროლილი სხეულისთვსი ფრენის სრულ დროს
@@ -623,11 +514,6 @@ def asrolili_time_calculate():
 
 
         return render_template('/mechanic/kinematika/asrolili/time.html', time=time , Dimension="წმ")
-
-
-
-
-
 
 
 # ითვლის ასროლილი სხეულისთვსი მყის სიჩქარეს
@@ -667,12 +553,7 @@ def asrolili_instant_velocity_calculate():
          return render_template('/mechanic/kinematika/asrolili/instant_velocity.html', instant_velocity="მოცემული მოძრაობა შეუძლებელია" )
 
 
-
-
-
-
-
-# ითვლის ასროლილი სხეულისთვსი საწყის სმაღლეს
+# ითვლის ასროლილი სხეულისთვსი საწყის სიმაღლეს
 @kinematic.route('/calculator/mechanic/kinematika/asrolili/initial_height/calculate')
 def asrolili_initial_height():
     return render_template('/mechanic/kinematika/asrolili/initial_height.html')
@@ -694,12 +575,6 @@ def asrolili_initial_height_calc():
 
         else:
             return render_template('/mechanic/kinematika/asrolili/initial_height.html', initial_height="მოძრაობა შეუძლებელია")
-
-
-
-
-
-
 
 
 # ითვლის ასროლილი სხეულისთვსი საწყის სიჩქარეს
@@ -734,13 +609,6 @@ def asrolili_initial_velocity_calc():
             return render_template('/mechanic/kinematika/asrolili/initial_velocity.html', initial_velocity=initial_velocity, Dimension="მ/წმ")
         else:
             return render_template('/mechanic/kinematika/asrolili/initial_velocity.html', initial_velocity="მოძრაობა შეუძლებელია")
-
-
-
-
-
-
-
 
 
 # ითვლის ასროლილი სხეულისთვსი ასვლის სიმაღლეს
@@ -780,11 +648,6 @@ def asrolili_height_calc():
 
         else:
             return render_template('/mechanic/kinematika/asrolili/initial_velocity.html', height_e="მოძრაობა შეუძლებელია", height="მოძრაობა შეუძლებელია")
-
-
-
-
-
 
 
 # ითვლის ასროლილი სხეულისთვსი გადაადგილებას
@@ -830,13 +693,6 @@ def asrolili_displacement_calc():
 
         else:
              return render_template('/mechanic/kinematika/asrolili/displacement.html', displacement="მოძრაობა შეუძლებელია")
-
-
-
-
-
-
-
 
 
 # ითვლის ასროლილი სხეულისთვსი მე-n წამში გავლილ მანძილს
@@ -890,12 +746,6 @@ def asrolili_in_n_time_dis_calc():
         return render_template('/mechanic/kinematika/asrolili/in_n_time_dis.html', distance="მოძრაობა შეუძლებელია")
 
 
-
-
-
-
-
-
 # ითვლის ასროლილი სხეულისთვსი მე-n მეტრის გავლის დროს
 @kinematic.route('/calculator/mechanic/kinematika/asrolili/in_n_meter_time/calculate')
 def asrolili_in_n_meter_time():
@@ -932,12 +782,6 @@ def asrolili_in_n_meter_time_calc():
     else:
 
         return render_template('/mechanic/kinematika/asrolili/in_n_meter_time.html', time="მოცემული მოძრაობა შეუძლებელია")
-
-
-
-
-
-
 
 
 # ითვლის ასროლილი სხეულისთვსი ბოლო n-წამში გავლილი მანძილს
@@ -979,12 +823,6 @@ def asrolili_last_n_time_dis_calc():
         return render_template('/mechanic/kinematika/asrolili/last_n_time_dis.html', distance='მოძრაობა შეუძლებელია')
 
 
-
-
-
-
-
-
 # ითვლის ასროლილი სხეულისთვსი პირველ n-წამში გავლილი მანძილს
 @kinematic.route('/calculator/mechanic/kinematika/asrolili/first_n_time_dis/calculate')
 def asrolili_first_n_time_dis():
@@ -1024,14 +862,6 @@ def asrolili_first_n_time_dis_calc():
         return render_template('/mechanic/kinematika/asrolili/first_n_time_dis.html', distance='მოძრაობა შეუძლებელია')
 
 
-
-
-
-
-
-
-
-
 # ითვლის ასროლილი სხეულისთვსი ბოლო n-მეტის გავლილის დროს
 @kinematic.route('/calculator/mechanic/kinematika/asrolili/last_n_meter_time/calculate')
 def asrolili_last_n_meter_time():
@@ -1068,10 +898,6 @@ def asrolili_last_n_meter_time_calc():
         return render_template('/mechanic/kinematika/asrolili/last_n_meter_time.html', time=time , Dimension="წმ")
     else:
         return render_template('/mechanic/kinematika/asrolili/last_n_meter_time.html', time='მოძრაობა შეუძლებელია')
-
-
-
-
 
 
 # ითვლის ასროლილი სხეულისთვსი პირველი n-მეტის გავლილის დროს
@@ -1117,13 +943,6 @@ def asrolili_first_n_meter_time_calc():
 
 
 
-
-
-
-
-
-
-
 ###############################################სიმაღლდიან გასროლილი სხეული დასაწყისი ######################################################
 ###############################################სიმაღლდიან გასროლილი სხეული დასაწყისი ######################################################
 ###############################################სიმაღლდიან გასროლილი სხეული დასაწყისი ######################################################
@@ -1164,11 +983,6 @@ def height_gasrolili_distance_calc():
         return render_template('/mechanic/kinematika/height_gasrolili/dist.html', distance="შეუძლებელია" ,)
 
 
-
-
-
-
-
 #სიმაღლდიან გასროლილი სხეულისთვის ითვლის ასვლის მაქსიმალურ სიმაღლეს
 @kinematic.route('/calculator/mechanic/kinematika/height_gasrolili/height/calculate')
 def height_gasrolili_height():
@@ -1201,12 +1015,6 @@ def height_gasrolili_getvalue_height():
     else:
        
         return render_template('/mechanic/kinematika/height_gasrolili/height.html', height="შეუძლებელია" )
-
-
-
-
-
-
 
 
 #სიმაღლდიან გასროლილი სხეულისთვის ითვლის ფრენის სრულ დროს
@@ -1243,15 +1051,11 @@ def height_gasrolili_getvalue_time():
         return render_template('/mechanic/kinematika/height_gasrolili/time.html', time="შეუძლებელია" )
 
 
-
-
-
-
-
 #სიმაღლდიან გასროლილი სხეულისთვის ითვლის საწყის სიჩქარეს
 @kinematic.route('/calculator/mechanic/kinematika/height_gasrolili/initaial_velocity/calculate')
 def height_gasrolili_velocity():
     return render_template('/mechanic/kinematika/height_gasrolili/initaial_velocity.html')
+
 
 @kinematic.route('/calculator/mechanic/kinematika/height_gasrolili/initaial_velocity/', methods=['GET','POST'])
 def height_gasrolili_getvalue_velocity():
@@ -1300,11 +1104,6 @@ def height_gasrolili_getvalue_velocity():
         return render_template('/mechanic/kinematika/height_gasrolili/initaial_velocity.html', initial_velocity="შეუძლებელია" )
 
 
-
-
-
-
-
 #სიმაღლდიან გასროლილი სხეულისთვის ითვლის კუთხეს
 @kinematic.route('/calculator/mechanic/kinematika/height_gasrolili/angle/calculate')
 def height_gasrolili_angle():
@@ -1347,17 +1146,11 @@ def height_gasrolili_getvalue_angle2():
         return render_template('/mechanic/kinematika/height_gasrolili/angle.html', angle="შეუძლებელია" )
 
 
-
-
-
-
-
-
-
 #სიმაღლდიან გასროლილი სხეულისთვის ითვლის მომენტალურ სიჩქარეს
 @kinematic.route('/calculator/mechanic/kinematika/height_gasrolili/instant_velocity/calculate')
 def height_gasrolili_inst_velocity():
     return render_template('/mechanic/kinematika/height_gasrolili/instant_velocity.html')
+
 
 @kinematic.route('/calculator/mechanic/kinematika/height_gasrolili/instant_velocity/', methods=['GET','POST'])
 def height_gasrolili_get_value_inst_velocity():
@@ -1404,12 +1197,6 @@ def height_gasrolili_get_value_inst_velocity():
         return render_template('/mechanic/kinematika/height_gasrolili/instant_velocity.html', inst_Y=inst_Y , inst_X=inst_X, inst_E=inst_E, Dimension="მ/წმ"  )
     else:
         return render_template('/mechanic/kinematika/height_gasrolili/instant_velocity.html' , inst_Y="ასეთი მოძრაობა შეუძლებელია" , inst_X="ასეთი მოძრაობა შეუძლებელია", inst_E="ასეთი მოძრაობა შეუძლებელია")
-
-
-
-
-
-
 
 
 #სიმაღლდიან გასროლილი სხეულისთვის ითვლის position X Y
@@ -1462,12 +1249,6 @@ def height_gasrolili_get_value_position_x_y():
         return render_template('/mechanic/kinematika/height_gasrolili/instant_positon.html' ,X="მოცემული მოძრაობა შეუძლებელია" , Y="მოცემული მოძრაობა შეუძლებელია")
 
 
-
-
-
-
-
-
 #სიმაღლდიან გასროლილი სხეულისთვის ითვლის დაცემის  კუთხეს
 @kinematic.route('/calculator/mechanic/kinematika/height_gasrolili/fall_angle/calculate')
 def height_gasrolili_fall_angle():
@@ -1506,11 +1287,6 @@ def height_gasrolili_getvalue_fall_angle():
 
     else:
         return render_template('/mechanic/kinematika/height_gasrolili/fall_angle.html' , fall_angle="ასეთი მოძრაობა შეუძლებელია" )
-
-
-
-
-
 
 
 #სიმაღლდიან ჩამოსროლილი სხეულისთვის ითვლის საწყის სიმაღლეს
@@ -1574,15 +1350,11 @@ def height_gasrolili_initial_height_calculate():
 
 
 
-
-
-
-
-
 ###############################################სიმაღლდიან ჩამოსროლილი სხეული დასაწყისი ######################################################
 ###############################################სიმაღლდიან ჩამოსროლილი სხეული დასაწყისი ######################################################
 ###############################################სიმაღლდიან ჩამოსროლილი სხეული დასაწყისი ######################################################
 ###############################################სიმაღლდიან ჩამოსროლილი სხეული დასაწყისი ######################################################
+
 
 
 
@@ -1616,11 +1388,6 @@ def chamosrolili_distance_calc():
     else:
         
         return render_template('/mechanic/kinematika/chamosrolili/dist.html', distance="შეუძლებელია" ,)
-
-
-
-
-
 
 
 #სიმაღლდიან ჩამოსროლილი სხეულისთვის ითვლის ფრენის სრულ დროს
@@ -1657,15 +1424,11 @@ def chamosrolili_getvalue_time():
         return render_template('/mechanic/kinematika/chamosrolili/time.html', time="შეუძლებელია" )
 
 
-
-
-
-
-
 #სიმაღლდიან ჩამოსროლილი სხეულისთვის ითვლის საწყის სიჩქარეს
 @kinematic.route('/calculator/mechanic/kinematika/chamosrolili/initaial_velocity/calculate')
 def chamosrolili_velocity():
     return render_template('/mechanic/kinematika/chamosrolili/initaial_velocity.html')
+
 
 @kinematic.route('/calculator/mechanic/kinematika/chamosrolili/initaial_velocity/', methods=['GET','POST'])
 def chamosrolili_getvalue_velocity():
@@ -1723,11 +1486,6 @@ def chamosrolili_getvalue_velocity():
     else:
     
         return render_template('/mechanic/kinematika/chamosrolili/initaial_velocity.html', initial_velocity="შეუძლებელია" )
-
-
-
-
-
 
 
 #სიმაღლდიან ჩამოსროლილი სხეულისთვის ითვლის კუთხეს
@@ -1804,16 +1562,11 @@ def chamosrolili_getvalue_angle2():
         return render_template('/mechanic/kinematika/chamosrolili/angle.html', angle="შეუძლებელია" )
 
 
-
-
-
-
-
-
 #სიმაღლდიან ჩამოსროლილი სხეულისთვის ითვლის მომენტალურ სიჩქარეს
 @kinematic.route('/calculator/mechanic/kinematika/chamosrolili/instant_velocity/calculate')
 def chamosrolili_inst_velocity():
     return render_template('/mechanic/kinematika/chamosrolili/instant_velocity.html')
+
 
 @kinematic.route('/calculator/mechanic/kinematika/chamosrolili/instant_velocity/', methods=['GET','POST'])
 def chamosrolili_get_value_inst_velocity():
@@ -1841,12 +1594,6 @@ def chamosrolili_get_value_inst_velocity():
         return render_template('/mechanic/kinematika/chamosrolili/instant_velocity.html', inst_Y=inst_Y , inst_X=inst_X, inst_E=inst_E ,Dimension="მ/წმ"  )
     else:
         return render_template('/mechanic/kinematika/chamosrolili/instant_velocity.html' , inst_Y="ასეთი მოძრაობა შეუძლებელია" , inst_X="ასეთი მოძრაობა შეუძლებელია", inst_E="ასეთი მოძრაობა შეუძლებელია")
-
-
-
-
-
-
 
 
 #სიმაღლდიან ჩამოსროლილი სხეულისთვის ითვლის  position X Y
@@ -1888,12 +1635,6 @@ def chamosrolili_get_value_position_x_y():
         return render_template('/mechanic/kinematika/chamosrolili/instant_positon.html' ,X="მოცემული მოძრაობა შეუძლებელია" , Y="მოცემული მოძრაობა შეუძლებელია")
 
 
-
-
-
-
-
-
 #სიმაღლდიან ჩამოსროლილი სხეულისთვის ითვლის დაცემის  კუთხეს
 @kinematic.route('/calculator/mechanic/kinematika/chamosrolili/fall_angle/calculate')
 def chamosrolili_fall_angle():
@@ -1930,12 +1671,6 @@ def chamosrolili_getvalue_fall_angle():
 
     else:
         return render_template('/mechanic/kinematika/chamosrolili/fall_angle_calc.html' , fall_angle="ასეთი მოძრაობა შეუძლებელია" )
-
-
-
-
-
-
 
 
 #სიმაღლდიან ჩამოსროლილი სხეულისთვის ითვლის საწყის სიმაღლეს
@@ -1988,6 +1723,4 @@ def chamosrolili_initial_height_calculate():
 
     else:
         return render_template('/mechanic/kinematika/chamosrolili/initial_height.html', initial_height='შეუძლებელია')
-
-
 
