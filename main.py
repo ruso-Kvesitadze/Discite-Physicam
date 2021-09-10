@@ -34,6 +34,11 @@ def calculator():
     return render_template ('choose.html' )
 
 
+@app.route('/conventer')
+def conventer_lounch():
+    return render_template ('convert.html' )
+
+
 @app.route('/calculator/mechanic')
 def mechanic():
     return render_template ('/mechanic/mechanic.html')

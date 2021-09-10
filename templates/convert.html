@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href= "/static/css/convert.css">
+    <link rel="icon" href="/static/images/first_page_ico/icon.png">
+    <script rel= "javascript" src= "/static/js/convert.js"></script>
+    <title>Discite Physicam</title>
+   
+    
+
+</head>
+<body>
+
+
+        <section class="header_nav">
+            <div class="header"> 
+            <a class="a_header" href="https://www.facebook.com/DiscitePhysicam" target="blank">Discite Physicam</a>
+            </div>    
+
+            <section class="navigation">
+                <nav> 
+                    <a href="/"> მთავარი </a>
+             
+                    <div class="animation start-home"></div>
+                </nav>
+            </section>
+
+        </section>
+
+
+
+
+        <section class="content">
+
+            <section class="conventer_body">
+
+                <select class="main_choose" id="main_select" onchange="giveSelection(this.value)">
+                    <option value="length">სიგრძე</option>
+                    <option value="area">ფართობი</option>
+                    <option value="volume">მოცულობა</option>
+                    <option value="mass">მასა</option>
+                    <option value="time">დრო</option>
+                    <option value="temperature">ტემპერატურა</option>
+                    <option value="velocity">სიჩქარე</option>
+                    <option value="pressure">წნევა</option>
+                    <option value="angle">კუთხე</option>
+                    <option value="energy">ენერგია</option>
+                    <option value="force">ძალა</option>
+                    <option value="power">სიმძლავრე</option>
+                    <option value="data">ციფრული მეხსიერება</option>
+
+
+                </select>
+
+                
+
+                <input type="text" placeholder="ruso" id="input" class="input">
+                <span> <img src="/static/images/refresh.png" alt="" class="refresh"> </span>
+                <input type="text" placeholder="anri" id="result" value="0" disabled>
+
+
+
+
+
+
+                <section class="input_choose">
+
+                    <select class="second_choose_1" id="inputType">
+                        <!-- სიგრძე 1ok1-->
+                        <option data-option="length" value="Meters">მეტრი</option>
+                        <option data-option="length" value="Kilometer">კილომეტრი</option>
+                        <option data-option="length" value="decimeter">დეციმეტრი</option>
+                        <option data-option="length" value="Centimeter">სანტიმეტრი</option>
+                        <option data-option="length" value="Millimeter">მილიმეტრი</option>
+                        <option data-option="length" value="Micrometer">მიკრომეტრი</option>
+                        <option data-option="length" value="Nanometer">ნანომეტრი</option>
+                        <option data-option="length" value="Miles">მილი</option>
+                        <option data-option="length" value="Yard">იარდი</option>
+                        <option data-option="length" value="Foot">ფუტი</option>
+                        <option data-option="length" value="Inches">ინჩი</option>
+                        <option data-option="length" value="Nautical mile">საზღვაო მილი</option>
+                        <option data-option="length" value="light year">სინათლის წელი</option>
+                        <option data-option="length" value="micron">მიკრონი</option>
+                        <option data-option="length" value="parsec">პარსეკი</option>
+                        <option data-option="length" value="astr-unit">ასტრონომიული ერთეული</option>
+                        <option data-option="length" value="plank length">პლანკის სიგრძე</option>
+                        <option data-option="length" value="electron radius">ელექტრონის რადიუსი</option>
+                        <option data-option="length" value="bohr radius">ბორის რადიუსი</option>
+                        <option data-option="length" value="earth radius">დედამიწის რადიუსი</option>
+                        <option data-option="length" value="sun radius">მზის რადიუსი</option>
+
+
+                        <!-- ფართობი 2ok2-->
+                        <option data-option="area" value="Square meter">კავადრატული მეტრი</option>
+                        <option data-option="area" value="Square kilometer">კავადრატული კილომეტრი</option>
+                        <option data-option="area" value="Square centimeter">კავადრატული სანტიმეტრი</option>
+                        <option data-option="area" value="Square millimeter">კავადრატული მილიმეტრი</option>
+                        <option data-option="area" value="Square micrometer">კავადრატული მიკრომეტრი</option>
+                        <option data-option="area" value="Square nanometer">კავადრატული ნანომეტრი</option>
+                        <option data-option="area" value="Hectare">ჰექტარი</option>
+                        <option data-option="area" value="Acre">აკრი</option>
+                        <option data-option="area" value="Square mile">კავადრატული მილი</option>
+                        <option data-option="area" value="Square yard">კავადრატული იარდი</option>
+                        <option data-option="area" value="Square foot">კავადრატული ფუტი</option>
+                        <option data-option="area" value="Square Inches">კავადრატული ინჩი</option>
+                        <option data-option="area" value="electron area">ელექტრონის კვეთის ფართობი</option>
+
+                        <!-- მოცულობა 3ok3-->
+                        <option data-option="volume" value="cubic meter">კუბური მეტრი</option>
+                        <option data-option="volume" value="liter">ლიტრი</option>
+                        <option data-option="volume" value="barrel">ბარელი</option>
+                        <option data-option="volume" value="cubic kilometer">კუბური კილომეტრი</option>
+                        <option data-option="volume" value="cubic centimeter">კუბური სანტიმეტრი</option>
+                        <option data-option="volume" value="cubic decimeter">კუბური დეციმეტრი</option>
+                        <option data-option="volume" value="cubic millimeter">კუბური მილიმეტრი</option>
+                        <option data-option="volume" value="cubic nanometer">ნანოლიტრი</option>
+                        <option data-option="volume" value="cubic mile">კუბური მილი</option>
+                        <option data-option="volume" value="cubic yard">კუბური იარდი</option>
+                        <option data-option="volume" value="cubic foot">კუბური ფუტი</option>
+                        <option data-option="volume" value="cubic Inches">კუბური ინჩი</option>
+                        <option data-option="volume" value="earth volume">დედამიწის მოცულობა</option>
+                        
+
+                        <!-- მასა 4ok4-->
+                        <option data-option="mass" value="Kilogram">კილოგრამი</option>
+                        <option data-option="mass" value="gram">გრამი</option>
+                        <option data-option="mass" value="miligram">მილიგრამი</option>
+                        <option data-option="mass" value="ton">ტონა</option>
+                        <option data-option="mass" value="pound">ფუნტი</option>
+                        <option data-option="mass" value="ounce">უნცია</option>
+                        <option data-option="mass" value="carat">კარატი</option>
+                        <option data-option="mass" value="atomic mass">ატომური მასა</option>
+                        <option data-option="mass" value="plank mass">პლანკის მასა</option>
+                        <option data-option="mass" value="electron mass">ელექტრონის მასა</option>
+                        <option data-option="mass" value="proton mass">პროტონის მასა</option>
+                        <option data-option="mass" value="neutron mass">ნეიტრონის მასა</option>
+                        <option data-option="mass" value="earth mass">დედამიწის მასა</option>
+                        <option data-option="mass" value="sun mass">მზის მასა</option>
+                        
+
+
+                        <!-- დრო 5ok5-->
+                        <option data-option="time" value="Second">წამი</option>
+                        <option data-option="time" value="Minute">წუთი</option>
+                        <option data-option="time" value="Hour">საათი</option>
+                        <option data-option="time" value="Nanosecond">ნანოწამი</option>
+                        <option data-option="time" value="Microsecond">მიკროწამი</option>
+                        <option data-option="time" value="Millisecond">მილიწამი</option>
+                        <option data-option="time" value="Day">დღე</option>
+                        <option data-option="time" value="Week">კვირა</option>
+                        <option data-option="time" value="Month">თვე</option>
+                        <option data-option="time" value="year">წელი</option>
+                        <option data-option="time" value="Decade">დეკადი</option>
+                        <option data-option="time" value="Century">საუკუნე</option>
+                        <option data-option="time" value="millenium">ათასწლეული</option>
+                        <option data-option="time" value="synodic Day">სინოდური დღე</option>
+                        <option data-option="time" value="synodic Month">სინოდური თვე</option>
+                        <option data-option="time" value="synodic year">სინოდური წელი</option>
+                        <option data-option="time" value="plank time">პლანკის დრო</option>
+
+                        <!-- ტემპერატურა 6ok6-->
+                        <option data-option="temperature" value="Kelvin">კელვინი</option>
+                        <option data-option="temperature" value="Celsius">ცელსისუი</option>
+                        <option data-option="temperature" value="Farenheit">ფარენჰაიტი</option>
+                        <option data-option="temperature" value="Rankine">რანკინი</option>
+                        <option data-option="temperature" value="Reaumur">რიმური</option>
+                        <option data-option="temperature" value="triple point of water">წყლის სამმაგი წერტილი</option>
+
+
+                        <!-- სიჩქარე 7კო7--> 
+                        <option data-option="velocity" value="Meters/second">მეტრი წამში</option> 
+                        <option data-option="velocity" value="Kilometers/hour">კილომეტრი საათში</option>
+                        <option data-option="velocity" value="Miles/hour">მილი საათში</option>
+                        <option data-option="velocity" value="Meters/hour">მეტრი საათში</option>
+                        <option data-option="velocity" value="Meters/minute">მეტრი წუთში</option>
+                        <option data-option="velocity" value="Kilometers/minute">კილომეტრი წუთში</option>
+                        <option data-option="velocity" value="Kilometers/second">კილომეტრი წამში</option>
+                        <option data-option="velocity" value="foot/hour">ფუტი საათში</option>
+                        <option data-option="velocity" value="foot/minute">ფუტი წუთში</option>
+                        <option data-option="velocity" value="Foot/second">ფუტი წამში</option>
+                        <option data-option="velocity" value="mile/minute">მილი წუთში</option>
+                        <option data-option="velocity" value="mile/second">მილი წამში</option>
+                        <option data-option="velocity" value="light">სინათლის სიჩქარე</option>
+                        <option data-option="velocity" value="1st cosmos">პირველი კოსმოსური სიჩქარე</option>
+                        <option data-option="velocity" value="2st cosmos">მეორე კოსმოსური სიჩქარე</option>
+                        <option data-option="velocity" value="3st cosmos">მესამე კოსმოსური სიჩქარე</option>
+                        <option data-option="velocity" value="Knot">კნოტი</option>
+
+                        
+
+                        <!-- წნევა 8ok8-->
+                        <option data-option="pressure" value="Pascal">პასკალი</option>
+                        <option data-option="pressure" value="Bar">ბარი</option>
+                        <option data-option="pressure" value="Atmosphere">ატმოსფერული წნევა</option>
+                        <option data-option="pressure" value="Torr">ტორი</option>
+                        <option data-option="pressure" value="psi">პსი</option>
+                        <option data-option="pressure" value="ksi">ქსი</option>
+                        <option data-option="pressure" value="newton/m">ნიუტონი/მ^2</option>
+                        <option data-option="pressure" value="newton/cm">ნიუტონი/სმ^2</option>
+                        <option data-option="pressure" value="newton/mm">ნიუტონი/მმ^2</option>
+                        
+
+                        <!-- კუთხე 9ok9-->
+                        <option data-option="angle" value="Degree">გრადუსი</option>
+                        <option data-option="angle" value="Radian">რადიანი</option>
+                        <option data-option="angle" value="Gradian">გრადიანი</option>
+                        <option data-option="angle" value="Milliradian">მილირადიანი</option>
+                        <option data-option="angle" value="Minute/arc">კუთხური წუთი</option>
+                        <option data-option="angle" value="second/arc">კუთხური წამი</option>
+
+                        <!-- ენერგია 10ok10-->
+                        <option data-option="energy" value="Joule">ჯოული</option>
+                        <option data-option="energy" value="Kilojoul">კილოჯოული</option>
+                        <option data-option="energy" value="Watt hour">ვატ საათი</option>
+                        <option data-option="energy" value="Watt second">ვატ წამი</option>
+                        <option data-option="energy" value="Kilowatt hour">კილოვატ საათი</option>
+                        <option data-option="energy" value="calorie">კალორია</option>
+                        <option data-option="energy" value="horse power">ცხენის ძალა</option>
+                        <option data-option="energy" value="Kilocalorie">კილოკალორია</option>
+                        <option data-option="energy" value="Electron-volt">ელექტრონ-ვოლტა</option>
+                        <option data-option="energy" value="Rydberg const">რიგბერგის მუდმივა</option>
+
+
+                        <!-- სიმძლავრე 11ok11-->
+                        <option data-option="power" value="watt">ვატი</option>
+                        <option data-option="power" value="kilowatt">კილოვატი</option>
+                        <option data-option="power" value="horse power">ცხენის ძალა</option>
+                        <option data-option="power" value="joule/hour">ჯოული/საათი</option>
+                        <option data-option="power" value="calorie/hour">კალორია/საათი</option>
+                        <option data-option="power" value="kilovolt/ampere">კილოვოლტ/ამპერი</option>
+                        <option data-option="power" value="volt/ampere">ვოლტ/ამპერი</option>
+
+
+                        <!-- ძალა 12ok12-->
+                        <option data-option="force" value="newton">ნიუტონი</option>
+                        <option data-option="force" value="kilonewton">კილონიუტონი</option>
+                        <option data-option="force" value="dyne">დინი</option>
+
+
+                        <!-- ციფრული მეხსიერება 13ok13-->
+                        <option data-option="data" value="bit">ბიტი</option>
+                        <option data-option="data" value="nibble">ნიბლი</option>
+                        <option data-option="data" value="byte">ბაიტი</option>
+                        <option data-option="data" value="kilobit">კილობიტი</option>
+                        <option data-option="data" value="kilobyte">კილობაიტი</option>
+                        <option data-option="data" value="megabit">მეგაბიტი</option>
+                        <option data-option="data" value="megabyte">მეგაბაიტი</option>
+                        <option data-option="data" value="gigabit">გიგაბიტი</option>
+                        <option data-option="data" value="gigabyte">გიგაბაიტი</option>
+                        <option data-option="data" value="terabit">ტერაბიტი</option>
+                        <option data-option="data" value="terabyte">ტერაბაიტი</option>
+                    </select>
+
+
+
+
+
+
+
+
+
+                    <section class="result_choose">
+
+                    <select class="second_choose_2" id="resultType">
+                        <!-- სიგრძე ok1-->
+                        <option data-option="length" value="Meters">მეტრი</option>
+                        <option data-option="length" value="Kilometer">კილომეტრი</option>
+                        <option data-option="length" value="decimeter">დეციმეტრი</option>
+                        <option data-option="length" value="Centimeter">სანტიმეტრი</option>
+                        <option data-option="length" value="Millimeter">მილიმეტრი</option>
+                        <option data-option="length" value="Micrometer">მიკრომეტრი</option>
+                        <option data-option="length" value="Nanometer">ნანომეტრი</option>
+                        <option data-option="length" value="Miles">მილი</option>
+                        <option data-option="length" value="Yard">იარდი</option>
+                        <option data-option="length" value="Foot">ფუტი</option>
+                        <option data-option="length" value="Inches">ინჩი</option>
+                        <option data-option="length" value="Nautical mile">საზღვაო მილი</option>
+                        <option data-option="length" value="light year">სინათლის წელი</option>
+                        <option data-option="length" value="micron">მიკრონი</option>
+                        <option data-option="length" value="parsec">პარსეკი</option>
+                        <option data-option="length" value="astr-unit">ასტრონომიული ერთეული</option>
+                        <option data-option="length" value="plank length">პლანკის სიგრძე</option>
+                        <option data-option="length" value="electron radius">ელექტრონის რადიუსი</option>
+                        <option data-option="length" value="bohr radius">ბორის რადიუსი</option>
+                        <option data-option="length" value="earth radius">დედამიწის რადიუსი</option>
+                        <option data-option="length" value="sun radius">მზის რადიუსი</option>
+
+
+                        <!-- ფართობი ok2-->
+                        <option data-option="area" value="Square meter">კავადრატული მეტრი</option>
+                        <option data-option="area" value="Square kilometer">კავადრატული კილომეტრი</option>
+                        <option data-option="area" value="Square centimeter">კავადრატული სანტიმეტრი</option>
+                        <option data-option="area" value="Square millimeter">კავადრატული მილიმეტრი</option>
+                        <option data-option="area" value="Square micrometer">კავადრატული მიკრომეტრი</option>
+                        <option data-option="area" value="Square nanometer">კავადრატული ნანომეტრი</option>
+                        <option data-option="area" value="Hectare">ჰექტარი</option>
+                        <option data-option="area" value="Acre">აკრი</option>
+                        <option data-option="area" value="Square mile">კავადრატული მილი</option>
+                        <option data-option="area" value="Square yard">კავადრატული იარდი</option>
+                        <option data-option="area" value="Square foot">კავადრატული ფუტი</option>
+                        <option data-option="area" value="Square Inches">კავადრატული ინჩი</option>
+                        <option data-option="area" value="electron area">ელექტრონის კვეთის ფართობი</option>
+
+                        <!-- მოცულობა ok3-->
+                        <option data-option="volume" value="cubic meter">კუბური მეტრი</option>
+                        <option data-option="volume" value="liter">ლიტრი</option>
+                        <option data-option="volume" value="barrel">ბარელი</option>
+                        <option data-option="volume" value="cubic kilometer">კუბური კილომეტრი</option>
+                        <option data-option="volume" value="cubic centimeter">კუბური სანტიმეტრი</option>
+                        <option data-option="volume" value="cubic decimeter">კუბური დეციმეტრი</option>
+                        <option data-option="volume" value="cubic millimeter">კუბური მილიმეტრი</option>
+                        <option data-option="volume" value="cubic nanometer">ნანოლიტრი</option>
+                        <option data-option="volume" value="cubic mile">კუბური მილი</option>
+                        <option data-option="volume" value="cubic yard">კუბური იარდი</option>
+                        <option data-option="volume" value="cubic foot">კუბური ფუტი</option>
+                        <option data-option="volume" value="cubic inc">კუბური ინჩი</option>
+                        <option data-option="volume" value="earth volume">დედამიწის მოცულობა</option>
+                        
+
+                        <!-- მასა ok4-->
+                        <option data-option="mass" value="Kilogram">კილოგრამი</option>
+                        <option data-option="mass" value="gram">გრამი</option>
+                        <option data-option="mass" value="miligram">მილიგრამი</option>
+                        <option data-option="mass" value="ton">ტონა</option>
+                        <option data-option="mass" value="pound">ფუნტი</option>
+                        <option data-option="mass" value="ounce">უნცია</option>
+                        <option data-option="mass" value="carat">კარატი</option>
+                        <option data-option="mass" value="atomic mass">ატომური მასა</option>
+                        <option data-option="mass" value="plank mass">პლანკის მასა</option>
+                        <option data-option="mass" value="electron mass">ელექტრონის მასა</option>
+                        <option data-option="mass" value="proton mass">პროტონის მასა</option>
+                        <option data-option="mass" value="neutron mass">ნეიტრონის მასა</option>
+                        <option data-option="mass" value="earth mass">დედამიწის მასა</option>
+                        <option data-option="mass" value="sun mass">მზის მასა</option>
+                        
+
+
+                        <!-- დრო ok5-->
+                        <option data-option="time" value="Second">წამი</option>
+                        <option data-option="time" value="Minute">წუთი</option>
+                        <option data-option="time" value="Hour">საათი</option>
+                        <option data-option="time" value="Nanosecond">ნანოწამი</option>
+                        <option data-option="time" value="Microsecond">მიკროწამი</option>
+                        <option data-option="time" value="Millisecond">მილიწამი</option>
+                        <option data-option="time" value="Day">დღე</option>
+                        <option data-option="time" value="Week">კვირა</option>
+                        <option data-option="time" value="Month">თვე</option>
+                        <option data-option="time" value="year">წელი</option>
+                        <option data-option="time" value="Decade">დეკადი</option>
+                        <option data-option="time" value="Century">საუკუნე</option>
+                        <option data-option="time" value="millenium">ათასწლეული</option>
+                        <option data-option="time" value="synodic Day">სინოდური დღე</option>
+                        <option data-option="time" value="synodic Month ">სინოდური თვე</option>
+                        <option data-option="time" value="synodic year">სინოდური წელი</option>
+                        <option data-option="time" value="plank time">პლანკის დრო</option>
+
+                        <!-- ტემპერატურა ok6-->
+                        <option data-option="temperature" value="Kelvin">კელვინი</option>
+                        <option data-option="temperature" value="Celsius">ცელსისუი</option>
+                        <option data-option="temperature" value="Farenheit">ფარენჰაიტი</option>
+                        <option data-option="temperature" value="Rankine">რანკინი</option>
+                        <option data-option="temperature" value="Reaumur">რიმური</option>
+                        <!-- <option data-option="temperature" value="triple point of water">წყლის სამმაგი წერტილი</option> -->
+
+
+                        <!-- სიჩქარე 7-->
+                        <option data-option="velocity" value="Meters/second">მეტრი წამში</option> 
+                        <option data-option="velocity" value="Kilometers/hour">კილომეტრი საათში</option>
+                        <option data-option="velocity" value="Miles/hour">მილი საათში</option>
+                        <option data-option="velocity" value="Meters/hour">მეტრი საათში</option>
+                        <option data-option="velocity" value="Meters/minute">მეტრი წუთში</option>
+                        <option data-option="velocity" value="Kilometers/minute">კილომეტრი წუთში</option>
+                        <option data-option="velocity" value="Kilometers/second">კილომეტრი წამში</option>
+                        <option data-option="velocity" value="foot/hour">ფუტი საათში</option>
+                        <option data-option="velocity" value="foot/minute">ფუტი წუთში</option>
+                        <option data-option="velocity" value="Foot/second">ფუტი წამში</option>
+                        <option data-option="velocity" value="mile/minute">მილი წუთში</option>
+                        <option data-option="velocity" value="mile/second">მილი წამში</option>
+                        <option data-option="velocity" value="light">სინათლის სიჩქარე</option>
+                        <option data-option="velocity" value="1st cosmos">პირველი კოსმოსური სიჩქარე</option>
+                        <option data-option="velocity" value="2st cosmos">მეორე კოსმოსური სიჩქარე</option>
+                        <option data-option="velocity" value="3st cosmos">მესამე კოსმოსური სიჩქარე</option>
+                        <option data-option="velocity" value="Knot">კნოტი</option>
+                        
+
+                        <!-- წნევა ok8-->
+                        <option data-option="pressure" value="Pascal">პასკალი</option>
+                        <option data-option="pressure" value="Bar">ბარი</option>
+                        <option data-option="pressure" value="Atmosphere">ატმოსფერული წნევა</option>
+                        <option data-option="pressure" value="Torr">ტორი</option>
+                        <option data-option="pressure" value="psi">პსი</option>
+                        <option data-option="pressure" value="newton/m">ნიუტონი/მ^2</option>
+                        <option data-option="pressure" value="newton/cm">ნიუტონი/სმ^2</option>
+                        <option data-option="pressure" value="newton/mm">ნიუტონი/მმ^2</option>
+                        
+
+                        <!-- კუთხე ok9-->
+                        <option data-option="angle" value="Degree">გრადუსი</option>
+                        <option data-option="angle" value="Radian">რადიანი</option>
+                        <option data-option="angle" value="Gradian">გრადიანი</option>
+                        <option data-option="angle" value="Milliradian">მილირადიანი</option>
+                        <option data-option="angle" value="Minute/arc">კუთხური წუთი</option>
+                        <option data-option="angle" value="second/arc">კუთხური წამი</option>
+
+                        <!-- ენერგია ok10-->
+                        <option data-option="energy" value="Joule">ჯოული</option>
+                        <option data-option="energy" value="Kilojoul">კილოჯოული</option>
+                        <option data-option="energy" value="Watt hour">ვატ საათი</option>
+                        <option data-option="energy" value="Watt second">ვატ წამი</option>
+                        <option data-option="energy" value="Kilowatt hour">კილოვატ საათი</option>
+                        <option data-option="energy" value="calorie">კალორია</option>
+                        <option data-option="energy" value="Gram calorie">გრამ კალორია</option>
+                        <option data-option="energy" value="Kilocalorie">კილოკალორია</option>
+                        <option data-option="energy" value="Electron-volt">ელექტრონ-ვოლტა</option>
+                        <!-- <option data-option="energy" value="Rydberg const">რიგბერგის მუდმივა</option> -->
+
+
+                        <!-- სიმძლავრე ok11-->
+                        <option data-option="power" value="watt">ვატი</option>
+                        <option data-option="power" value="kilowatt">კილოვატი</option>
+                        <option data-option="power" value="horse power">ცხენის ძალა</option>
+                        <option data-option="power" value="joule/hour">ჯოული/საათი</option>
+                        <option data-option="power" value="calorie/hour">კალორია/საათი</option>
+                        <option data-option="power" value="kilovolt/ampere">კილოვოლტ/ამპერი</option>
+                        <option data-option="power" value="volt/ampere">ვოლტ/ამპერი</option>
+
+
+                        <!-- ძალა ok12-->
+                        <option data-option="force" value="newton">ნიუტონი</option>
+                        <option data-option="force" value="kilonewton">კილონიუტონი</option>
+                        <option data-option="force" value="dyne">დინი</option>
+
+
+                        <!-- ციფრული მეხსიერება ok13-->
+                        <option data-option="data" value="bit">ბიტი</option>
+                        <option data-option="data" value="nibble">ნიბლი</option>
+                        <option data-option="data" value="byte">ბაიტი</option>
+                        <option data-option="data" value="kilobit">კილობიტი</option>
+                        <option data-option="data" value="kilobyte">კილობაიტი</option>
+                        <option data-option="data" value="megabit">მეგაბიტი</option>
+                        <option data-option="data" value="megabyte">მეგაბაიტი</option>
+                        <option data-option="data" value="gigabit">გიგაბიტი</option>
+                        <option data-option="data" value="gigabyte">გიგაბაიტი</option>
+                        <option data-option="data" value="terabit">ტერაბიტი</option>
+                        <option data-option="data" value="terabyte">ტერაბაიტი</option>
+                    </select>
+
+
+
+                     </section>
+                </section>
+            </section>
+        </section>
+
+
+
+
+<!-- ეს სკრიპტი აძლევს საშუალებას გააანწაილოს სექტორებში ცვლადები -->
+<script>
+
+    var main_select = document.querySelector('#main_select');
+    var resultType = document.querySelector('#resultType');
+    var inputType = document.querySelector('#inputType');
+    var options3 = resultType.querySelectorAll('option');
+    var options2 = inputType.querySelectorAll('option');
+
+
+    function giveSelection(selValue) {
+    resultType.innerHTML = '';
+    inputType.innerHTML = '';
+    for(var i = 0; i < options3.length; i++) {
+    if(options3[i].dataset.option === selValue) {
+    resultType.appendChild(options3[i]);
+        }
+    }
+
+    for(var i = 0; i < options2.length; i++) {
+    if(options2[i].dataset.option === selValue) {
+    inputType.appendChild(options2[i]);
+            }
+        }
+    }
+
+    giveSelection(main_select.value);
+
+</script>
+
+<!--  მიაქ ინფორმაცია ბექში დასამუშავებლად -->
+<script>
+
+    
+    var input = document.getElementById('input');
+    var result = document.getElementById('result');
+    var inputType = document.getElementById('inputType');
+    var resultType = document.getElementById('resultType');
+    var main_select = document.getElementById('main_select');
+    var inputTypeValue, resultTypeValue, main_selectValue;
+
+
+    input.addEventListener("keyup" ,myResult)
+    main_select.addEventListener("change", myResult)
+    inputType.addEventListener("change", myResult)
+    resultType.addEventListener("change", myResult)
+
+
+
+    inputTypeValue=inputType.value;
+    resultTypeValue=resultType.value;
+    main_selectValue=main_select.value;
+   
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
