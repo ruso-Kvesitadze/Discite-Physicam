@@ -1183,7 +1183,7 @@ def height_gasrolili_get_value_inst_velocity():
 
     if time<= time_bc :
 
-        inst_Y= initaial_velocity - (gravity*time)
+        inst_Y= velocity_Y - (gravity*time)
         
         inst_E=math.sqrt(inst_Y**2 + inst_X**2)
 
