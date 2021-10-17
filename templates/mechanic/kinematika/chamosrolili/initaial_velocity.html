@@ -49,7 +49,12 @@
             <input type="number" class="input"  placeholder=" " step="0.001" min=0 value="0" name="time">
               
                 <div class="holder">
-                    <label for="firstname" class="placeholder_of_inputs" >ფრენის დრო</label>
+                    
+                    <select class="choose" name="select_second" id="sel1" onchange="giveSelection(this.value)">
+                        <option value="ფრენის დრო">ფრენის დრო</option>
+                        <option value="საწყისი სიმაღლე">საწყისი სიმაღლე</option>       
+                    </select>
+                 
                 </div>
         </div>
 
@@ -66,11 +71,11 @@
                
             <div class="holder3">
                 
-                    <select class="choose" name="select">
-                        <option>საწყისი სიმაღლე</option>
-                        <option>ფრენის მანძილი</option>
-                        <option>საბოლოო სიჩქარე</option>
-                        
+                    <select class="choose" name="select" id="sel2">
+                        <option data-option="ფრენის დრო">საწყისი სიმაღლე</option>
+                        <option data-option="ფრენის დრო">ფრენის მანძილი</option>
+                        <option data-option="საწყისი სიმაღლე">ფრენის მანძილი</option>
+                        <option data-option="ფრენის დრო">საბოლოო სიჩქარე</option>
                     </select>
             
             </div>
@@ -2294,7 +2299,22 @@
             }
             </style>
 
+    <script>
+        var sel1 = document.querySelector('#sel1');
+        var sel2 = document.querySelector('#sel2');
+        var options2 = sel2.querySelectorAll('option');
 
+        function giveSelection(selValue) {
+        sel2.innerHTML = '';
+        for(var i = 0; i < options2.length; i++) {
+            if(options2[i].dataset.option === selValue) {
+            sel2.appendChild(options2[i]);
+            }
+        }
+        }
+
+        giveSelection(sel1.value);
+    </script>
 
 
 {% endblock %}
