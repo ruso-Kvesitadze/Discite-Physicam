@@ -1,9 +1,3 @@
 # Discite-Physicam
 
- დღეს დავამთავრე ცონვენტერის მთავარი მნიშვნელობების გამომთვლელის გაკეთება, მაგრამ არ დამიწერია დამრგვალების ფუნქცია და მაგრა მეზარება 10/9/2021
- 
- რუსოს კორონა ქონდა და შევნელდით მაგრამ მალე გავაგრძელებთ მუშაობას 12/9/2021
- 
- კონვერტერი მთლიანად დამტავრდა მარტო ვიზუალი დარჩა შესაქმნელი 13/9/2021
- 
- მთლიანად დავამთავრეთ სიმაღლიდან გასროლილი სხეულის ამოცანა 16/9/2021
+A physics calculator that enables you to determine unknown quantities in various typical problems. Each page includes an explanatory drawing, a brief theory explanation, and a method to arrive at the formula for calculating the unknown quantity.
